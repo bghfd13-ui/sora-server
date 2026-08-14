@@ -190,7 +190,7 @@ public class FrontendProxyMiddleware
 
     public async Task InvokeAsync(HttpContext ctx)
     {
-        string requestUrl = ctx.Request.GetEncodedPathAndQuery();`n        Console.WriteLine("[FProxy]  + requestUrl);
+        string requestUrl = ctx.Request.GetEncodedPathAndQuery();
         string requestFullUrl = ctx.Request.GetEncodedUrl();
 
         if (requestUrl.Contains("/canmanage/") ||
