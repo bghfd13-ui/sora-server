@@ -20,7 +20,15 @@ public class SignService : ServiceBase
     {
         try
         {
-            byte[] privateKeyBlob = Convert.FromBase64String(System.IO.File.ReadAllText(@"Keys\PrivateKeyBlob.txt"));
+            string keyPath = System.IO.Path.Combine(
+    AppContext.BaseDirectory,
+    "Keys",
+    "PrivateKeyBlob.txt"
+);
+
+byte[] privateKeyBlob = Convert.FromBase64String(
+    System.IO.File.ReadAllText(keyPath)
+);
 
             _shaCsp = SHA1.Create();
             _rsaCsp = new RSACryptoServiceProvider();
