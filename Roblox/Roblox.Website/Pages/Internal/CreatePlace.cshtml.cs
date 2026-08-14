@@ -35,8 +35,10 @@ public class CreatePlace : RobloxPageModel
         {
             var asset = await services.assets.CreatePlace(
                 userSession.userId,
+                "My Place",
                 CreatorType.User,
-                userSession.userId);
+                userSession.userId,
+                null);
 
             await services.games.CreateUniverse(asset.placeId);
 
