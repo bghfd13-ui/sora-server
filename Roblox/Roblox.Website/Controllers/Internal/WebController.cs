@@ -594,9 +594,8 @@ public class WebController : ControllerBase
         if (!await services.cooldown.TryCooldownCheck($"CreatePlaceInGame:{safeUserSession.userId}", TimeSpan.FromSeconds(5)))
             throw new BadRequestException(1, "You are creating places too fast, please wait a few seconds before trying again");
         await services.games.CanManageUniverse(safeUserSession.userId, universeId);
-        // Whitelist 677
-        if (!StaffFilter.IsOwner(safeUserSession.userId) && safeUserSession.userId != 677)
-            throw new ForbiddenException(11, "You don't have permissions to create a place in this universe");
+        // CanManageUniverse already verifies that the logged-in user owns this Universe.
+        // Do not apply a separate staff/ID whitelist here.
         if (await services.games.CountUniversePlaces(universeId) >= 10)
             throw new BadRequestException(1, "You cannot create more than 10 places in a universe");   
         var place = await services.games.CreatePlaceInGame(safeUserSession.userId, safeUserSession.username, CreatorType.User, universeId);

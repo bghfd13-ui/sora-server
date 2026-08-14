@@ -24,8 +24,8 @@
                                                               "catalogDetailsPageOwnersTabEnabled":  false,
                                                               "requireLoginThroughCookie":  false
                                                           },
-                                                "baseUrl":  "https://sora-server-1.onrender.com",
-                                                "apiFormat":  "https://sora-server-1.onrender.com/apisite/{0}{1}"
+                                                "baseUrl":  "http://127.0.0.1:5000",
+                                                "apiFormat":  "http://127.0.0.1:5000/apisite/{0}{1}"
                                             }
                             }
 }

@@ -1,0 +1,337 @@
+warning: in the working copy of 'Roblox/Roblox.Website/Pages/Auth/Login.cshtml', LF will be replaced by CRLF the next time Git touches it
+[1mdiff --git a/Roblox/Roblox.Website/Pages/Auth/Login.cshtml b/Roblox/Roblox.Website/Pages/Auth/Login.cshtml[m
+[1mindex f07375b..a72f7cc 100644[m
+[1m--- a/Roblox/Roblox.Website/Pages/Auth/Login.cshtml[m
+[1m+++ b/Roblox/Roblox.Website/Pages/Auth/Login.cshtml[m
+[36m@@ -1,63 +1,284 @@[m
+[31m-@page "/auth/accountlogin"[m
+[32m+[m[32m﻿@page "/auth/accountlogin"[m
+ @model Roblox.Website.Pages.Auth.Login[m
+ [m
+ @{[m
+[31m-    Layout = "Shared/_Layout";[m
+[32m+[m[32m    Layout = null;[m
+[32m+[m[32m    var has2FAError = Model.errorMessage != null && Model.errorMessage.Contains("2FA");[m
+ }[m
+ [m
+[31m-<div class="container mt-4">[m
+[31m-    @if (string.IsNullOrEmpty(Model.applicationId))[m
+[31m-    {[m
+[31m-        <div class="row">[m
+[31m-            <div class="col-12">[m
+[31m-                <div class="alert alert-warning">[m
+[31m-                    <p class="mb-0"><span class="fw-bolder">Warning:</span> No application ID is set. If your application was approved, or you signed up with an invite url, you can ignore this message.</p>[m
+[31m-                </div>[m
+[32m+[m[32m<!DOCTYPE html>[m
+[32m+[m[32m<html lang="en">[m
+[32m+[m[32m<head>[m
+[32m+[m[32m    <meta charset="utf-8" />[m
+[32m+[m[32m    <meta name="viewport" content="width=device-width, initial-scale=1.0" />[m
+[32m+[m[32m    <title>Log In - Sora</title>[m
+[32m+[m
+[32m+[m[32m    <style>[m
+[32m+[m[32m        * {[m
+[32m+[m[32m            box-sizing: border-box;[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        html, body {[m
+[32m+[m[32m            margin: 0;[m
+[32m+[m[32m            padding: 0;[m
+[32m+[m[32m            width: 100%;[m
+[32m+[m[32m            min-height: 100%;[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        body {[m
+[32m+[m[32m            background: #f1f3f5;[m
+[32m+[m[32m            font-family: Arial, Helvetica, sans-serif;[m
+[32m+[m[32m            color: #111;[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        .login-wrapper {[m
+[32m+[m[32m            width: 100%;[m
+[32m+[m[32m            min-height: 100vh;[m
+[32m+[m[32m            display: flex;[m
+[32m+[m[32m            justify-content: center;[m
+[32m+[m[32m            align-items: flex-start;[m
+[32m+[m[32m            padding-top: 31px;[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        .login-card {[m
+[32m+[m[32m            width: 420px;[m
+[32m+[m[32m            max-width: calc(100% - 32px);[m
+[32m+[m[32m            background: #fff;[m
+[32m+[m[32m            border: 1px solid #d2d6da;[m
+[32m+[m[32m            border-radius: 3px;[m
+[32m+[m[32m            padding: 29px 34px 32px 34px;[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        .login-title {[m
+[32m+[m[32m            margin: 0;[m
+[32m+[m[32m            text-align: center;[m
+[32m+[m[32m            font-size: 32px;[m
+[32m+[m[32m            line-height: 38px;[m
+[32m+[m[32m            font-weight: 700;[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        .login-subtitle {[m
+[32m+[m[32m            margin: 8px 0 27px 0;[m
+[32m+[m[32m            text-align: center;[m
+[32m+[m[32m            color: #777;[m
+[32m+[m[32m            font-size: 14px;[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        .field-label {[m
+[32m+[m[32m            display: block;[m
+[32m+[m[32m            margin-bottom: 8px;[m
+[32m+[m[32m            font-size: 14px;[m
+[32m+[m[32m            font-weight: 700;[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        .login-input {[m
+[32m+[m[32m            width: 100%;[m
+[32m+[m[32m            height: 34px;[m
+[32m+[m[32m            padding: 7px 10px;[m
+[32m+[m[32m            margin-bottom: 16px;[m
+[32m+[m[32m            border: 1px solid #d7dce1;[m
+[32m+[m[32m            border-radius: 5px;[m
+[32m+[m[32m            background: #fff;[m
+[32m+[m[32m            color: #222;[m
+[32m+[m[32m            font-size: 14px;[m
+[32m+[m[32m            outline: none;[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        .login-input:focus {[m
+[32m+[m[32m            border-color: #80bdff;[m
+[32m+[m[32m            box-shadow: 0 0 0 2px rgba(0,123,255,.10);[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        .login-button {[m
+[32m+[m[32m            width: 100%;[m
+[32m+[m[32m            height: 35px;[m
+[32m+[m[32m            border: 0;[m
+[32m+[m[32m            border-radius: 5px;[m
+[32m+[m[32m            background: #68b393;[m
+[32m+[m[32m            color: #fff;[m
+[32m+[m[32m            font-size: 14px;[m
+[32m+[m[32m            font-weight: 700;[m
+[32m+[m[32m            cursor: pointer;[m
+[32m+[m[32m            margin-top: 2px;[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        .login-button:hover {[m
+[32m+[m[32m            background: #5da887;[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        .login-button:disabled {[m
+[32m+[m[32m            opacity: .6;[m
+[32m+[m[32m            cursor: not-allowed;[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        .bottom-text {[m
+[32m+[m[32m            margin-top: 20px;[m
+[32m+[m[32m            text-align: center;[m
+[32m+[m[32m            font-size: 14px;[m
+[32m+[m[32m            color: #666;[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        .bottom-text a {[m
+[32m+[m[32m            color: #007bff;[m
+[32m+[m[32m            text-decoration: none;[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        .bottom-text a:hover {[m
+[32m+[m[32m            text-decoration: underline;[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        .error {[m
+[32m+[m[32m            margin-bottom: 18px;[m
+[32m+[m[32m            padding: 10px 12px;[m
+[32m+[m[32m            border: 1px solid #f1b5b5;[m
+[32m+[m[32m            border-radius: 4px;[m
+[32m+[m[32m            background: #fff0f0;[m
+[32m+[m[32m            color: #b00020;[m
+[32m+[m[32m            font-size: 14px;[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        .twofa {[m
+[32m+[m[32m            margin-top: 2px;[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        .secondary-link {[m
+[32m+[m[32m            display: block;[m
+[32m+[m[32m            margin-top: 12px;[m
+[32m+[m[32m            text-align: center;[m
+[32m+[m[32m            color: #007bff;[m
+[32m+[m[32m            text-decoration: none;[m
+[32m+[m[32m            font-size: 14px;[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        .secondary-link:hover {[m
+[32m+[m[32m            text-decoration: underline;[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        @@media (max-width: 480px) {[m
+[32m+[m[32m            .login-wrapper {[m
+[32m+[m[32m                padding-top: 20px;[m
+[32m+[m[32m            }[m
+[32m+[m
+[32m+[m[32m            .login-card {[m
+[32m+[m[32m                padding: 25px 24px 28px 24px;[m
+[32m+[m[32m            }[m
+[32m+[m
+[32m+[m[32m            .login-title {[m
+[32m+[m[32m                font-size: 29px;[m
+[32m+[m[32m            }[m
+[32m+[m[32m        }[m
+[32m+[m[32m    </style>[m
+[32m+[m[32m</head>[m
+[32m+[m
+[32m+[m[32m<body>[m
+[32m+[m[32m    <div class="login-wrapper">[m
+[32m+[m[32m        <div class="login-card">[m
+[32m+[m
+[32m+[m[32m            <h1 class="login-title">Log In</h1>[m
+[32m+[m
+[32m+[m[32m            <div class="login-subtitle">[m
+[32m+[m[32m                Log in to your Sora account[m
+             </div>[m
+[31m-        </div>[m
+[31m-    }[m
+[31m-    <div class="row">[m
+[31m-        <div class="col-12 col-md-6 offset-md-3 col-lg-4 offset-lg-4">[m
+[31m-            <div class="card card-body bg-dark text-light">[m
+[31m-                <h2>Login</h2>[m
+[32m+[m
+[32m+[m[32m            @if (Model.errorMessage != null)[m
+[32m+[m[32m            {[m
+[32m+[m[32m                <div class="error">[m
+[32m+[m[32m                    @Model.errorMessage[m
+[32m+[m[32m                </div>[m
+[32m+[m[32m            }[m
+[32m+[m
+[32m+[m[32m            <form method="post">[m
+[32m+[m
+                 @if (Model.applicationId != null)[m
+                 {[m
+[31m-                    <p>If you do not have an account, you can <a href="/auth/signup?applicationId=@Model.applicationId">create one here</a>.</p>[m
+[32m+[m[32m                    <input type="hidden"[m
+[32m+[m[32m                           name="applicationId"[m
+[32m+[m[32m                           value="@Model.applicationId" />[m
+                 }[m
+[31m-                else[m
+[32m+[m
+[32m+[m[32m                @Html.AntiForgeryToken()[m
+[32m+[m
+[32m+[m[32m                <label class="field-label" for="username">[m
+[32m+[m[32m                    Username[m
+[32m+[m[32m                </label>[m
+[32m+[m
+[32m+[m[32m                <input[m
+[32m+[m[32m                    id="username"[m
+[32m+[m[32m                    name="username"[m
+[32m+[m[32m                    type="text"[m
+[32m+[m[32m                    class="login-input"[m
+[32m+[m[32m                    autocomplete="username"[m
+[32m+[m[32m                    required[m
+[32m+[m[32m                    disabled="@Model.loginDisabled" />[m
+[32m+[m
+[32m+[m[32m                <label class="field-label" for="password">[m
+[32m+[m[32m                    Password[m
+[32m+[m[32m                </label>[m
+[32m+[m
+[32m+[m[32m                <input[m
+[32m+[m[32m                    id="password"[m
+[32m+[m[32m                    name="password"[m
+[32m+[m[32m                    type="password"[m
+[32m+[m[32m                    class="login-input"[m
+[32m+[m[32m                    autocomplete="current-password"[m
+[32m+[m[32m                    required[m
+[32m+[m[32m                    disabled="@Model.loginDisabled" />[m
+[32m+[m
+[32m+[m[32m                @if (has2FAError)[m
+[32m+[m[32m                {[m
+[32m+[m[32m                    <div class="twofa">[m
+[32m+[m[32m                        <label class="field-label" for="totpcode">[m
+[32m+[m[32m                            2FA Code[m
+[32m+[m[32m                        </label>[m
+[32m+[m
+[32m+[m[32m                        <input[m
+[32m+[m[32m                            id="totpcode"[m
+[32m+[m[32m                            name="totpcode"[m
+[32m+[m[32m                            type="text"[m
+[32m+[m[32m                            class="login-input"[m
+[32m+[m[32m                            autocomplete="one-time-code"[m
+[32m+[m[32m                            inputmode="numeric"[m
+[32m+[m[32m                            minlength="6"[m
+[32m+[m[32m                            maxlength="6"[m
+[32m+[m[32m                            pattern="[0-9]*"[m
+[32m+[m[32m                            disabled="@Model.loginDisabled" />[m
+[32m+[m[32m                    </div>[m
+[32m+[m[32m                }[m
+[32m+[m
+[32m+[m[32m                <button[m
+[32m+[m[32m                    id="login-submit"[m
+[32m+[m[32m                    class="login-button"[m
+[32m+[m[32m                    type="submit"[m
+[32m+[m[32m                    disabled="@Model.loginDisabled">[m
+[32m+[m[32m                    Log In[m
+[32m+[m[32m                </button>[m
+[32m+[m
+[32m+[m[32m                @if (Model.resetPasswordEnabled)[m
+                 {[m
+[31m-                    <p>If you do not have an account, you can <a href="/auth/signup">create one here</a>.</p>[m
+[32m+[m[32m                    <a class="secondary-link" href="/auth/password-reset">[m
+[32m+[m[32m                        Forgot your password?[m
+[32m+[m[32m                    </a>[m
+                 }[m
+[31m-                @if (Model.errorMessage != null)[m
+[32m+[m
+[32m+[m[32m            </form>[m
+[32m+[m
+[32m+[m[32m            <div class="bottom-text">[m
+[32m+[m[32m                New to Sora?[m
+[32m+[m[32m                @if (Model.applicationId != null)[m
+                 {[m
+[31m-                    <p class="text-danger">@Model.errorMessage</p>[m
+[32m+[m[32m                    <a href="/auth/signup?applicationId=@Model.applicationId">[m
+[32m+[m[32m                        Create an account[m
+[32m+[m[32m                    </a>[m
+[32m+[m[32m                }[m
+[32m+[m[32m                else[m
+[32m+[m[32m                {[m
+[32m+[m[32m                    <a href="/auth/signup">[m
+[32m+[m[32m                        Create an account[m
+[32m+[m[32m                    </a>[m
+                 }[m
+[31m-                <form method="post">[m
+[31m-                    <input disabled="@Model.loginDisabled" type="text" placeholder="Username" name="username" class="form-control mb-1"/>[m
+[31m-                    <input disabled="@Model.loginDisabled" type="password" placeholder="Password" name="password" class="form-control mb-1"/>[m
+[31m-                    <input disabled="@Model.loginDisabled" type="text" autocomplete="off" minlength="6" maxlength="6" pattern="\d*" placeholder="2FA Code (leave blank if not set)" name="totpcode" class="form-control mb-1"/>[m
+[31m-                    @if (Model.applicationId != null)[m
+[31m-                    {[m
+[31m-                        <input type="hidden" name="applicationId" value="@Model.applicationId"/>[m
+[31m-                    }[m
+[31m-                    @if (Model.resetPasswordEnabled)[m
+[31m-                    {[m
+[31m-                        <p><a href="/auth/password-reset">Reset Password</a></p>[m
+[31m-                    }[m
+[31m-@Html.AntiForgeryToken()[m
+[31m-                    <div class="d-grid gap-2 mt-4 mb-4">[m
+[31m-                        <input disabled="@Model.loginDisabled" class="btn btn-primary btn-custom" type="submit" value="Login" id="login-submit"/>[m
+[31m-                    @if (!Model.loginDisabled)[m
+[31m-                    {[m
+[31m-                        <hr class="m-0 my-2">[m
+[31m-[m
+[31m-                        <a href="/auth/discord-login" class="btn btn-discord btn-custom">[m
+[31m-                            <i class="bi bi-discord me-2"></i> Login with Discord[m
+[31m-                        </a>[m
+[31m-                    }[m
+[31m-                    </div>[m
+[31m-                </form>[m
+             </div>[m
+[32m+[m
+         </div>[m
+     </div>[m
+[31m-</div>[m
+[32m+[m[32m</body>[m
+[32m+[m[32m</html>[m

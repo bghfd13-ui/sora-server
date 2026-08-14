@@ -1,0 +1,39 @@
+Roblox\Roblox.Dto\Assets\Assets.cs:25:    public class CreatePlaceResponse
+Roblox\Roblox.Dto\Games\Universe.cs:192:public class CreateUniverseRequest
+Roblox\Roblox.Dto\Games\Universe.cs:233:public class CreateUniverseResponse
+Roblox\Roblox.Dto\Games\Universe.cs:238:public class CreatePlaceInGameResponse
+Roblox\Roblox.Services\App\FeatureFlags\FeatureFlags.cs:52:    CreatePlaceSelfService,
+Roblox\Roblox.Services\Assets\AssetsService.cs:1526:    public async Task<CreatePlaceResponse> CreatePlace(long creatorId, string creatorName, CreatorType creatorType, long creatorUserId, long? templateId = 0)
+Roblox\Roblox.Services\Games\Games.cs:1128:    public async Task<CreateUniverseResponse> CreateUniverse(long rootPlaceId)
+Roblox\Roblox.Services\Games\Games.cs:1148:            return new CreateUniverseResponse()
+Roblox\Roblox.Services\Games\Games.cs:1154:    public async Task<CreatePlaceInGameResponse> CreatePlaceInGame(long creatorId, string creatorName, CreatorType creatorType, long universeId)
+Roblox\Roblox.Services\Games\Games.cs:1159:            var place = await assets.CreatePlace(creatorId, creatorName, creatorType, creatorId);
+Roblox\Roblox.Services\Games\Games.cs:1165:            return new CreatePlaceInGameResponse()
+Roblox\Roblox.Website\Controllers\Internal\AdminApi.cs:2520:        var asset = await services.assets.CreatePlace(request.userId, username, CreatorType.User, request.userId);
+Roblox\Roblox.Website\Controllers\Internal\AdminApi.cs:2521:        var universe = await services.games.CreateUniverse(asset.placeId);
+Roblox\Roblox.Website\Controllers\Internal\WebController.cs:592:    public async Task<dynamic> CreatePlaceInGame(long templatePlaceIdToUse, long universeId)
+Roblox\Roblox.Website\Controllers\Internal\WebController.cs:594:        if (!await services.cooldown.TryCooldownCheck($"CreatePlaceInGame:{safeUserSession.userId}", TimeSpan.FromSeconds(5)))
+Roblox\Roblox.Website\Controllers\Internal\WebController.cs:602:        var place = await services.games.CreatePlaceInGame(safeUserSession.userId, safeUserSession.username, CreatorType.User, universeId);
+Roblox\Roblox.Website\Controllers\RobloxApi\Universe.cs:866:    public async Task<dynamic> CreateUniverseApi([FromBody] CreateUniverseRequest request)
+Roblox\Roblox.Website\Controllers\RobloxApi\Universe.cs:868:        if (!FeatureFlags.IsEnabled(FeatureFlag.CreatePlaceSelfService))
+Roblox\Roblox.Website\Controllers\RobloxApi\Universe.cs:873:            await Roblox.Services.Cache.redLock.CreateLockAsync("CreatePlaceSelfServiceV1:UserId:" + userSession.userId,
+Roblox\Roblox.Website\Controllers\RobloxApi\Universe.cs:877:            Writer.Info(LogGroup.AbuseDetection, "CreatePlace API could not acquire createGameLock");
+Roblox\Roblox.Website\Controllers\RobloxApi\Universe.cs:881:        var createStatus = await CanCreatePlace(userSession.userId);
+Roblox\Roblox.Website\Controllers\RobloxApi\Universe.cs:886:        Writer.Info(LogGroup.AbuseDetection, "CreatePlace API userId={0} can create a place, creating it", userSession.userId);
+Roblox\Roblox.Website\Controllers\RobloxApi\Universe.cs:888:        var asset = await services.assets.CreatePlace(userSession.userId, userSession.username, CreatorType.User, userSession.userId, request.templatePlaceIdToUse);
+Roblox\Roblox.Website\Controllers\RobloxApi\Universe.cs:890:        var universe = await services.games.CreateUniverse(asset.placeId);
+Roblox\Roblox.Website\Controllers\RobloxApi\Universe.cs:899:    public async Task<PlaceCreationFailureReason> CanCreatePlace(long userId)
+Roblox\Roblox.Website\Controllers\RobloxApi\Universe.cs:902:        log.Info("start CanCreatePlace with userId={0}",userId);
+Roblox\Roblox.Website\Pages\Auth\Signup.cshtml.cs:254:        if (FeatureFlags.IsEnabled(FeatureFlag.CreatePlaceSelfService))
+Roblox\Roblox.Website\Pages\Auth\Signup.cshtml.cs:257:            var asset = await services.assets.CreatePlace(createdUser.userId, username, CreatorType.User, createdUser.userId);
+Roblox\Roblox.Website\Pages\Auth\Signup.cshtml.cs:259:            await services.games.CreateUniverse(asset.placeId);
+Roblox\Roblox.Website\Pages\Internal\CreatePlace.cshtml.cs:12:public class CreatePlace : RobloxPageModel
+Roblox\Roblox.Website\Pages\Internal\CreatePlace.cshtml.cs:144:    public async Task<PlaceCreationFailureReason> CanCreatePlace(long userId)
+Roblox\Roblox.Website\Pages\Internal\CreatePlace.cshtml.cs:147:        log.Info("start CanCreatePlace with userId={0}",userId);
+Roblox\Roblox.Website\Pages\Internal\CreatePlace.cshtml.cs:263:        //     if (!FeatureFlags.IsEnabled(FeatureFlag.CreatePlaceSelfService))
+Roblox\Roblox.Website\Pages\Internal\CreatePlace.cshtml.cs:270:        //         await Roblox.Services.Cache.redLock.CreateLockAsync("CreatePlaceSelfServiceV1:UserId:" + userSession.userId,
+Roblox\Roblox.Website\Pages\Internal\CreatePlace.cshtml.cs:275:        //         Writer.Info(LogGroup.AbuseDetection, "CreatePlace OnPost could not acquire createGameLock");
+Roblox\Roblox.Website\Pages\Internal\CreatePlace.cshtml.cs:280:        //     var createStatus = await CanCreatePlace(userSession.userId);
+Roblox\Roblox.Website\Pages\Internal\CreatePlace.cshtml.cs:286:        //     Writer.Info(LogGroup.AbuseDetection, "CreatePlace OnPost userId={0} can create a place, creating it", userSession.userId);
+Roblox\Roblox.Website\Pages\Internal\CreatePlace.cshtml.cs:288:        //     var asset = await services.assets.CreatePlace(userSession.userId, CreatorType.User, userSession.userId);
+Roblox\Roblox.Website\Pages\Internal\CreatePlace.cshtml.cs:290:        //     await services.games.CreateUniverse(asset.placeId);
