@@ -1,0 +1,31 @@
+{
+    "serverRuntimeConfig":  {
+                                "backend":  {
+                                                "csrfKey":  "S11vDNWlIFIDLIjCN0wtu2A9dPCTQX2O7pzCmezqkDahr+OvaT/IqyMDDrICeX27+tLFvbHzdh7zc+CUDmAHjw=="
+                                            }
+                            },
+    "publicRuntimeConfig":  {
+                                "backend":  {
+                                                "proxyEnabled":  false,
+                                                "flags":  {
+                                                              "myAccountPage2016Enabled":  true,
+                                                              "catalogGenreFilterSupported":  false,
+                                                              "catalogPageLimit":  28,
+                                                              "catalogSaleCountVisibleFromDetailsEndpoint":  false,
+                                                              "catalogDetailsPageResellerLimit":  10,
+                                                              "avatarPageInventoryLimit":  10,
+                                                              "friendsPageLimit":  25,
+                                                              "settingsPageThemeSelectorEnabled":  true,
+                                                              "tradeWindowInventoryCollectibleLimit":  10,
+                                                              "moneyPagePromotionTabVisible":  false,
+                                                              "gameGenreFilterMethod":  "keyword",
+                                                              "gameGenreFilterSupported":  true,
+                                                              "avatarPageOutfitCreatedAtAvailable":  false,
+                                                              "catalogDetailsPageOwnersTabEnabled":  false,
+                                                              "requireLoginThroughCookie":  false
+                                                          },
+                                                "baseUrl":  "http://127.0.0.1:5000",
+                                                "apiFormat":  "http://127.0.0.1:5000/apisite/{0}{1}"
+                                            }
+                            }
+}
