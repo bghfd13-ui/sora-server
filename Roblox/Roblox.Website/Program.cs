@@ -1,5 +1,6 @@
-using Roblox.Rendering;
+﻿using Roblox.Rendering;
 using Roblox.Website.Middleware;
+using Roblox.Libraries.RemoteView;
 using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.Extensions.FileProviders;
@@ -41,6 +42,10 @@ Roblox.Configuration.ScriptDirectory = configuration.GetSection("Directories:Scr
 Roblox.Configuration.AdminBundleDirectory = configuration.GetSection("Directories:AdminBundle").Value!;
 Roblox.Configuration.EconomyChatBundleDirectory = configuration.GetSection("Directories:EconomyChatBundle").Value!;
 Roblox.Configuration.BaseUrl = configuration.GetSection("BaseUrl").Value!;
+RemoteView.Configure(
+    "https://sora-frontend-2k6t.onrender.com",
+    configuration.GetSection("Authorization").Value!
+);
 Roblox.Configuration.ShortBaseUrl = Roblox.Configuration.BaseUrl!.Replace("https://www.", "");
 Roblox.Configuration.HCaptchaPublicKey = configuration.GetSection("HCaptcha:Public").Value!;
 Roblox.Configuration.HCaptchaPrivateKey = configuration.GetSection("HCaptcha:Private").Value!;
@@ -228,3 +233,6 @@ app.UseWebSockets();
 app.UseRequestDecompression();
 app.MapHub<MessageRouterHub>("/v1/router/signalr");
 app.Run();
+
+
+
