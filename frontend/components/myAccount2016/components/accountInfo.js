@@ -141,7 +141,8 @@ const AccountInfo = props => {
                                 setTheme(ev.currentTarget.value);
                                 window.location.reload();
                             }}>
-                                <option value='light'>Default</option>
+                                <option value='light'>Light</option>
+                                <option value='dark'>Dark</option>
                                 <option value='obc2016'>OBC Theme</option>
                             </select>
                         </div>
@@ -177,7 +178,7 @@ const AccountInfo = props => {
                                     }}>
                                 <option value="Default">Default</option>
                                 <option value="SourceSans">Source Sans</option>
-								<option value="freaky">𝓯𝓻𝓮𝓪𝓴𝔂</option>
+								<option value="freaky">рќ“Їрќ“»рќ“®рќ“Єрќ“ґрќ”‚</option>
                             </select>
                         </div>
                     </div>

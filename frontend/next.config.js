@@ -10,6 +10,17 @@ module.exports = {
   reactStrictMode: true,
   serverRuntimeConfig: config.serverRuntimeConfig,
   publicRuntimeConfig: config.publicRuntimeConfig,
+  async rewrites() {
+    // The browser talks to Next.js on port 3000.  API routes are served by
+    // the .NET website on port 5000, so proxy them here instead of returning
+    // a Next.js 404 for every client-side /apisite request.
+    return [
+      {
+        source: '/apisite/:path*',
+        destination: `${process.env.BACKEND_INTERNAL_URL || 'http://127.0.0.1:5000'}/apisite/:path*`,
+      },
+    ];
+  },
   async redirects() {
     return [
       {

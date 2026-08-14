@@ -110,7 +110,7 @@ const NavSideBar = props => {
         const setPending = async () => {
             if (authStore.isStaff) {
                 let pendingAssCount = 0;
-                // im pretty sure there's a better way to do this while keeping everything asynchronous but ong i forgot 😭😭
+                // im pretty sure there's a better way to do this while keeping everything asynchronous but ong i forgot рџ­рџ­
                 getPendingAssets().then(d => {
                     pendingAssCount += d.length;
                     setPendingCount(pendingAssCount);
@@ -146,8 +146,8 @@ const NavSideBar = props => {
     
     const isStaff = authStore.isStaff;
     
-    return <div className={s.container}>
-        <div className={s.card}>
+    return <div className={`${s.container} sora2021-sidebar`}>
+        <div className={`${s.card} sora2021-sidebar-card`}>
             <a href={'/users/' + authStore.userId + '/profile'} className={s.username}>
 			<div className={s.Wrapheadshot}>
 			   <PlayerHeadshot id={authStore.userId} name={authStore.username} />
@@ -168,16 +168,11 @@ const NavSideBar = props => {
             <LinkEntry theme={getTheme()} name='Trade' url='/My/Trades.aspx' icon='icon-nav-trade'
                        count={authStore.notificationCount.trades}/>
             <LinkEntry theme={getTheme()} name='Groups' url='/My/Groups.aspx' icon='icon-nav-group'/>
-            <LinkEntry theme={getTheme()} name='Forums' url='/Forum/Default.aspx' icon='icon-nav-forum'/>
 			<LinkEntry theme={getTheme()} name='Blog' url='https://blog.silrev.biz/' icon='icon-nav-blog'/>
             {isStaff ? (
                 <LinkEntry theme={getTheme()} name='Panel' url='/admin' icon='icon-edit' count={pendingCount}/>
             ) : null}
-            <a href='/BuildersClub/Upgrade.ashx'><p className={s.upgradeNowButton}>Upgrade Now</p></a>
-			<div>
-			<p>Events</p>
-			<img src='/img/logo.png' width='150px'></img>
-			</div>
+            <a href='/BuildersClub/Upgrade.ashx'><p className={s.upgradeNowButton}>Get Premium</p></a>
         </div>
     </div>
 }

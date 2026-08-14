@@ -301,7 +301,7 @@ public class EconomyService : ServiceBase, IService
     {
         var query = new SqlBuilder();
         var t = query.AddTemplate(
-            "SELECT t.id, t.item_name as itemName, t.created_at as createdAt, t.user_id_two as userIdTwo, u.username, t.group_id_two as groupIdTwo, g.name as groupName, t.amount, t.currency_type as currency, t.type, t.sub_type as subType, t.asset_id as assetId, a.name as assetName, t.user_asset_id as userAssetId, t.old_username as oldUsername, t.new_username as newUsername FROM user_transaction AS t LEFT JOIN \"user\" u ON u.id = user_id_two LEFT JOIN asset a ON a.id = t.asset_id LEFT JOIN \"group\" g ON g.id = t.group_id_two /**where**/ /**orderby**/");
+            "SELECT t.id, NULL::text as itemName, t.created_at as createdAt, t.user_id_two as userIdTwo, u.username, t.group_id_two as groupIdTwo, g.name as groupName, t.amount, t.currency_type as currency, t.type, t.sub_type as subType, t.asset_id as assetId, a.name as assetName, t.user_asset_id as userAssetId, t.old_username as oldUsername, t.new_username as newUsername FROM user_transaction AS t LEFT JOIN \"user\" u ON u.id = user_id_two LEFT JOIN asset a ON a.id = t.asset_id LEFT JOIN \"group\" g ON g.id = t.group_id_two /**where**/ /**orderby**/");
         return new Tuple<SqlBuilder, SqlBuilder.Template>(query, t);
     }
 
@@ -369,7 +369,7 @@ public class EconomyService : ServiceBase, IService
         var query = @"
         SELECT 
             t.id,
-            t.item_name AS itemName,
+            NULL::text as itemName,
             t.created_at AS createdAt,
             t.user_id_one AS userIdOne,
             t.user_id_two AS userIdTwo,

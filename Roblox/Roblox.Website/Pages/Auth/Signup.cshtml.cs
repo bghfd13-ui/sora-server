@@ -19,7 +19,8 @@ namespace Roblox.Website.Pages.Auth;
 public enum SignupMethod
 {
     Application = 1,
-    InviteUrl
+    InviteUrl,
+    Direct
 }
 
 public class Signup : RobloxPageModel
@@ -69,11 +70,6 @@ public class Signup : RobloxPageModel
     {
         FeatureCheck();
 
-        if (string.IsNullOrEmpty(applicationId) && string.IsNullOrEmpty(inviteId))
-        {
-            return new RedirectResult("/");
-        }
-
         if (userSession != null && applicationId is {Length: <= 128 and > 1})
         {
             var alreadyApproved = await services.users.IsUserApproved(userSession.userId);
@@ -98,13 +94,6 @@ public class Signup : RobloxPageModel
     public async Task<IActionResult> OnPost()
     {
         // Error messages are intentionally vague. Let's keep it that way.
-
-        if (string.IsNullOrEmpty(applicationId) && string.IsNullOrEmpty(inviteId))
-        {
-            Writer.Info(LogGroup.SignUp, "Sign up failed, empty applicationId and inviteId");
-            errorMessage = InvalidIdMessage;
-            return new PageResult();
-        }
 
         await SetupInvite();
 
@@ -175,10 +164,9 @@ public class Signup : RobloxPageModel
         // }
         else
         {
-            errorMessage = InvalidIdMessage;
-            return new PageResult();
+            method = SignupMethod.Direct;
+            redlockKey = "SignUpDirect:v1:" + ip;
         }
-
         await using var redLock = await Roblox.Services.Cache.redLock.CreateLockAsync(redlockKey, TimeSpan.FromMinutes(5));
         if (!redLock.IsAcquired)
         {
@@ -255,7 +243,7 @@ public class Signup : RobloxPageModel
         });
         HttpContext.Response.Cookies.Append(Middleware.SessionMiddleware.CookieName, sessionCookie, new CookieOptions()
         {
-            Secure = true,
+            Secure = false,
             Expires = DateTimeOffset.Now.Add(TimeSpan.FromDays(364)),
             IsEssential = true,
             Path = "/",
@@ -270,7 +258,9 @@ public class Signup : RobloxPageModel
             // create universe too
             await services.games.CreateUniverse(asset.placeId);
         }
-        long? refferedBy = await services.users.GetUserRefferedBy(applicationId);
+        long? refferedBy = method == SignupMethod.Application
+            ? await services.users.GetUserRefferedBy(applicationId!)
+            : null;
         if (refferedBy != null)
         {
             // Give the user 50 robux for signing up

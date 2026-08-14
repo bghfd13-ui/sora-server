@@ -1,0 +1,67 @@
+services:
+  caddy:
+    image: caddy:2.10-alpine
+    restart: unless-stopped
+    ports: ["80:80", "443:443"]
+    environment: { SORA_DOMAIN: ${SORA_DOMAIN} }
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on: [frontend]
+  frontend:
+    build: { context: .., dockerfile: frontend/Dockerfile }
+    restart: unless-stopped
+    environment: { BACKEND_INTERNAL_URL: http://backend:5000 }
+    depends_on: { backend: { condition: service_started } }
+  backend:
+    build: { context: .., dockerfile: Roblox/Roblox.Website/Dockerfile }
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      Urls: http://+:5000
+      Postgres: Host=postgres;Database=${POSTGRES_DB};Username=${POSTGRES_USER};Password=${POSTGRES_PASSWORD};Maximum Pool Size=20
+      Redis: redis:6379
+      BaseUrl: https://${SORA_DOMAIN}
+      CdnBaseUrl: https://${SORA_DOMAIN}
+      Directories__Storage: /data/storage/
+      Directories__Asset: /data/storage/asset/
+      Directories__Public: /data/public/
+      Directories__Thumbnails: /data/public/images/thumbnails/
+      Directories__GroupIcons: /data/public/images/groups/
+      Directories__PublicJs: /data/public/js/
+      Directories__PublicImg: /data/public/img/
+      Directories__UnsecuredContent: /data/public/UnsecuredContent/
+    volumes: [sora_data:/data]
+    depends_on:
+      postgres: { condition: service_healthy }
+      redis: { condition: service_healthy }
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes: [postgres_data:/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes: [redis_data:/data]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+volumes:
+  caddy_data:
+  caddy_config:
+  postgres_data:
+  redis_data:
+  sora_data:

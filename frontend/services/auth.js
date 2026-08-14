@@ -34,3 +34,11 @@ export const changeUsername = ({ username, password }) => {
 export const logoutFromAllOtherSessions = () => {
   return request('POST', getFullUrl('auth', '/v2/logoutfromallsessionsandreauthenticate'))
 }
+export const signup = ({ username, password, gender = 'Unknown' }) => {
+  return request('POST', getFullUrl('auth', '/v2/signup'), {
+    username,
+    password,
+    gender,
+    birthday: '',
+  });
+}

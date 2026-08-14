@@ -2,6 +2,7 @@ const themeType = {
 	koroneholyfuck67: 'koroneholyfuck67',
     obc2016: 'obc2016',
     light: 'light',
+    dark: 'dark',
     default: 'light',
 }
 

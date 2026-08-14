@@ -3,7 +3,6 @@ import { getTheme, themeType } from "../../services/theme";
 
 const footerLinks = {
   '/about-us': 'About Us',
-  'https://discord.gg/': 'Discord',
   '/internal/robuxexchange': 'Robux Exchange',
   '/internal/tixexchange': 'Tix Exchange',
   '/auth/tos': 'Terms',
@@ -84,7 +83,7 @@ const Footer = props => {
           })
         }
       </ul>
-      <p className={s.footerNote}>©2025 Marine. Marine is not affliated with Roblox Corporation.</p>
+      <p className={s.footerNote}>© {new Date().getFullYear()} Sora. Sora is not affiliated with Roblox Corporation.</p>
     </div>
   </footer>
 

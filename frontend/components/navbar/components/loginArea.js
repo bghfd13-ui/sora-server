@@ -78,7 +78,7 @@ const LoginArea = props => {
         </div>
         <div className='col-6'>
           <p className={s.text}>
-            <a className={`${s.link} ${s.signupLink}`} href='/auth/application'>
+            <a className={`${s.link} ${s.signupLink}`} href='/signup'>
               Sign Up
             </a>
           </p>

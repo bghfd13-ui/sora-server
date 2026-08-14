@@ -211,12 +211,12 @@ const useStyles = createUseStyles({
 const sorts = [{
     token: 'recent',
     name: 'recently_played',
-    displayName: 'Recently Played',
+    displayName: 'Continue',
     games: [],
 }, {
     token: 'Favorited',
     name: 'favorited',
-    displayName: 'My Favorites',
+    displayName: 'Recommended For You',
     games: [],
 }]
 
@@ -274,12 +274,12 @@ const MyDashboard = props => {
     if (!auth.userId)
         return null;
 
-    return <div className={`container ${s.container}`}>
+    return <div className={`container ${s.container} sora2021-home`}>
         <div className={s.skyScraperLeft}>
             <AdSkyscraper context='dashboard-left' />
         </div>
         <div className={s.homeContainer}>
-            <div className={`col-12 ${s.homeHeader}`}>
+            <div className={`col-12 ${s.homeHeader} sora2021-home-header`}>
                 <Link href={`/users/${auth.userId}/profile`}>
                     <a href={`/users/${auth.userId}/profile`} className={s.headshotWrapper}>
                         <PlayerHeadshot id={auth.userId} name={auth.username} />
@@ -293,7 +293,7 @@ const MyDashboard = props => {
                     </h1>
                 </div>
             </div>
-            <div className={`col-12 ${s.friendSection}`}>
+            <div className={`col-12 ${s.friendSection} sora2021-friends-section`}>
                 <div className={s.containerHeader}>
                     <h3>Friends ({friends?.length || 0})</h3>
                     <span style={{ float: 'right', marginLeft: 'auto' }}>
@@ -317,7 +317,7 @@ const MyDashboard = props => {
             <div className={`col-12 ${s.homeGamesContainer}`}>
                 {
                     sorts.map(sort => {
-                        return <div className={`col-xs-12 ${s.sortContainer}`}>
+                        return <div className={`col-xs-12 ${s.sortContainer} sora2021-game-sort`}>
                             <div className={s.containerHeader}>
                                 <h3>{sort.displayName}</h3>
                                 <span>
@@ -337,7 +337,7 @@ const MyDashboard = props => {
                     })
                 }
             </div>
-            <div className={`col-12 ${s.feedNews}`}>
+            <div className={`col-12 ${s.feedNews} sora2021-feed`}>
                 <div className={`col-sm-6 ${s.newsContainer} ${s.myFeedContainer}`}>
                     <div className={s.containerHeader} style={{ padding: 0 }}>
                         <h3 style={{ padding: '5px 0', margin: '0 0 6px' }}>My Feed</h3>

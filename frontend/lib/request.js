@@ -9,13 +9,23 @@ let _csrf = '';
  * @returns {string}
  */
 export const getFullUrl = (service, url) => {
-    return config.publicRuntimeConfig.backend.apiFormat.replace(/\{0\}/g, service).replace(/\{1\}/g, url);
+    if (typeof window !== 'undefined') {
+        return '/apisite/' + service + url;
+    }
+
+    return config.publicRuntimeConfig.backend.apiFormat
+        .replace(/\{0\}/g, service)
+        .replace(/\{1\}/g, url);
 }
 
 /**
  * @returns {string}
  */
 export const getBaseUrl = () => {
+    if (typeof window !== 'undefined') {
+        return window.location.origin;
+    }
+
     return config.publicRuntimeConfig.backend.baseUrl;
 }
 
@@ -24,7 +34,11 @@ export const getBaseUrl = () => {
  * @returns {string}
  */
 export const getBaseUrl2 = (str) => {
-    return config.publicRuntimeConfig.backend.baseUrl + (str.charAt(0) === '/' ? str : '/' + str);
+    const baseUrl = typeof window !== 'undefined'
+        ? window.location.origin
+        : config.publicRuntimeConfig.backend.baseUrl;
+
+    return baseUrl + (str.charAt(0) === '/' ? str : '/' + str);
 }
 
 /**

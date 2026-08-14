@@ -30,7 +30,10 @@ public class ApplicationGuardMiddleware
         "/auth/2fa",
         "/auth/privacy",
         "/auth/tos",
-        "/auth/accountlogin",
+        "/login",
+        "/signup",
+        "/apisite/auth/v2/login",
+        "/apisite/auth/v2/signup",
         "/auth/password-reset",
         "/auth/contact",
         "/auth/account-deletion",
@@ -252,7 +255,7 @@ public class ApplicationGuardMiddleware
     private async Task Redirect(HttpContext ctx, string dest)
     {
         ctx.Response.StatusCode = 302;
-        ctx.Response.Headers.Location = "/auth/home";
+        ctx.Response.Headers.Location = dest;
         await ctx.Response.WriteAsync("Object moved to <a href=\""+dest+"\">here</a>.");
     }
 

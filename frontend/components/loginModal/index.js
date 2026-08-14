@@ -89,7 +89,7 @@ const LoginModal = props => {
           }}>Log In</button>
         </div>
         <div className='col-6'>
-          <button className={`btn ${s.btnSecondary} ${s.btn}`}>Sign up</button>
+          <button className={`btn ${s.btnSecondary} ${s.btn}`} onClick={() => { window.location.href = "/signup"; }}>Sign up</button>
         </div>
       </div>
       <div className='row mt-2'>

@@ -1,0 +1,355 @@
+﻿/*
+  Sora 2021 UI pass
+  Goal: Roblox web light theme, late-2019 through 2021 proportions.
+*/
+
+:root {
+    --sora21-bg: #f2f4f5;
+    --sora21-surface: #ffffff;
+    --sora21-text: #393b3d;
+    --sora21-muted: #606162;
+    --sora21-border: #d5d7d9;
+    --sora21-link: #0066b3;
+    --sora21-green: #00b06f;
+}
+
+body:has(#theme-2021-enabled) {
+    background: var(--sora21-bg) !important;
+    color: var(--sora21-text) !important;
+}
+
+body:has(#theme-2021-enabled) #__next {
+    background: var(--sora21-bg);
+}
+
+/* ---------- TOP BAR ---------- */
+
+.sora2021-navbar {
+    height: 40px !important;
+    min-height: 40px !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    border-bottom: 1px solid #d5d7d9 !important;
+    box-shadow: 0 1px 3px rgba(25, 25, 25, .12) !important;
+}
+
+.sora2021-navbar > .container,
+.sora2021-navbar .container {
+    height: 40px !important;
+    min-height: 40px !important;
+    max-width: none !important;
+}
+
+.sora2021-navbar .row {
+    min-height: 40px !important;
+}
+
+.sora2021-navbar a,
+.sora2021-navbar span,
+.sora2021-navbar div {
+    color: #393b3d;
+}
+
+.sora2021-navbar a.nav-link {
+    color: #393b3d !important;
+}
+
+.sora2021-navbar input {
+    height: 28px !important;
+    background: #f2f4f5 !important;
+    border-color: #c7cdd4 !important;
+    color: #393b3d !important;
+}
+
+.sora2021-navbar input::placeholder {
+    color: #757575 !important;
+}
+
+.sora2021-navbar .icon-nav-search,
+.sora2021-navbar .icon-nav-message2,
+.sora2021-navbar .icon-nav-settings,
+.sora2021-navbar .icon-nav-robux {
+    filter: grayscale(1) brightness(.45);
+}
+
+/* ---------- LEFT SIDEBAR ---------- */
+
+.sora2021-sidebar {
+    top: 40px !important;
+    z-index: 998 !important;
+}
+
+.sora2021-sidebar-card {
+    width: 175px !important;
+    height: calc(100vh - 40px) !important;
+    margin-top: 0 !important;
+    padding: 12px 10px 18px !important;
+    background: #ffffff !important;
+    border-right: 1px solid #d5d7d9 !important;
+    box-shadow: none !important;
+    overflow-y: auto;
+}
+
+.sora2021-sidebar-card > a:first-child {
+    min-height: 28px;
+    margin-bottom: 4px;
+    color: #393b3d !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+}
+
+.sora2021-sidebar-card a,
+.sora2021-sidebar-card p,
+.sora2021-sidebar-card span {
+    color: #393b3d;
+}
+
+.sora2021-sidebar-card a:hover {
+    color: #393b3d !important;
+}
+
+.sora2021-sidebar-card > div {
+    border-color: #e1e3e5 !important;
+}
+
+.sora2021-sidebar-card a[href="/BuildersClub/Upgrade.ashx"] p {
+    margin-top: 12px !important;
+    padding: 7px 10px !important;
+    background: #393b3d !important;
+    border-radius: 3px !important;
+    color: #fff !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+}
+
+/* ---------- MAIN HOME ---------- */
+
+body:has(#theme-2021-enabled) .sora2021-home {
+    max-width: 1040px !important;
+    width: calc(100% - 205px) !important;
+    margin: 0 auto 0 195px !important;
+    padding: 24px 18px 48px !important;
+    display: flex !important;
+    background: transparent !important;
+}
+
+body:has(#theme-2021-enabled) .sora2021-home > div:first-child,
+body:has(#theme-2021-enabled) .sora2021-home > div:last-child {
+    display: none !important;
+}
+
+body:has(#theme-2021-enabled) .sora2021-home > div:nth-child(2) {
+    width: 100% !important;
+    max-width: 100% !important;
+    float: none !important;
+    margin: 0 !important;
+}
+
+body:has(#theme-2021-enabled) .sora2021-home > div:nth-child(2)::before {
+    content: "Home";
+    display: block;
+    margin: 0 0 14px;
+    color: #393b3d;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+body:has(#theme-2021-enabled) .sora2021-home-header {
+    display: none !important;
+}
+
+body:has(#theme-2021-enabled) .sora2021-friends-section,
+body:has(#theme-2021-enabled) .sora2021-game-sort {
+    margin-bottom: 18px !important;
+}
+
+body:has(#theme-2021-enabled) .sora2021-friends-section h3,
+body:has(#theme-2021-enabled) .sora2021-game-sort h3 {
+    color: #393b3d !important;
+    font-size: 20px !important;
+    line-height: 1.25 !important;
+    font-weight: 700 !important;
+}
+
+body:has(#theme-2021-enabled) .sora2021-friends-section .section-content {
+    padding: 4px 0 8px !important;
+    margin-bottom: 4px !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+body:has(#theme-2021-enabled) .sora2021-game-sort .section-content,
+body:has(#theme-2021-enabled) .sora2021-game-sort .section-content-off {
+    border-radius: 3px !important;
+    box-shadow: none !important;
+}
+
+body:has(#theme-2021-enabled) .sora2021-game-sort button {
+    background: transparent !important;
+    border: 0 !important;
+    color: #606162 !important;
+    box-shadow: none !important;
+    font-weight: 500 !important;
+}
+
+body:has(#theme-2021-enabled) .sora2021-feed {
+    display: none !important;
+}
+
+body:has(#theme-2021-enabled) .section-content {
+    border-radius: 3px;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 1324px) {
+    body:has(#theme-2021-enabled) .sora2021-home {
+        width: calc(100% - 36px) !important;
+        margin: 0 auto !important;
+        padding-top: 20px !important;
+    }
+
+    .sora2021-sidebar-card {
+        box-shadow: 2px 0 6px rgba(25,25,25,.12) !important;
+    }
+}
+
+@media (max-width: 991px) {
+    .sora2021-navbar {
+        height: auto !important;
+        min-height: 40px !important;
+    }
+
+    body:has(#theme-2021-enabled) .sora2021-home {
+        width: 100% !important;
+        padding: 16px 12px 40px !important;
+    }
+}
+
+/* ==========================================================
+   SORA 2021 DARK THEME
+   ========================================================== */
+
+body.sora-dark {
+    --background-color: #232527;
+    --background-color-legacy: #232527;
+    --white-color: #393b3d;
+    --text-color-primary: #f2f4f5;
+    --text-color-secondary: #b8b8b8;
+    --text-color-secondary-dark: #b8b8b8;
+    --text-color-tertiary: #b8b8b8;
+    --text-color-quinary: #606162;
+
+    background: #232527 !important;
+    color: #f2f4f5 !important;
+}
+
+body.sora-dark #__next,
+body.sora-dark #__next > div {
+    background: #232527 !important;
+}
+
+body.sora-dark h1,
+body.sora-dark h2,
+body.sora-dark h3,
+body.sora-dark h4,
+body.sora-dark h5,
+body.sora-dark h6,
+body.sora-dark p,
+body.sora-dark span,
+body.sora-dark li,
+body.sora-dark div {
+    color: inherit;
+}
+
+body.sora-dark .section-content,
+body.sora-dark .card,
+body.sora-dark [class*="card"] {
+    background-color: #393b3d;
+    color: #f2f4f5;
+    border-color: #606162;
+}
+
+body.sora-dark input,
+body.sora-dark textarea,
+body.sora-dark select,
+body.sora-dark .form-control {
+    background-color: #393b3d !important;
+    color: #f2f4f5 !important;
+    border-color: #606162 !important;
+}
+
+body.sora-dark input::placeholder,
+body.sora-dark textarea::placeholder {
+    color: #b8b8b8 !important;
+}
+
+/* 2021 navbar */
+body.sora-dark .sora2021-navbar {
+    background: #191b1d !important;
+    border-bottom-color: #393b3d !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,.35) !important;
+}
+
+body.sora-dark .sora2021-navbar a,
+body.sora-dark .sora2021-navbar a.nav-link,
+body.sora-dark .sora2021-navbar span,
+body.sora-dark .sora2021-navbar div {
+    color: #f2f4f5 !important;
+}
+
+body.sora-dark .sora2021-navbar input {
+    background: #393b3d !important;
+    border-color: #606162 !important;
+    color: #f2f4f5 !important;
+}
+
+body.sora-dark .sora2021-navbar .icon-nav-search,
+body.sora-dark .sora2021-navbar .icon-nav-message2,
+body.sora-dark .sora2021-navbar .icon-nav-settings,
+body.sora-dark .sora2021-navbar .icon-nav-robux {
+    filter: grayscale(1) brightness(2.3);
+}
+
+/* 2021 sidebar */
+body.sora-dark .sora2021-sidebar-card {
+    background: #232527 !important;
+    border-right-color: #393b3d !important;
+}
+
+body.sora-dark .sora2021-sidebar-card a,
+body.sora-dark .sora2021-sidebar-card p,
+body.sora-dark .sora2021-sidebar-card span {
+    color: #f2f4f5 !important;
+}
+
+body.sora-dark .sora2021-sidebar-card > div {
+    border-color: #393b3d !important;
+}
+
+/* 2021 home */
+body.sora-dark .sora2021-home,
+body.sora-dark .sora2021-home > div {
+    background: transparent !important;
+}
+
+body.sora-dark .sora2021-home > div:nth-child(2)::before,
+body.sora-dark .sora2021-friends-section h3,
+body.sora-dark .sora2021-game-sort h3 {
+    color: #f2f4f5 !important;
+}
+
+body.sora-dark .sora2021-game-sort button {
+    color: #b8b8b8 !important;
+}
+
+body.sora-dark a {
+    color: #5fb8ff;
+}
+
+body.sora-dark .dropdown-menu,
+body.sora-dark [role="menu"] {
+    background: #393b3d !important;
+    color: #f2f4f5 !important;
+}

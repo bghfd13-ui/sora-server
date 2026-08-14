@@ -57,6 +57,7 @@
     "@babel/preset-env": "^7.16.11",
     "@babel/register": "^7.16.9",
     "@types/jest": "^27.4.0",
+    "@types/react": "19.2.18",
     "@wojtekmaj/enzyme-adapter-react-17": "^0.6.6",
     "babel": "^6.23.0",
     "babel-jest": "^27.4.6",
@@ -69,6 +70,7 @@
     "eslint-config-next": "11.0.1",
     "expose-loader": "^3.0.0",
     "jest": "^27.4.7",
-    "regenerator-runtime": "^0.13.9"
+    "regenerator-runtime": "^0.13.9",
+    "typescript": "7.0.2"
   }
 }
