@@ -16,7 +16,7 @@ var domain = AppDomain.CurrentDomain;
 domain.SetData("REGEX_DEFAULT_MATCH_TIMEOUT", TimeSpan.FromSeconds(5));
 
 IConfiguration configuration = new ConfigurationBuilder()
-    .AddJsonFile("appsettings.json")
+.AddJsonFile("appsettings.json", optional: false, reloadOnChange: false)
     .Build();
 
 var builder = WebApplication.CreateBuilder(args);
