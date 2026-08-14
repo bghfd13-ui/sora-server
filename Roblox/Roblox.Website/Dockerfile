@@ -21,16 +21,12 @@ COPY Roblox/Roblox.Libraries/Json /out/json
 COPY api/public /out/public
 COPY admin/public /out/admin
 
-
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
 
 WORKDIR /app
 
 ENV ASPNETCORE_URLS=http://+:5000
 ENV ASPNETCORE_ENVIRONMENT=Production
-
-# Render имеет низкий лимит inotify.
-# Используем polling вместо FileSystemWatcher.
 ENV DOTNET_USE_POLLING_FILE_WATCHER=1
 
 COPY --from=build /out ./
