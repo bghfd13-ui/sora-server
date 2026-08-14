@@ -1,4 +1,4 @@
-using System.Net;
+﻿using System.Net;
 using System.Text;
 using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.Net.Http.Headers;
@@ -60,7 +60,7 @@ public class FrontendProxyMiddleware
         "/internal/tixexchange",
         "/internal/robuxexchange",
         "/internal/referral",
-        "/auth/notapproved",
+        "/auth/notapproved",`r`n        "/home",
         // Admin
         "/admin-api/api",
         "/admin",
