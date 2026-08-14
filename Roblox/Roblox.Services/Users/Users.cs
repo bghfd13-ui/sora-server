@@ -1,4 +1,4 @@
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Text.Json;
 using System.Text.RegularExpressions;
 using CsvHelper;
@@ -1302,10 +1302,7 @@ public class UsersService : ServiceBase, IService
             };
         });
         // Render outside transaction to prevent deadlock/unnecessary locks
-#if !DEBUG
-        using var av = ServiceProvider.GetOrCreate<AvatarService>();
-        await av.RedrawAvatar(result.userId, Roblox.Configuration.SignupAvatarAssetIds);
-#endif
+// Avatar rendering disabled on Render
         return result;
     }
 
