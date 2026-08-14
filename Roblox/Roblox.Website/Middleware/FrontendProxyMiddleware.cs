@@ -60,7 +60,8 @@ public class FrontendProxyMiddleware
         "/internal/tixexchange",
         "/internal/robuxexchange",
         "/internal/referral",
-        "/auth/notapproved",`r`n        "/home",
+        "/auth/notapproved",
+        "/home",
         // Admin
         "/admin-api/api",
         "/admin",
@@ -275,4 +276,5 @@ public class FrontendProxyMiddleware
     }
 
 }
+
 
