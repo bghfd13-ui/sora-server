@@ -2,12 +2,26 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
 COPY Roblox/ ./Roblox/
+COPY api/public ./api/public
+COPY admin/public ./admin/public
+COPY economy-chat/build ./economy-chat/build
+COPY scripts ./scripts
+COPY rcc-lua ./rcc-lua
 
 RUN dotnet restore Roblox/Roblox.Website/Roblox.Website.csproj
 RUN dotnet publish Roblox/Roblox.Website/Roblox.Website.csproj --configuration Release --output /out --no-restore
 
 COPY Roblox/Roblox.Website/appsettings.json /out/appsettings.json
 COPY Roblox/Roblox.Website/game-servers.json /out/game-servers.json
+
+COPY Roblox/Roblox.Libraries/Templates /out/templates
+COPY Roblox/Roblox.Libraries/Json /out/json
+
+COPY api/public /out/public
+COPY admin/public /out/admin
+COPY economy-chat/build /out/economy-chat
+COPY scripts /out/scripts
+COPY rcc-lua /out/rcc-lua
 
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
