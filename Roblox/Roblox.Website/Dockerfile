@@ -7,6 +7,7 @@ RUN dotnet restore Roblox/Roblox.Website/Roblox.Website.csproj
 RUN dotnet publish Roblox/Roblox.Website/Roblox.Website.csproj --configuration Release --output /out --no-restore
 
 COPY Roblox/Roblox.Website/appsettings.json /out/appsettings.json
+COPY Roblox/Roblox.Website/game-servers.json /out/game-servers.json
 
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
