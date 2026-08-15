@@ -31,13 +31,11 @@
 			<input type="text" class="form-control dark-input" id="url" {disabled} placeholder="Example: https://www.roblox.com/catalog/17238615/Burro-Pinata" />
 		</div>
 		<div class="col-6">
-			{#if didError}
-				<label for="force">Force Upload</label>
-				<select class="form-control" bind:value={force}>
-					<option value="false">No</option>
-					<option value="true">Yes</option>
-				</select>
-			{/if}
+<label for="force">Force Upload</label>
+<select class="form-control" bind:value={force}>
+    <option value="false">No</option>
+    <option value="true">Yes</option>
+</select>
 		</div>
 		<div class="col-6 mt-4">
 			<button
