@@ -194,13 +194,17 @@ public class UsersService : ServiceBase, IService
     }
     public async Task<TotpStatus> GetTotpStatus(long userId)
     {
-        TotpStatus? status = await db.QuerySingleOrDefaultAsync<TotpStatus>("SELECT status FROM user_totp WHERE user_id = :id", new
-        {
-            id = userId,
-        });
-        if (status == null) 
+        int? status = await db.QuerySingleOrDefaultAsync<int?>(
+            "SELECT status FROM user_totp WHERE user_id = :id",
+            new
+            {
+                id = userId,
+            });
+
+        if (status == null)
             return TotpStatus.Disabled;
-        return (TotpStatus)status;
+
+        return (TotpStatus)status.Value;
     }
     public async Task<TotpInfo> GetTotp(long userId)
     {
