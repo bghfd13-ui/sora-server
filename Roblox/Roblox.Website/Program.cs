@@ -27,7 +27,10 @@ Roblox.Services.Database.Configure(
     Environment.GetEnvironmentVariable("POSTGRES")
     ?? configuration.GetSection("Postgres").Value!
 );
-Roblox.Services.Cache.Configure(configuration.GetSection("Redis").Value!);
+Roblox.Services.Cache.Configure(
+    Environment.GetEnvironmentVariable("REDIS")
+    ?? configuration.GetSection("Redis").Value!
+);
 
 // Config
 Roblox.Configuration.CdnBaseUrl = configuration.GetSection("CdnBaseUrl").Value!;
@@ -41,7 +44,9 @@ Roblox.Configuration.JsonDataDirectory = configuration.GetSection("Directories:J
 Roblox.Configuration.ScriptDirectory = configuration.GetSection("Directories:ScriptsData").Value!;
 Roblox.Configuration.AdminBundleDirectory = configuration.GetSection("Directories:AdminBundle").Value!;
 Roblox.Configuration.EconomyChatBundleDirectory = configuration.GetSection("Directories:EconomyChatBundle").Value!;
-Roblox.Configuration.BaseUrl = configuration.GetSection("BaseUrl").Value!;
+Roblox.Configuration.BaseUrl =
+    Environment.GetEnvironmentVariable("BASE_URL")
+    ?? configuration.GetSection("BaseUrl").Value!;
 RemoteView.Configure(
     "https://sora-frontend-2k6t.onrender.com",
     configuration.GetSection("Authorization").Value!
