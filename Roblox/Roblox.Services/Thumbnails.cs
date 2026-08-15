@@ -36,27 +36,23 @@ public class ThumbnailsService : ServiceBase, IService
             {
                 ids = new List<Models.Assets.Type>()
                 {
-                    // Focus on user-generated content for now. We might add hats/games in the future.
+                    // User-generated content
                     Models.Assets.Type.TeeShirt,
                     Models.Assets.Type.Shirt,
                     Models.Assets.Type.Pants,
                     Models.Assets.Type.Image,
-                    // >:D
-                    // Models.Assets.Type.Hat,
-                    // Models.Assets.Type.Gear,
-                    // Models.Assets.Type.HairAccessory,
-                    // Models.Assets.Type.FaceAccessory,
-                    // Models.Assets.Type.NeckAccessory,
-                    // Models.Assets.Type.ShoulderAccessory,
-                    // Models.Assets.Type.FrontAccessory,
-                    // Models.Assets.Type.BackAccessory,
-                    // Models.Assets.Type.WaistAccessory,
-                    // Models.Assets.Type.Image,
 
-                    //Models.Assets.Type.Face,
-                    //Models.Assets.Type.Place,
-                    //Models.Assets.Type.Mesh,
-                    //Models.Assets.Type.MeshPart,
+                    // Accessories / avatar assets
+                    Models.Assets.Type.Hat,
+                    Models.Assets.Type.Gear,
+                    Models.Assets.Type.HairAccessory,
+                    Models.Assets.Type.FaceAccessory,
+                    Models.Assets.Type.NeckAccessory,
+                    Models.Assets.Type.ShoulderAccessory,
+                    Models.Assets.Type.FrontAccessory,
+                    Models.Assets.Type.BackAccessory,
+                    Models.Assets.Type.WaistAccessory,
+                    Models.Assets.Type.Face,
                 }.Select(c => (int)c).ToList(),
                 dt = t,
             });
