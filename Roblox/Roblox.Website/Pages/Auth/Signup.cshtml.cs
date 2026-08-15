@@ -250,13 +250,47 @@ public class Signup : RobloxPageModel
             SameSite = SameSiteMode.Lax,
         });
         
-        // Create default place for user
+        // Create default place for user.
+        // IMPORTANT: failure here must NOT make Sign Up return HTTP 500 after
+        // the account and session have already been created. This is especially
+        // important on fresh Render deployments where Baseplate.rbxl/storage
+        // may not be available yet.
         if (FeatureFlags.IsEnabled(FeatureFlag.CreatePlaceSelfService))
         {
-            // create place!
-            var asset = await services.assets.CreatePlace(createdUser.userId, username, CreatorType.User, createdUser.userId);
-            // create universe too
-            await services.games.CreateUniverse(asset.placeId);
+            try
+            {
+                Writer.Info(LogGroup.SignUp,
+                    "Sign up: creating default place for user {0}", createdUser.userId);
+
+                var asset = await services.assets.CreatePlace(
+                    createdUser.userId,
+                    username,
+                    CreatorType.User,
+                    createdUser.userId);
+
+                Writer.Info(LogGroup.SignUp,
+                    "Sign up: default place created. placeId={0}, userId={1}",
+                    asset.placeId,
+                    createdUser.userId);
+
+                await services.games.CreateUniverse(asset.placeId);
+
+                Writer.Info(LogGroup.SignUp,
+                    "Sign up: default universe created for placeId={0}, userId={1}",
+                    asset.placeId,
+                    createdUser.userId);
+            }
+            catch (Exception e)
+            {
+                // The account itself is already created at this point.
+                // Do not turn a successful registration into an InternalServerError
+                // just because optional default-place creation failed.
+                Writer.Info(LogGroup.SignUp,
+                    "Sign up: default place/universe creation failed for user {0}: {1}\n{2}",
+                    createdUser.userId,
+                    e.Message,
+                    e.StackTrace);
+            }
         }
         long? refferedBy = method == SignupMethod.Application
             ? await services.users.GetUserRefferedBy(applicationId!)
