@@ -139,13 +139,42 @@ public class UsersService : ServiceBase, IService
     /// <returns>True if valid, otherwise false</returns>
     public async Task<bool> VerifyPassword(long userId, string password)
     {
-        var dbPass = await db.QuerySingleOrDefaultAsync<PasswordEntry>("SELECT password FROM \"user\" WHERE id = :id", new
+        var dbPass = await db.QuerySingleOrDefaultAsync<PasswordEntry>(
+            "SELECT password FROM \"user\" WHERE id = :id",
+            new
+            {
+                id = userId,
+            });
+
+        if (dbPass == null || string.IsNullOrEmpty(dbPass.password))
+            throw new RecordNotFoundException();
+
+        var storedPassword = dbPass.password;
+
+        // Normal Argon2 password.
+        if (storedPassword.StartsWith("$argon2", StringComparison.Ordinal))
         {
-            id = userId,
-        });
-        if (dbPass == null || string.IsNullOrEmpty(dbPass.password)) throw new RecordNotFoundException();
-        var hasher = new PasswordHasher();
-        return hasher.Verify(dbPass.password, password);
+            var hasher = new PasswordHasher();
+
+            try
+            {
+                return hasher.Verify(storedPassword, password);
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        // Legacy plaintext password migration.
+        // If the old stored password matches, hash it immediately.
+        if (storedPassword == password)
+        {
+            await UpdatePassword(userId, password);
+            return true;
+        }
+
+        return false;
     }
 
     public async Task UpdatePassword(long userId, string newPassword)
