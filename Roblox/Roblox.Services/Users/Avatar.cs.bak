@@ -1,4 +1,4 @@
-﻿using System.Diagnostics;
+using System.Diagnostics;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
@@ -950,7 +950,7 @@ public class AvatarService : ServiceBase, IService {
         // Now thumbnail 3D, these have a unique format in JSON
         try
         {
-            // TODO: consider resizing these 3D renders вЂ” they may be too large
+            // TODO: consider resizing these 3D renders — they may be too large
             var thumbJson = JsonSerializer.Deserialize<Thumbnail3DRender>(thumbnail3DResult);
             if (thumbJson is null)
                 throw new Exception("Renderer returned incorrect 3D thumbnail.");
