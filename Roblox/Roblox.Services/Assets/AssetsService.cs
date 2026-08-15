@@ -214,6 +214,79 @@ public class AssetsService : ServiceBase, IService
     }
 
     public async Task<Stream> GetAssetContent(string key)
+{
+    if (key.Contains('/', StringComparison.Ordinal))
+    {
+        Metrics.SecurityMetrics.ReportBadCharacterFoundInAssetContentName(
+            key,
+            "/",
+            "GetAssetContent"
+        );
+
+        throw new ArgumentException("GetAssetContent error 1");
+    }
+
+    string assetPath = Configuration.AssetDirectory + key;
+    string storagePath = Configuration.StorageDirectory + key;
+
+    for (var i = 0; i < 10; i++)
+    {
+        try
+        {
+            // First: normal asset storage
+            if (File.Exists(assetPath))
+            {
+                return new FileStream(
+                    assetPath,
+                    FileMode.Open,
+                    FileAccess.Read,
+                    FileShare.Read,
+                    default,
+                    FileOptions.Asynchronous
+                );
+            }
+
+            // Fallback: general storage
+            if (File.Exists(storagePath))
+            {
+                return new FileStream(
+                    storagePath,
+                    FileMode.Open,
+                    FileAccess.Read,
+                    FileShare.Read,
+                    default,
+                    FileOptions.Asynchronous
+                );
+            }
+
+            throw new FileNotFoundException(
+                "Asset content was not found in AssetDirectory or StorageDirectory.",
+                key
+            );
+        }
+        catch (IOException e)
+        {
+            Writer.Info(
+                LogGroup.AssetDelivery,
+                "GetAssetContent IO exception. Message = {0}\n{1}",
+                e.Message,
+                e.StackTrace
+            );
+
+            if (e.Message.Contains("Could not find file") ||
+                e.Message.Contains("not found"))
+            {
+                throw;
+            }
+
+            await Task.Delay(TimeSpan.FromMilliseconds(100 * (i + 1)));
+        }
+    }
+
+    throw new Exception(
+        "Maximum retry attempts reached for GetAssetContent(" + key + ")"
+    );
+}
     {
         if (key.Contains('/', StringComparison.Ordinal))
         {
