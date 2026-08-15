@@ -1335,7 +1335,8 @@ public class UsersService : ServiceBase, IService
             };
         });
         // Render outside transaction to prevent deadlock/unnecessary locks
-// Avatar rendering disabled on Render
+        using var avatarService = ServiceProvider.GetOrCreate<AvatarService>();
+        await avatarService.RedrawAvatar(result.userId);
         return result;
     }
 
@@ -2690,3 +2691,5 @@ public class UsersService : ServiceBase, IService
         return false;
     }
 }
+
+
