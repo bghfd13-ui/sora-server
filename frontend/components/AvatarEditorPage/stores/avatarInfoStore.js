@@ -1,4 +1,4 @@
-import {createContainer} from "unstated-next";
+﻿import {createContainer} from "unstated-next";
 import {useEffect, useRef, useState} from "react";
 import FeedbackStore from "../../../stores/feedback";
 import {FeedbackType} from "../../../models/feedback";
@@ -118,7 +118,7 @@ const AvatarInfoStore = createContainer(() => {
         let stopwatch = new Stopwatch();
         stopwatch.Start();
         let attempts = 0;
-        while (avThumb == null && attempts <= 10) {
+        while (avThumb == null && attempts < 60) {
             let thumbnail = await multiGetUserThumbnails({userIds: [auth.userId]})
                 .then(result => result[0]);
             if (thumbnail.state === "Completed" && typeof thumbnail.imageUrl === "string") {
@@ -139,7 +139,7 @@ const AvatarInfoStore = createContainer(() => {
         attempts = 0;
         stopwatch = new Stopwatch();
         stopwatch.Start();
-        while (avThumb3D == null && attempts <= 10) {
+        while (avThumb3D == null && attempts < 60) {
             let thumbnail = await multiGetUserThumbnails3D({userIds: [auth.userId]})
                 .then(result => result[0]);
             if (thumbnail.state === "Completed" && typeof thumbnail.imageUrl === "string") {
@@ -345,3 +345,4 @@ export function IsNegative(int) {
  */
 
 export default AvatarInfoStore;
+
