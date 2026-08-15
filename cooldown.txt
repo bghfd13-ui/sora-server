@@ -1,0 +1,879 @@
+Roblox\Roblox.AbuseDetection\Class1.cs:3:public class Class1
+Roblox\Roblox.AbuseDetection\Models\Users.cs:3:public class ReportUserCreation
+Roblox\Roblox.AbuseDetection\Models\Users.cs:19:public class ShouldAllowCreationRequest
+Roblox\Roblox.AbuseDetection\Report\Scheduler.cs:6:public static class Scheduler
+Roblox\Roblox.AbuseDetection\Report\Users.cs:5:public static class UsersAbuse
+Roblox\Roblox.Cache\Class1.cs:5:public class DistributedCache
+Roblox\Roblox.Configuration\Class1.cs:8:public class GameServerConfigEntry
+Roblox\Roblox.Configuration\Class1.cs:15:public class GameServerV2ConfigEntry
+Roblox\Roblox.Configuration\Class1.cs:21:public static class Configuration
+Roblox\Roblox.Dto\AbuseReport\AbuseReport.cs:6:public class AbuseReportEntry
+Roblox\Roblox.Dto\AbuseReport\AbuseReport.cs:18:public class GameMessagesEntry
+Roblox\Roblox.Dto\AbuseReport\AbuseReport.cs:27:public class InGameMessage
+Roblox\Roblox.Dto\AbuseReport\AbuseReport.cs:41:public class InGameMessages
+Roblox\Roblox.Dto\AbuseReport\AbuseReport.cs:50:public class InGameAbuseReportEntry
+Roblox\Roblox.Dto\Assets\Advertisement.cs:5:public class AdvertisementEntryDetails
+Roblox\Roblox.Dto\Assets\Advertisement.cs:12:public class AdvertisementWithTargetDetailsResponse
+Roblox\Roblox.Dto\Assets\Advertisement.cs:18:public class AdvertisementEntry
+Roblox\Roblox.Dto\Assets\Assets.cs:7:    public class AssetId
+Roblox\Roblox.Dto\Assets\Assets.cs:12:    public class AssetIdWithType
+Roblox\Roblox.Dto\Assets\Assets.cs:18:    public class CreateResponse
+Roblox\Roblox.Dto\Assets\Assets.cs:25:    public class CreatePlaceResponse
+Roblox\Roblox.Dto\Assets\Assets.cs:30:    public class ProductEntry
+Roblox\Roblox.Dto\Assets\Assets.cs:42:    public class MultiGetEntryLowestSeller
+Roblox\Roblox.Dto\Assets\Assets.cs:51:    public class MultiGetEntryInternal
+Roblox\Roblox.Dto\Assets\Assets.cs:81:    public class MultiGetEntry
+Roblox\Roblox.Dto\Assets\Assets.cs:194:    public class RecommendedItemEntry
+Roblox\Roblox.Dto\Assets\Assets.cs:209:    public class MultiGetAssetDeveloperDetailsDb
+Roblox\Roblox.Dto\Assets\Assets.cs:225:    public class CreatorEntry
+Roblox\Roblox.Dto\Assets\Assets.cs:232:    public class MultiGetAssetDeveloperDetails
+Roblox\Roblox.Dto\Assets\Assets.cs:271:    public class CreationEntry
+Roblox\Roblox.Dto\Assets\Assets.cs:277:    public class IsAsset18Plus
+Roblox\Roblox.Dto\Assets\Assets.cs:282:    public class StaffAssetCommentEntry
+Roblox\Roblox.Dto\Assets\Assets.cs:293:    public class Vector3
+Roblox\Roblox.Dto\Assets\Assets.cs:300:    public class Camera
+Roblox\Roblox.Dto\Assets\Assets.cs:307:    public class AABB
+Roblox\Roblox.Dto\Assets\Assets.cs:313:    public class FileContent
+Roblox\Roblox.Dto\Assets\Assets.cs:318:    public class Thumbnail3DRender
+Roblox\Roblox.Dto\Assets\Assets.cs:327:    public class Thumbnail3DRendered
+Roblox\Roblox.Dto\Assets\AssetVersion.cs:3:public class AssetVersionEntry
+Roblox\Roblox.Dto\Assets\AssetVersion.cs:18:public class AssetVersionMetadata
+Roblox\Roblox.Dto\Assets\AssetVersion.cs:24:public class AssetVersionMetadataImage : AssetVersionMetadata
+Roblox\Roblox.Dto\Assets\Catalog.cs:7:public class CatalogSearchRequest
+Roblox\Roblox.Dto\Assets\Catalog.cs:22:public class CatalogMultiGetEntry
+Roblox\Roblox.Dto\Assets\Catalog.cs:28:public class SearchResponse : RobloxCollectionPaginated<CatalogMultiGetEntry>
+Roblox\Roblox.Dto\Assets\Catalog.cs:40:public class ItemRestrictions {
+Roblox\Roblox.Dto\Assets\Catalog.cs:47:public class MinimalCatalogEntry
+Roblox\Roblox.Dto\Assets\Catalog.cs:69:public class UserAssetForSaleEntry
+Roblox\Roblox.Dto\Assets\Catalog.cs:79:public class AssetResaleChartEntry
+Roblox\Roblox.Dto\Assets\Catalog.cs:85:public class RecentAveragePrice
+Roblox\Roblox.Dto\Assets\Catalog.cs:90:public class AssetResaleCharts
+Roblox\Roblox.Dto\Assets\Catalog.cs:96:public class AssetResaleData
+Roblox\Roblox.Dto\Assets\Comments.cs:3:public class CommentEntry
+Roblox\Roblox.Dto\Assets\DataStore.cs:3:public class DataStoreEntry
+Roblox\Roblox.Dto\Assets\DataStore.cs:12:public class OrderedDataStoreEntry
+Roblox\Roblox.Dto\Assets\Favorites.cs:3:public class FavoriteEntry
+Roblox\Roblox.Dto\Avatar\Colors.cs:5:public class ColorEntry
+Roblox\Roblox.Dto\Avatar\Colors.cs:16:public class BodyScales
+Roblox\Roblox.Dto\Avatar\Colors.cs:26:public class AvatarWithColors : ColorEntry
+Roblox\Roblox.Dto\Avatar\Colors.cs:35:public class OutfitAvatar : ColorEntry
+Roblox\Roblox.Dto\Avatar\Outfit.cs:3:public class OutfitEntry
+Roblox\Roblox.Dto\Avatar\Outfit.cs:13:public class OutfitExtendedDetails
+Roblox\Roblox.Dto\Chat\Chat.cs:5:public class Conversation
+Roblox\Roblox.Dto\Chat\Chat.cs:14:public class Participant
+Roblox\Roblox.Dto\Chat\Chat.cs:21:public class Message
+Roblox\Roblox.Dto\Chat\Chat.cs:33:public class MessageRead
+Roblox\Roblox.Dto\Chat\Chat.cs:41:public class MarkAsReadRequest
+Roblox\Roblox.Dto\Chat\Chat.cs:47:public class StartCloudeditConversationRequest
+Roblox\Roblox.Dto\Chat\Chat.cs:52:public class StartConversationRequest
+Roblox\Roblox.Dto\Chat\Chat.cs:57:public class SendMessageRequest
+Roblox\Roblox.Dto\Chat\Chat.cs:62:public class AddToConversationRequest
+Roblox\Roblox.Dto\Chat\Chat.cs:67:public class UpdateTypingStatusRequest
+Roblox\Roblox.Dto\Chat\Chat.cs:73:public class MessageEvent
+Roblox\Roblox.Dto\Chat\Chat.cs:79:public class AddedToConversationEvent
+Roblox\Roblox.Dto\Chat\Chat.cs:86:public class TypingEvent
+Roblox\Roblox.Dto\Chat\Chat.cs:95:public class EventHandler
+Roblox\Roblox.Dto\Cooldown\Cooldown.cs:1:namespace Roblox.Dto.Cooldown;
+Roblox\Roblox.Dto\Cooldown\Cooldown.cs:3:public class RateLimitBucketEntry
+Roblox\Roblox.Dto\Count.cs:3:public class Total
+Roblox\Roblox.Dto\Count.cs:8:public class ExistsType
+Roblox\Roblox.Dto\Count.cs:14:public class Year
+Roblox\Roblox.Dto\Economy\IEconomyTransaction.cs:6:public class EconomyTransactionBase
+Roblox\Roblox.Dto\Economy\IEconomyTransaction.cs:67:public class GroupFundRecipientTransaction : IEconomyTransaction
+Roblox\Roblox.Dto\Economy\IEconomyTransaction.cs:90:public class GroupFundPayoutTransaction : IEconomyTransaction
+Roblox\Roblox.Dto\Economy\IEconomyTransaction.cs:113:public class AudioUploadTransaction : IEconomyTransaction
+Roblox\Roblox.Dto\Economy\IEconomyTransaction.cs:137:public class GameThumbnailUploadTransaction : IEconomyTransaction
+Roblox\Roblox.Dto\Economy\IEconomyTransaction.cs:160:public class AssetPurchaseTransaction : IEconomyTransaction
+Roblox\Roblox.Dto\Economy\IEconomyTransaction.cs:186:public class DevProdPurchaseTransaction : IEconomyTransaction
+Roblox\Roblox.Dto\Economy\IEconomyTransaction.cs:209:public class DevProdSaleTransaction : IEconomyTransaction
+Roblox\Roblox.Dto\Economy\IEconomyTransaction.cs:233:public class AssetResalePurchaseTransaction : IEconomyTransaction
+Roblox\Roblox.Dto\Economy\IEconomyTransaction.cs:259:public class AssetSaleTransaction : IEconomyTransaction
+Roblox\Roblox.Dto\Economy\IEconomyTransaction.cs:285:public class AssetReSaleTransaction : IEconomyTransaction
+Roblox\Roblox.Dto\Forums\Posts.cs:3:public class PostEntry
+Roblox\Roblox.Dto\Forums\Posts.cs:19:public class PostWithReplies
+Roblox\Roblox.Dto\Forums\Posts.cs:27:public class PostWithPosterInfo
+Roblox\Roblox.Dto\Forums\Posts.cs:35:public class ThreadInfo
+Roblox\Roblox.Dto\Forums\Posts.cs:44:public class ForumThreadWithId
+Roblox\Roblox.Dto\Forums\Posts.cs:56:public class CreatePostRequest
+Roblox\Roblox.Dto\Forums\Posts.cs:61:public class CreateThreadRequest
+Roblox\Roblox.Dto\Forums\Posts.cs:67:public class SubCategoryData
+Roblox\Roblox.Dto\Forums\Posts.cs:74:public class FloodCheckPostEntry
+Roblox\Roblox.Dto\Friends\Friends.cs:5:public class FriendEntry
+Roblox\Roblox.Dto\Friends\Friends.cs:20:public class FriendEntryDto
+Roblox\Roblox.Dto\Friends\Friends.cs:28:public class FriendRequestEntryInternal
+Roblox\Roblox.Dto\Friends\MultiGet.cs:3:public class MultiGetStatusEntry
+Roblox\Roblox.Dto\Friends\MultiGet.cs:9:public class FollowingExistsRequest
+Roblox\Roblox.Dto\Gambling.cs:12:public class GamblingResponse
+Roblox\Roblox.Dto\Games\GameService.cs:6:public class GameServerGetOrCreateResponse
+Roblox\Roblox.Dto\Games\GameService.cs:14:public class GameServerMultiRunEntry
+Roblox\Roblox.Dto\Games\GameService.cs:30:public class GameServerDb
+Roblox\Roblox.Dto\Games\GameService.cs:40:public class GameServerInfoResponse
+Roblox\Roblox.Dto\Games\GameService.cs:45:public class GameServerEmptyResponse
+Roblox\Roblox.Dto\Games\GameService.cs:50:public class GameServerPlayer
+Roblox\Roblox.Dto\Games\GameService.cs:56:public class JoinGame
+Roblox\Roblox.Dto\Games\GameService.cs:60:public class GameServerEntry
+Roblox\Roblox.Dto\Games\GameService.cs:66:public class GameServerWithUpdated : GameServerEntry
+Roblox\Roblox.Dto\Games\GameService.cs:71:public class GameServerEntryWithPlayers : GameServerEntry
+Roblox\Roblox.Dto\Games\GameService.cs:76:public class GameServerPort
+Roblox\Roblox.Dto\Games\GameService.cs:100:public class GameServerJwt
+Roblox\Roblox.Dto\Games\GameService.cs:109:public class GameServerTicketJwt
+Roblox\Roblox.Dto\Games\GameService.cs:117:public class AssetPlayEntry
+Roblox\Roblox.Dto\Games\Media.cs:5:public class GameMediaEntry
+Roblox\Roblox.Dto\Games\Place.cs:5:public class PlaceEntry
+Roblox\Roblox.Dto\Games\Place.cs:29:public class VoteRequest
+Roblox\Roblox.Dto\Games\Universe.cs:7:public class UniverseCreator
+Roblox\Roblox.Dto\Games\Universe.cs:17:public class Universe 
+Roblox\Roblox.Dto\Games\Universe.cs:60:public class MultiGetUniverseEntry : Universe
+Roblox\Roblox.Dto\Games\Universe.cs:65:public class GameListEntry
+Roblox\Roblox.Dto\Games\Universe.cs:88:public class GameListEntryRoblox
+Roblox\Roblox.Dto\Games\Universe.cs:112:public class GamesForCreatorEntryDb
+Roblox\Roblox.Dto\Games\Universe.cs:124:public class RootPlaceEntry
+Roblox\Roblox.Dto\Games\Universe.cs:129:public class GamesForCreatorDevelop
+Roblox\Roblox.Dto\Games\Universe.cs:145:public class UniversePermission
+Roblox\Roblox.Dto\Games\Universe.cs:181:public class TeamCreateSettings
+Roblox\Roblox.Dto\Games\Universe.cs:186:public class UpdateUniverseConfiguration
+Roblox\Roblox.Dto\Games\Universe.cs:192:public class CreateUniverseRequest
+Roblox\Roblox.Dto\Games\Universe.cs:197:public class UniverseConfiguration
+Roblox\Roblox.Dto\Games\Universe.cs:221:public class GamesForCreatorEntry
+Roblox\Roblox.Dto\Games\Universe.cs:233:public class CreateUniverseResponse
+Roblox\Roblox.Dto\Games\Universe.cs:238:public class CreatePlaceInGameResponse
+Roblox\Roblox.Dto\Games\Universe.cs:244:public class PlayEntry
+Roblox\Roblox.Dto\Games\Universe.cs:250:public class SetYearRequest
+Roblox\Roblox.Dto\Games\Universe.cs:254:public class SetMaxPlayerCountRequest
+Roblox\Roblox.Dto\Games\Universe.cs:258:public class SetRobloxPlaceIdRequest
+Roblox\Roblox.Dto\Games\Universe.cs:263:public class UniverseGamePassEntryDb
+Roblox\Roblox.Dto\Games\Universe.cs:276:public class UniverseGamePassEntry
+Roblox\Roblox.Dto\Games\Universe.cs:290:public class GamePassDetails {
+Roblox\Roblox.Dto\Games\Universe.cs:295:public class BadgeAwardDate {
+Roblox\Roblox.Dto\Games\Universe.cs:300:public class BadgeAssetDetailsDb {
+Roblox\Roblox.Dto\Games\Universe.cs:318:public class BadgeAssetDetails 
+Roblox\Roblox.Dto\Games\Universe.cs:336:public class BadgeStatistics
+Roblox\Roblox.Dto\Games\Universe.cs:343:public class BadgeAwardingUniverse
+Roblox\Roblox.Dto\Games\Universe.cs:350:public class BadgeDetails
+Roblox\Roblox.Dto\Games\Universe.cs:357:public class BadgeUpdateRequest
+Roblox\Roblox.Dto\Games\Universe.cs:364:public class DeveloperProductDb
+Roblox\Roblox.Dto\Games\Universe.cs:380:public class DeveloperProduct
+Roblox\Roblox.Dto\Games\Universe.cs:396:public class DeveloperProducts
+Roblox\Roblox.Dto\Games\Universe.cs:407:public class UpdateDevProductRequest
+Roblox\Roblox.Dto\Games\Universe.cs:415:public class ProductReceipt
+Roblox\Roblox.Dto\Games\Universe.cs:426:public class ReceiptResponse
+Roblox\Roblox.Dto\Groups\Group.cs:3:public class GroupEntryDb
+Roblox\Roblox.Dto\Groups\Group.cs:14:public class GroupWithShout
+Roblox\Roblox.Dto\Groups\Group.cs:25:public class GroupUser
+Roblox\Roblox.Dto\Groups\Group.cs:34:public class GroupUserWithRoleId : GroupUser
+Roblox\Roblox.Dto\Groups\Group.cs:39:public class GroupEntry
+Roblox\Roblox.Dto\Groups\Group.cs:73:public class GroupMemberDb
+Roblox\Roblox.Dto\Groups\Group.cs:83:public class ApiRoleEntry
+Roblox\Roblox.Dto\Groups\Group.cs:91:public class GroupMemberEntry
+Roblox\Roblox.Dto\Groups\Group.cs:97:public class GroupWallPostStaff
+Roblox\Roblox.Dto\Groups\Group.cs:124:public class GroupCreationResponse : GroupWithShout
+Roblox\Roblox.Dto\Groups\Icon.cs:3:public class GroupIcon : IAsyncDisposable
+Roblox\Roblox.Dto\Groups\Role.cs:5:public class RoleEntry
+Roblox\Roblox.Dto\Groups\Role.cs:15:public class RolePermissions
+Roblox\Roblox.Dto\Groups\Role.cs:37:public class RoleWithPermissions : RoleEntry
+Roblox\Roblox.Dto\Groups\Role.cs:103:public class SkinnyRank
+Roblox\Roblox.Dto\Groups\Role.cs:109:public class RoleGroupPostPermissions
+Roblox\Roblox.Dto\Groups\Role.cs:118:public class RoleGroupMembershipPermissions
+Roblox\Roblox.Dto\Groups\Role.cs:125:public class RoleGroupManagementPermissions
+Roblox\Roblox.Dto\Groups\Role.cs:132:public class GroupEconomyPermissions
+Roblox\Roblox.Dto\Groups\Role.cs:143:public class GroupPermissionsApiResponse
+Roblox\Roblox.Dto\Groups\Role.cs:151:public class GroupPermissionsEntryApi
+Roblox\Roblox.Dto\Groups\Role.cs:204:public class UserRoleEntry
+Roblox\Roblox.Dto\Groups\Role.cs:210:public class RoleSetInGroupDetailed
+Roblox\Roblox.Dto\Groups\Search.cs:3:public class SearchGroupEntry
+Roblox\Roblox.Dto\Groups\Settings.cs:3:public class GroupSettingsEntry
+Roblox\Roblox.Dto\Groups\SocialLinks.cs:5:public class SocialLinkEntry
+Roblox\Roblox.Dto\Groups\Status.cs:3:public class StatusEntry
+Roblox\Roblox.Dto\Groups\Wall.cs:3:public class WallEntry
+Roblox\Roblox.Dto\Groups\Wall.cs:13:public class GroupUserWithRole
+Roblox\Roblox.Dto\Groups\Wall.cs:20:public class WallEntryV2
+Roblox\Roblox.Dto\Groups\Wall.cs:29:public class StaffWallEntry
+Roblox\Roblox.Dto\JsonIntEnumConverter.cs:6:public class JsonIntEnumConverter<T> : JsonConverter<T> where T : Enum
+Roblox\Roblox.Dto\Marketplace\Marketplace.cs:4:public class PurchaseRequest
+Roblox\Roblox.Dto\Marketplace\Marketplace.cs:13:public class ProductPurchaseRequest
+Roblox\Roblox.Dto\Marketplace\Marketplace.cs:22:public class DeveloperProductPurchaseRequest
+Roblox\Roblox.Dto\Persistence\Persistence.cs:3:public class SetRequest
+Roblox\Roblox.Dto\Persistence\Persistence.cs:8:public class QueuedKeyEntry
+Roblox\Roblox.Dto\Persistence\Persistence.cs:15:public class QueuedKeysRequest
+Roblox\Roblox.Dto\Persistence\Persistence.cs:21:public class GetKeyEntry
+Roblox\Roblox.Dto\Persistence\Persistence.cs:29:public class GetKeyEntrySorted
+Roblox\Roblox.Dto\Staff.cs:3:public class ResolveThumbAssetEntry
+Roblox\Roblox.Dto\Staff.cs:8:public class ResolveThumbUsersEntry
+Roblox\Roblox.Dto\Staff.cs:13:public class ResolveThumbGroupsEntry
+Roblox\Roblox.Dto\Staff.cs:18:public class StaffAssetResolveThumbnailResponse
+Roblox\Roblox.Dto\Thumbnails.cs:7:public class ThumbnailEntry
+Roblox\Roblox.Dto\Thumbnails.cs:14:public class ThumbnailEntryRBX
+Roblox\Roblox.Dto\Thumbnails.cs:21:public class AssetThumbnailEntryDb
+Roblox\Roblox.Dto\Trades\Trades.cs:5:public class TradeEntryDb
+Roblox\Roblox.Dto\Trades\Trades.cs:15:public class TradeEntryDbFull
+Roblox\Roblox.Dto\Trades\Trades.cs:30:public class TradeItemEntryDb
+Roblox\Roblox.Dto\Trades\Trades.cs:43:public class TradeUser
+Roblox\Roblox.Dto\Trades\Trades.cs:50:public class UserAssetEntry
+Roblox\Roblox.Dto\Trades\Trades.cs:62:public class TradeOfferEntry
+Roblox\Roblox.Dto\Trades\Trades.cs:69:public class GetTradeDataResponse
+Roblox\Roblox.Dto\Trades\Trades.cs:81:public class CreateTradeOffer
+Roblox\Roblox.Dto\Trades\Trades.cs:88:public class CreateTradeRequest
+Roblox\Roblox.Dto\Trades\Trades.cs:93:public class ConfirmOwnershipEntry
+Roblox\Roblox.Dto\Users\Alert.cs:3:public class Alert
+Roblox\Roblox.Dto\Users\Authentication.cs:3:    public class LoginTicet
+Roblox\Roblox.Dto\Users\Authentication.cs:9:    public class TwoFactorTicket
+Roblox\Roblox.Dto\Users\AvatarCache.cs:3:public class AvatarCacheAsset
+Roblox\Roblox.Dto\Users\Badges.cs:3:public class BadgeEntry
+Roblox\Roblox.Dto\Users\Economy.cs:6:public class UserEconomy
+Roblox\Roblox.Dto\Users\Economy.cs:12:public class SummaryEntryDb
+Roblox\Roblox.Dto\Users\Economy.cs:19:public class EconomySummary
+Roblox\Roblox.Dto\Users\Economy.cs:31:public class PurchaseRequest
+Roblox\Roblox.Dto\Users\Economy.cs:39:public class TransactionEntryDb
+Roblox\Roblox.Dto\Users\Economy.cs:62:public class UserTransactionMinimal
+Roblox\Roblox.Dto\Users\Economy.cs:68:public class UserTransactionTotals
+Roblox\Roblox.Dto\Users\Economy.cs:88:public class CurrencyExchangeMarketTotalEntry
+Roblox\Roblox.Dto\Users\Economy.cs:94:public class TradeCurrencyOrder
+Roblox\Roblox.Dto\Users\Economy.cs:130:public class TradeCurrencyLog
+Roblox\Roblox.Dto\Users\Economy.cs:140:public class CreateExchangeOrderRequest
+Roblox\Roblox.Dto\Users\Feed.cs:5:public class FeedCreatorEntry
+Roblox\Roblox.Dto\Users\Feed.cs:12:public class FeedEntry
+Roblox\Roblox.Dto\Users\Feed.cs:22:public class UserFeedEntryDb
+Roblox\Roblox.Dto\Users\Feed.cs:31:public class GroupFeedEntryDb : UserFeedEntryDb
+Roblox\Roblox.Dto\Users\Inventory.cs:6:public class CanViewInventoryEntry
+Roblox\Roblox.Dto\Users\Inventory.cs:12:public class InventoryPrivacyEntry
+Roblox\Roblox.Dto\Users\Inventory.cs:18:public class CollectibleItemEntry
+Roblox\Roblox.Dto\Users\Inventory.cs:30:public class InventoryEntry : CollectibleItemEntry
+Roblox\Roblox.Dto\Users\Inventory.cs:41:public class OwnerUserEntry
+Roblox\Roblox.Dto\Users\Inventory.cs:48:public class OwnershipEntryShared
+Roblox\Roblox.Dto\Users\Inventory.cs:56:public class OwnershipEntry : OwnershipEntryShared
+Roblox\Roblox.Dto\Users\Inventory.cs:61:public class OwnershipEntryDb : OwnershipEntryShared
+Roblox\Roblox.Dto\Users\Membership.cs:5:public class UserMembershipEntry
+Roblox\Roblox.Dto\Users\Membership.cs:13:public class MembershipMetadata
+Roblox\Roblox.Dto\Users\Messages.cs:3:public class MessageEntryDb
+Roblox\Roblox.Dto\Users\Moderation.cs:4:public class UserBanEntry
+Roblox\Roblox.Dto\Users\Password.cs:3:public class PasswordEntry
+Roblox\Roblox.Dto\Users\Presence.cs:5:public class GetPresenceResponse
+Roblox\Roblox.Dto\Users\Presence.cs:10:public class PresenceEntry
+Roblox\Roblox.Dto\Users\Presence.cs:21:public class DbPresenceEntry
+Roblox\Roblox.Dto\Users\Referral.cs:3:    public class Referral
+Roblox\Roblox.Dto\Users\Settings.cs:5:public class UserSettingsEntry
+Roblox\Roblox.Dto\Users\Status.cs:3:public class SetStatusRequest
+Roblox\Roblox.Dto\Users\UserAsset.cs:3:public class CollectibleUserAssetEntry
+Roblox\Roblox.Dto\Users\UserAsset.cs:14:public class SetPriceRequest
+Roblox\Roblox.Dto\Users\UserAsset.cs:19:public class StaffUserAssetTrackEntry
+Roblox\Roblox.Dto\Users\Users.cs:9:public class UserId
+Roblox\Roblox.Dto\Users\Users.cs:14:public class UserIdWithUsername
+Roblox\Roblox.Dto\Users\Users.cs:20:public class MultiGetEntry
+Roblox\Roblox.Dto\Users\Users.cs:30:public class MultiGetDbEntry
+Roblox\Roblox.Dto\Users\Users.cs:48:public class TotpInfo
+Roblox\Roblox.Dto\Users\Users.cs:55:public class UserInfo
+Roblox\Roblox.Dto\Users\Users.cs:73:public class MultiGetAccountStatusEntry
+Roblox\Roblox.Dto\Users\Users.cs:85:public class SessionEntry
+Roblox\Roblox.Dto\Users\Users.cs:91:public class MultiGetRequest
+Roblox\Roblox.Dto\Users\Users.cs:96:public class MultiGetByNameRequest
+Roblox\Roblox.Dto\Users\Users.cs:101:public class StatusEntry
+Roblox\Roblox.Dto\Users\Users.cs:106:public class GeneralPrivacyEntry
+Roblox\Roblox.Dto\Users\Users.cs:111:public class AccountStatusEntry
+Roblox\Roblox.Dto\Users\Users.cs:116:public class TradeFilterEntry
+Roblox\Roblox.Dto\Users\Users.cs:121:public class PreviousUsernameEntry
+Roblox\Roblox.Dto\Users\Users.cs:127:public class UserLotteryEntry
+Roblox\Roblox.Dto\Users\Users.cs:151:public class CreateUserApplicationRequest
+Roblox\Roblox.Dto\Users\Users.cs:167:public class UserApplicationEntry : CreateUserApplicationRequest
+Roblox\Roblox.Dto\Users\Users.cs:207:public class AppSocialMedia
+Roblox\Roblox.Dto\Users\Users.cs:264:public class SteamAppSocial : AppSocialMedia
+Roblox\Roblox.Dto\Users\Users.cs:271:public class SteamUserIdParser : ISocialMediaParser
+Roblox\Roblox.Dto\Users\Users.cs:283:public class RedditUsernameAppSocial : AppSocialMedia
+Roblox\Roblox.Dto\Users\Users.cs:291:public class RedditUsernameParser : ISocialMediaParser
+Roblox\Roblox.Dto\Users\Users.cs:305:public class TwitterUserIdAppSocial : AppSocialMedia
+Roblox\Roblox.Dto\Users\Users.cs:313:public class TwitterUsernameAppSocial : AppSocialMedia
+Roblox\Roblox.Dto\Users\Users.cs:322:public class TwitterUsernameParser : ISocialMediaParser
+Roblox\Roblox.Dto\Users\Users.cs:344:public class TikTokRedirectSocial : AppSocialMedia
+Roblox\Roblox.Dto\Users\Users.cs:370:public class TikTokRedirectParser : ISocialMediaParser
+Roblox\Roblox.Dto\Users\Users.cs:393:public class TikTokUsernameSocial : AppSocialMedia
+Roblox\Roblox.Dto\Users\Users.cs:401:public class TiKTokUsernameParser : ISocialMediaParser
+Roblox\Roblox.Dto\Users\Users.cs:425:public class YoutubeChannelNameAppSocial : AppSocialMedia
+Roblox\Roblox.Dto\Users\Users.cs:433:public class YoutubeChannelNameParser : ISocialMediaParser
+Roblox\Roblox.Dto\Users\Users.cs:456:public class YoutubeChannelIdAppSocial : AppSocialMedia
+Roblox\Roblox.Dto\Users\Users.cs:464:public class YoutubeChannelIdParser : ISocialMediaParser
+Roblox\Roblox.Dto\Users\Users.cs:487:public class RobloxUserIdAppSocial : AppSocialMedia
+Roblox\Roblox.Dto\Users\Users.cs:495:public class RobloxUserIdParser : ISocialMediaParser
+Roblox\Roblox.Dto\Users\Users.cs:523:public class User18OrOver
+Roblox\Roblox.Dto\Users\Users.cs:528:public class UserInviteEntry
+Roblox\Roblox.Dto\Users\Users.cs:537:public class StaffUserStatusEntry
+Roblox\Roblox.Dto\Users\Users.cs:546:public class StaffUserPermissionEntry
+Roblox\Roblox.Dto\Users\Users.cs:552:public class UserSessionExpirationEntry
+Roblox\Roblox.Dto\Users\Users.cs:557:public class PasswordResetEntry
+Roblox\Roblox.EconomyChat\ChatService.cs:11:public class ChatService : ServiceBase
+Roblox\Roblox.EconomyChat\Models\Chat.cs:5:public class UnreadMessageCount
+Roblox\Roblox.EconomyChat\Models\Chat.cs:10:public class ChatAuthor
+Roblox\Roblox.EconomyChat\Models\Chat.cs:18:public class ChatMessage
+Roblox\Roblox.EconomyChat\Models\Chat.cs:27:public class DirectChatMessage : ChatMessage
+Roblox\Roblox.EconomyChat\Models\Chat.cs:32:public class ChannelChatMessage : ChatMessage
+Roblox\Roblox.EconomyChat\Models\Chat.cs:37:public class CreateMessageRequest
+Roblox\Roblox.EconomyChat\Models\Events.cs:15:public class GenericEvent<T> : IChatEvent
+Roblox\Roblox.EconomyChat\Models\Events.cs:29:public class IsTypingEventData
+Roblox\Roblox.EconomyChat\Models\Events.cs:40:public class IsTypingEvent : GenericEvent<IsTypingEventData>
+Roblox\Roblox.EconomyChat\Models\Events.cs:50:public class ChatMessageEvent : GenericEvent<ChannelChatMessage>
+Roblox\Roblox.EconomyChat\Models\Events.cs:57:public class ChatMessageDeletionEventData
+Roblox\Roblox.EconomyChat\Models\Events.cs:65:public class ChatMessageDeletionEvent : GenericEvent<ChatMessageDeletionEventData>
+Roblox\Roblox.EconomyChat\Models\Metadata.cs:3:public class Metadata
+Roblox\Roblox.EconomyChat\Models\Metadata.cs:9:public class Channel
+Roblox\Roblox.Exceptions\Services\Assets\Assets.cs:3:public class AssetNameTooShortException : Exception { }
+Roblox\Roblox.Exceptions\Services\Assets\Assets.cs:4:public class AssetNameTooLongException : Exception { }
+Roblox\Roblox.Exceptions\Services\Assets\Assets.cs:5:public class AssetDescriptionTooLongException : Exception { }Roblox\Roblox.Exceptions\Services\Users\Avatar.cs:3:public class TooManyOutfitsException : Exception { }
+Roblox\Roblox.Exceptions\Services\Users\Avatar.cs:4:public class OutfitNameTooShortException : Exception { }
+Roblox\Roblox.Exceptions\Services\Users\Avatar.cs:5:public class OutfitNameTooLongException : Exception { }
+Roblox\Roblox.Exceptions\Services\Users\Avatar.cs:6:public class NoImageUrlException : Exception {}Roblox\Roblox.Exceptions\Services\Users\Economy.cs:3:public class NotEnoughRobuxForPurchaseException : Exception { }Roblox\Roblox.Exceptions\Services\Users\Status.cs:3:public class StatusTooLongException : System.Exception { }
+Roblox\Roblox.Exceptions\Services\Users\Status.cs:4:public class StatusTooShortException : System.Exception { }Roblox\Roblox.Exceptions\Services\Users\Users.cs:4:public class UserNotFoundException : Exception { }
+Roblox\Roblox.Exceptions\Services\Users\Users.cs:6:public class AccountLastOnlineTooRecentlyException : Exception {}Roblox\Roblox.IntegrationTest\Features\CurrencyExchange.cs:9:public class CurrencyExchangeTest : TestBase
+Roblox\Roblox.IntegrationTest\Features\Trade.cs:18:public class TradeItem
+Roblox\Roblox.IntegrationTest\Features\Trade.cs:24:public class TradeTest : TestBase
+Roblox\Roblox.IntegrationTest\Services\Assets.cs:6:public class AssetsServiceIntegrationTest : TestBase
+Roblox\Roblox.IntegrationTest\Services\Groups.cs:6:public class GroupsServiceIntegrationTest : TestBase
+Roblox\Roblox.IntegrationTest\Services\Users.cs:7:public class UnitTest1 : TestBase
+Roblox\Roblox.IntegrationTest\TestBase.cs:21:public class TestBase
+Roblox\Roblox.Libraries\Assets\ContentFormatters.cs:5:    public static class ContentFormatters
+Roblox\Roblox.Libraries\Assets\Imager.cs:15:public class UnsupportedImageFormatException : Exception
+Roblox\Roblox.Libraries\Assets\Imager.cs:23:public class InvalidImageException : Exception
+Roblox\Roblox.Libraries\Assets\Imager.cs:28:public class Imager
+Roblox\Roblox.Libraries\Assets\UrlUtilities.cs:5:public static class UrlUtilities
+Roblox\Roblox.Libraries\AsyncLimit.cs:7:public class AsyncLimit
+Roblox\Roblox.Libraries\AsyncLimit.cs:91:public class OnCompletionJob
+Roblox\Roblox.Libraries\AsyncLimit.cs:97:public class AsyncLimitJob : IAsyncDisposable
+Roblox\Roblox.Libraries\Captcha\Captcha.cs:7:internal class HCaptchaJsonResponse
+Roblox\Roblox.Libraries\Captcha\Captcha.cs:12:public class HCaptcha
+Roblox\Roblox.Libraries\CombinedDisposable.cs:3:public class CombinedAsyncDisposable : IAsyncDisposable
+Roblox\Roblox.Libraries\Cursor\Cursor.cs:9:    public static class Cursor
+Roblox\Roblox.Libraries\DiscordApi\DiscordApi.cs:11:public class DiscordApi
+Roblox\Roblox.Libraries\DiscordApi\DiscordApi.cs:13:    private class DiscordHttpClient : HttpClient
+Roblox\Roblox.Libraries\DiscordApi\DiscordApiResponse.cs:4:public class DiscordTokenResponse
+Roblox\Roblox.Libraries\DiscordApi\DiscordBotApi.cs:9:public class DiscordBotApi
+Roblox\Roblox.Libraries\DiscordApi\DiscordBotApi.cs:11:    private class DiscordHttpClient : HttpClient
+Roblox\Roblox.Libraries\EasyJwt\EasyJwt.cs:8:public class MicrosoftJsonSerialize : IJsonSerializer
+Roblox\Roblox.Libraries\EasyJwt\EasyJwt.cs:24:public class EasyJwt
+Roblox\Roblox.Libraries\Exceptions\Logic.cs:5:public class Logic<T> where T : Enum
+Roblox\Roblox.Libraries\Exceptions\LogicException.cs:10:    public class LogicException : System.Exception
+Roblox\Roblox.Libraries\FastFlag\FastFlag.cs:11:public class FastString : IFastFlag
+Roblox\Roblox.Libraries\FastFlag\FastFlag.cs:25:public class DFastString : FastString
+Roblox\Roblox.Libraries\FastFlag\FastFlag.cs:33:public class FastInt : IFastFlag
+Roblox\Roblox.Libraries\FastFlag\FastFlag.cs:49:public class DFastInt : FastInt
+Roblox\Roblox.Libraries\FastFlag\FastFlag.cs:57:public class FastFlag : IFastFlag
+Roblox\Roblox.Libraries\FastFlag\FastFlag.cs:73:public class DFastFlag : FastFlag
+Roblox\Roblox.Libraries\FastFlag\FastFlag.cs:81:public class FastLogGroup : IFastFlag
+Roblox\Roblox.Libraries\FastFlag\FastFlag.cs:98:public class FastFlagResult
+Roblox\Roblox.Libraries\Password\PasswordHasher.cs:5:    public class PasswordHasher : IPasswordHasher
+Roblox\Roblox.Libraries\RemoteView\RemoteView.cs:7:public static class RemoteView
+Roblox\Roblox.Libraries\RobloxApi\RobloxApi.cs:14:public class ProductDataResponse
+Roblox\Roblox.Libraries\RobloxApi\RobloxApi.cs:25:public class AssetDelivery
+Roblox\Roblox.Libraries\RobloxApi\RobloxApi.cs:32:public class AssetDeliveryEntry
+Roblox\Roblox.Libraries\RobloxApi\RobloxApi.cs:38:public class AssetDeliveryV2Response
+Roblox\Roblox.Libraries\RobloxApi\RobloxApi.cs:44:public class AssetDeliveryV1BatchResponse
+Roblox\Roblox.Libraries\RobloxApi\RobloxApi.cs:57:public class AssetDeliveryV1Error
+Roblox\Roblox.Libraries\RobloxApi\RobloxApi.cs:65:public class ProductInfoWithAssetDelivery : ProductDataResponse
+Roblox\Roblox.Libraries\RobloxApi\RobloxApi.cs:70:public class UsersResponseV1
+Roblox\Roblox.Libraries\RobloxApi\RobloxApi.cs:76:public class MultiGetByUsernameRequest 
+Roblox\Roblox.Libraries\RobloxApi\RobloxApi.cs:83:public class MultiGetByUsernameResponseEntry 
+Roblox\Roblox.Libraries\RobloxApi\RobloxApi.cs:92:public class MultiGetByUsernameResponse
+Roblox\Roblox.Libraries\RobloxApi\RobloxApi.cs:97:public class AssetTypeEntry
+Roblox\Roblox.Libraries\RobloxApi\RobloxApi.cs:103:public class AvatarAsset
+Roblox\Roblox.Libraries\RobloxApi\RobloxApi.cs:109:public class AvatarResponse
+Roblox\Roblox.Libraries\RobloxApi\RobloxApi.cs:114:public class MultiGetDetailsRequestEntry
+Roblox\Roblox.Libraries\RobloxApi\RobloxApi.cs:120:public class MultiGetDetailsRequest
+Roblox\Roblox.Libraries\RobloxApi\RobloxApi.cs:125:public class MultiGetDetailsResponseEntry
+Roblox\Roblox.Libraries\RobloxApi\RobloxApi.cs:134:public class MultiGetDetailsResponse
+Roblox\Roblox.Libraries\RobloxApi\RobloxApi.cs:139:public class CountResponse
+Roblox\Roblox.Libraries\RobloxApi\RobloxApi.cs:144:public class InventoryEntry
+Roblox\Roblox.Libraries\RobloxApi\RobloxApi.cs:149:public class InventoryResponse
+Roblox\Roblox.Libraries\RobloxApi\RobloxApi.cs:154:public class InvalidUserException : Exception
+Roblox\Roblox.Libraries\RobloxApi\RobloxApi.cs:159:public class BadgeEntry
+Roblox\Roblox.Libraries\RobloxApi\RobloxApi.cs:164:public class ProfileHeaderResponse
+Roblox\Roblox.Libraries\RobloxApi\RobloxApi.cs:174:public class BundleItemEntry
+Roblox\Roblox.Libraries\RobloxApi\RobloxApi.cs:181:public class BundleProduct
+Roblox\Roblox.Libraries\RobloxApi\RobloxApi.cs:186:public class BundleResponseEntry
+Roblox\Roblox.Libraries\RobloxApi\RobloxApi.cs:197:public class MultiGetBundlesResponse
+Roblox\Roblox.Libraries\RobloxApi\RobloxApi.cs:201:public class BatchAssetRequest
+Roblox\Roblox.Libraries\RobloxApi\RobloxApi.cs:208:public class RobloxApi
+Roblox\Roblox.Libraries\RobloxApi\RobloxApi.cs:214:    private class RobloxApiHttpClient : HttpClient
+Roblox\Roblox.Libraries\TwitterApi\TwitterApi.cs:7:public class TwitterPublicMetrics
+Roblox\Roblox.Libraries\TwitterApi\TwitterApi.cs:19:public class TwitterUserObject
+Roblox\Roblox.Libraries\TwitterApi\TwitterApi.cs:31:public class GenericTwitterResponse<T>
+Roblox\Roblox.Libraries\TwitterApi\TwitterApi.cs:36:public class TwitterRecordNotFoundException : Exception
+Roblox\Roblox.Libraries\TwitterApi\TwitterApi.cs:41:public class TwitterApi
+Roblox\Roblox.Libraries.UnitTest\Assets\UrlUtilities.cs:6:public class UnitTestUrlUtilities
+Roblox\Roblox.Libraries.UnitTest\AsyncLimit.cs:11:public class AsyncLimitUnitTest
+Roblox\Roblox.Libraries.UnitTest\Cursor\Cursor.cs:9:public class UnitTestCursor
+Roblox\Roblox.Libraries.UnitTest\Password\PasswordHasher.cs:6:    public class UnitTestPasswordHasher
+Roblox\Roblox.Logging\Class1.cs:49:public class Writer
+Roblox\Roblox.Logging\Class1.cs:130:    public class LogWithId : IDisposable
+Roblox\Roblox.Metrics\Metrics\ApplicationGuard.cs:7:public static class ApplicationGuardMetrics
+Roblox\Roblox.Metrics\Metrics\Assets.cs:8:public static class AssetMetrics
+Roblox\Roblox.Metrics\Metrics\Economy.cs:8:public static class EconomyMetrics
+Roblox\Roblox.Metrics\Metrics\Games.cs:6:public static class GameMetrics
+Roblox\Roblox.Metrics\Metrics\Groups.cs:7:public static class GroupMetrics
+Roblox\Roblox.Metrics\Metrics\Render.cs:7:public static class RenderMetrics
+Roblox\Roblox.Metrics\Metrics\SecurityMetrics.cs:6:public static class SecurityMetrics
+Roblox\Roblox.Metrics\Metrics\User.cs:7:public static class UserMetrics
+Roblox\Roblox.Metrics\Metrics.cs:9:public static class RobloxInfluxDb
+Roblox\Roblox.Models\Enums\Assets.cs:115:    public static class UserAdvertisementTypeExtensions
+Roblox\Roblox.Models\Enums\Assets.cs:148:    public class LotteryItemEntry
+Roblox\Roblox.Models\Enums\Assets.cs:159:    public class AssetVotesResponse
+Roblox\Roblox.Models\Enums\Db.cs:9:public static class SortOrderExtensions
+Roblox\Roblox.Models\Enums\Economy.cs:85:    public class InternalPurchaseFailureException : Exception
+Roblox\Roblox.Models\Enums\Users.cs:83:    public class UserConnections
+Roblox\Roblox.Models\Games\Placelauncher.cs:6:public class PlaceLaunchRequest
+Roblox\Roblox.Models\Games\Placelauncher.cs:22:public class PlaceLaunchResponse
+Roblox\Roblox.Models\Metadata\Avatar.cs:5:public class ColorMetadataEntry
+Roblox\Roblox.Models\Metadata\Avatar.cs:12:public static class AvatarMetadata
+Roblox\Roblox.Models\Metadata\Badges.cs:3:public class BadgeEntry
+Roblox\Roblox.Models\Metadata\Badges.cs:17:public class BadgesMetadata
+Roblox\Roblox.Models\Metadata\Badges.cs:23:        new BadgeEntry(3, "Combat Initiation", "This badge was granted when a player scored 10 victories in games that use classic combat scripts. It was retired Summer 2015 and is no longer attainable."),
+Roblox\Roblox.Models\Metadata\Badges.cs:24:        new BadgeEntry(4, "Warrior", "This badge was granted when a player scored 100 or more victories in games that use classic combat scripts. It was retired Summer 2015 and is no longer attainable."),
+Roblox\Roblox.Models\Metadata\Badges.cs:25:        new BadgeEntry(5, "Bloxxer", "This badge was granted when a player scored at least 250 victories, and fewer than 250 wipeouts, in games that use classic combat scripts. It was retired Summer 2015 and is no longer attainable."),
+Roblox\Roblox.Models\Objects\Develop.cs:4:public class UniversePermissionModel
+Roblox\Roblox.Models\Objects\Develop.cs:10:public class UpdatePlace
+Roblox\Roblox.Models\RobloxCollection.cs:3:public class CursorEntry
+Roblox\Roblox.Models\RobloxCollection.cs:19:public class BadCursorException : System.Exception
+Roblox\Roblox.Models\RobloxCollection.cs:36:public class RobloxCollection<T>
+Roblox\Roblox.Models\RobloxCollection.cs:41:public class RobloxCollectionPaginated<T> : RobloxCollection<T>
+Roblox\Roblox.Models\Rules\Assets.cs:3:public static class Rules
+Roblox\Roblox.Models\Sessions\UserSession.cs:6:    public class UserSession
+Roblox\Roblox.Models\Sessions\UserSession.cs:33:    public class UserAgentBypass
+Roblox\Roblox.Rendering\CommandHandler.cs:11:    public static class CommandHandler
+Roblox\Roblox.Rendering\Models.cs:3:    public class RenderRequest
+Roblox\Roblox.Rendering\Models.cs:10:    public class RenderResponse<T>
+Roblox\Roblox.Rendering\Models.cs:17:    public class AvatarBodyColors
+Roblox\Roblox.Rendering\Models.cs:27:    public class AvatarAssetTypeEntry
+Roblox\Roblox.Rendering\Models.cs:32:    public class AvatarAssetEntry
+Roblox\Roblox.Rendering\Models.cs:38:    public class AvatarData
+Roblox\Roblox.Rendering\RenderingHandler.cs:13:    public class RenderingHandler
+Roblox\Roblox.Rendering\RenderingHandler.cs:38:        private class RenderResponse
+Roblox\Roblox.Rendering.Test\UnitTest1.cs:8:public class RenderingTest
+Roblox\Roblox.Services\AbuseReportService.cs:8:public class AbuseReportService : ServiceBase, IService
+Roblox\Roblox.Services\App\FeatureFlags\FeatureFlags.cs:59:public static class FeatureFlags
+Roblox\Roblox.Services\App\Groups\GroupRolesetUpdate.cs:7:public class GroupRolesetUpdate
+Roblox\Roblox.Services\Assets\AssetsCache.cs:9:public class GetLatestAssetVersionCache : GenericMemoryCache<long, AssetVersionEntry>
+Roblox\Roblox.Services\Assets\AssetsService.cs:37:public class EasyConverters
+Roblox\Roblox.Services\Assets\AssetsService.cs:131:public class AssetsService : ServiceBase, IService
+Roblox\Roblox.Services\Assets\AssetsService.cs:402:    internal class AssetValidationResponse
+Roblox\Roblox.Services\Assets\AssetsService.cs:2459:    public async Task<bool> IsInCommentCooldown(long userId)
+Roblox\Roblox.Services\Assets\AssetsService.cs:2470:    public async Task<bool> IsInCommentCooldownGlobal()
+Roblox\Roblox.Services\Assets\AssetsService.cs:2512:        if (await IsInCommentCooldown(userId)) throw new FloodcheckException();
+Roblox\Roblox.Services\Assets\AssetsService.cs:2513:        if (await IsInCommentCooldownGlobal()) throw new FloodcheckException();
+Roblox\Roblox.Services\Assets\AssetsService.cs:3244:        { "Classic Baseplate", 114 },
+Roblox\Roblox.Services\Assets\AssetsService.cs:3245:        { "Classic Obby", 115 },
+Roblox\Roblox.Services\Assets\AudioService.cs:10:public class AudioService : ServiceBase, IService
+Roblox\Roblox.Services\Assets\DataStoreService.cs:16:public class DataStoreService : ServiceBase, IService
+Roblox\Roblox.Services\Assets\RobloxAssetService.cs:7:public class RobloxAssetService : ServiceBase, IService
+Roblox\Roblox.Services\Cache.cs:8:public static class Cache
+Roblox\Roblox.Services\Chat.cs:12:public class ChatService : ServiceBase, IService
+Roblox\Roblox.Services\Cooldown.cs:2:using Roblox.Dto.Cooldown;
+Roblox\Roblox.Services\Cooldown.cs:6:public class CooldownException : System.Exception
+Roblox\Roblox.Services\Cooldown.cs:11:public class CooldownService : ServiceBase, IService
+Roblox\Roblox.Services\Cooldown.cs:13:    public async Task<bool> TryCooldownCheck(string key, System.TimeSpan minimumRequestSpacing)
+Roblox\Roblox.Services\Cooldown.cs:23:    [Obsolete("Use TryCooldownCheck instead")]
+Roblox\Roblox.Services\Cooldown.cs:24:    public async Task CooldownCheck(string key, System.TimeSpan minimumRequestSpacing)
+Roblox\Roblox.Services\Cooldown.cs:26:        if (!await TryCooldownCheck(key, minimumRequestSpacing))
+Roblox\Roblox.Services\Cooldown.cs:27:            throw new CooldownException();
+Roblox\Roblox.Services\Cooldown.cs:30:    public async Task ResetCooldown(string key)
+Roblox\Roblox.Services\Cooldown.cs:50:    public async Task<bool> TryIncrementBucketCooldown(string key, long requestsPerPeriod, TimeSpan period, IEnumerable<RateLimitBucketEntry> entries, bool incrementOnFailure = false)
+Roblox\Roblox.Services\Cooldown.cs:62:    public async Task<bool> TryIncrementBucketCooldown(string key, long requestsPerPeriod, TimeSpan period, bool incrementOnFailure = false)
+Roblox\Roblox.Services\DbModels\Asset.cs:6:    public class AssetModerationEntry
+Roblox\Roblox.Services\DbModels\Asset.cs:13:    public class ModerationEntryDb
+Roblox\Roblox.Services\DbModels\Asset.cs:18:    public class UserAssetEntry
+Roblox\Roblox.Services\DbModels\Asset.cs:24:    public class AssetId
+Roblox\Roblox.Services\DbModels\Users\Avatar.cs:5:public class DatabaseAvatar
+Roblox\Roblox.Services\DbModels\Users\Avatar.cs:22:public class DatabaseAvatarWithImages : DatabaseAvatar
+Roblox\Roblox.Services\DbModels\Users\Usernames.cs:3:public class PreviousUsernameEntries
+Roblox\Roblox.Services\Economy.cs:13:public class EconomyService : ServiceBase, IService
+Roblox\Roblox.Services\Exceptions\FloodcheckException.cs:3:public class FloodcheckException : System.Exception
+Roblox\Roblox.Services\Exceptions\LockNotAcquiredException.cs:3:public class LockNotAcquiredException : System.Exception
+Roblox\Roblox.Services\Exceptions\NotApprovedException.cs:3:public class NotApprovedException : System.Exception
+Roblox\Roblox.Services\Exceptions\PermissionException.cs:3:public class PermissionException : System.Exception
+Roblox\Roblox.Services\Exceptions\PlaceLauncherException.cs:4:public class PlaceLauncherException : System.Exception
+Roblox\Roblox.Services\Exceptions\RecordNotFoundException.cs:3:public class RecordNotFoundException : System.Exception
+Roblox\Roblox.Services\Exceptions\RobloxException.cs:3:public class RobloxException : System.Exception
+Roblox\Roblox.Services\Extensions\SqlBuilder.cs:5:public static class SqlBuilderExtensions
+Roblox\Roblox.Services\FilterText.cs:7:public class FilterService : ServiceBase, IService
+Roblox\Roblox.Services\Forums.cs:10:public class ForumsService : ServiceBase
+Roblox\Roblox.Services\Forums.cs:237:        using var cs = ServiceProvider.GetOrCreate<CooldownService>();
+Roblox\Roblox.Services\Forums.cs:238:        return await cs.TryIncrementBucketCooldown(bucketKey, requestPerMinutePerIp, TimeSpan.FromMinutes(1), true);
+Roblox\Roblox.Services\Games\Badges.cs:9:public class BadgesService : ServiceBase, IService 
+Roblox\Roblox.Services\Games\Games.cs:15:public class GamesService : ServiceBase, IService
+Roblox\Roblox.Services\Games\Games.cs:611:            case "classics":
+Roblox\Roblox.Services\Games\Games.cs:612:                // Classic games place IDs
+Roblox\Roblox.Services\Games\Games.cs:1026:        string chatStyle = "ClassicAndBubble";
+Roblox\Roblox.Services\Games\GamesCache.cs:4:public class GetGamesListCache : GenericMemoryCache<string, IEnumerable<GameListEntry>>
+Roblox\Roblox.Services\Games\GameServer.cs:22:public class GameServerService : ServiceBase
+Roblox\Roblox.Services\Games\GameServer.cs:24:    public class ArbiterHttpClient : HttpClient
+Roblox\Roblox.Services\Games\GameServer.cs:92:        public class EvictPlayerRequest
+Roblox\Roblox.Services\Games\GameServer.cs:98:        public class StartGameServerRequest
+Roblox\Roblox.Services\Games\GameServer.cs:113:        public class KillGameServerRequest
+Roblox\Roblox.Services\Games\GameServer.cs:242:            using var cooldown = ServiceProvider.GetOrCreate<CooldownService>(this);
+Roblox\Roblox.Services\Games\GameServer.cs:243:            // Per 100 users there is a 1 day cooldown to earn tickets from visits
+Roblox\Roblox.Services\Games\GameServer.cs:244:            if (await cooldown.TryIncrementBucketCooldown("TicketCreatorPlaceVisit:" + placeId, 100, TimeSpan.FromDays(1)))
+Roblox\Roblox.Services\Games\PlaceLauncher.cs:12:public class PlaceLauncherService : ServiceBase
+Roblox\Roblox.Services\Games\PlayerSecurity.cs:3:public class PlayerSecurityService :  ServiceBase, IService 
+Roblox\Roblox.Services\Games\PrivateServerFactory.cs:18:public class PrivateServerService : ServiceBase
+Roblox\Roblox.Services\Games\Sets.cs:7:    public class SetsService : ServiceBase
+Roblox\Roblox.Services\GenericInMemoryCache.cs:5:public class GenericMemoryCache<TKey,TValue> : ServiceBase, IService where TKey : notnull
+Roblox\Roblox.Services\Groups\Groups.cs:20:public class GroupsService : ServiceBase, IService
+Roblox\Roblox.Services\Groups\Groups.cs:466:            throw new CooldownException();
+Roblox\Roblox.Services\Groups\Groups.cs:470:            throw new CooldownException();
+Roblox\Roblox.Services\Promocodes.cs:12:public class PromocodesService : ServiceBase, IService
+Roblox\Roblox.Services\Promocodes.cs:14:    public class Rewards
+Roblox\Roblox.Services\Services\Database.cs:6:public static class Database
+Roblox\Roblox.Services\Services\ServiceBase.cs:9:    public class ServiceBase : IDisposable
+Roblox\Roblox.Services\Services\ServiceProvider.cs:5:public static class ServiceProvider
+Roblox\Roblox.Services\Signer.cs:11:public class SignService : ServiceBase
+Roblox\Roblox.Services\Thumbnails.cs:12:public class ThumbnailsService : ServiceBase, IService
+Roblox\Roblox.Services\Users\AccountInformation.cs:9:public class AccountInformationService : ServiceBase, IService
+Roblox\Roblox.Services\Users\Application.cs:3:public class ApplicationService : ServiceBase, IService
+Roblox\Roblox.Services\Users\ApplicationProcessorService.cs:7:public class ApplicationProcessorService : ServiceBase, IService
+Roblox\Roblox.Services\Users\Avatar.cs:28:public class AvatarService : ServiceBase, IService {
+Roblox\Roblox.Services\Users\Avatar.cs:30:    public class AssetTypeGroups
+Roblox\Roblox.Services\Users\AvatarCache.cs:7:public class AvatarCache : ServiceBase, IService
+Roblox\Roblox.Services\Users\CurrencyExchange.cs:10:public class CurrencyExchangeService : ServiceBase, IService
+Roblox\Roblox.Services\Users\Friends.cs:14:public class FriendsService : ServiceBase, IService
+Roblox\Roblox.Services\Users\Inventory.cs:10:public class InventoryService : ServiceBase, IService
+Roblox\Roblox.Services\Users\PrivateMessages.cs:11:public class PrivateMessagesService : ServiceBase, IService
+Roblox\Roblox.Services\Users\Trades.cs:20:public class TradesService : ServiceBase, IService
+Roblox\Roblox.Services\Users\Trades.cs:502:        // make sure user isn't in the cooldown
+Roblox\Roblox.Services\Users\Trades.cs:503:        var isInCooldown = await IsUserInFloodCheck(userIdSender, request.userId);
+Roblox\Roblox.Services\Users\Trades.cs:504:        logic.Requires(SendTradeErrorCodes.FloodCheck, FailType.FloodCheck, !isInCooldown);
+Roblox\Roblox.Services\Users\Trades.cs:648:        // make sure user isn't in the cooldown
+Roblox\Roblox.Services\Users\Trades.cs:649:        var isInCooldown = await IsUserInFloodCheck(contextUserId, request.userId);
+Roblox\Roblox.Services\Users\Trades.cs:650:        logic.Requires(SendTradeErrorCodes.FloodCheck, FailType.FloodCheck, !isInCooldown);
+Roblox\Roblox.Services\Users\UserCache.cs:7:public class UserSessionsCache : GenericMemoryCache<string, SessionEntry?>
+Roblox\Roblox.Services\Users\UserCache.cs:12:public class UserInviteCache : GenericMemoryCache<long, UserInviteEntry?>
+Roblox\Roblox.Services\Users\UserCache.cs:20:public class UserApplicationCache : GenericMemoryCache<long, UserApplicationEntry?>
+Roblox\Roblox.Services\Users\UserCache.cs:28:public class GetUserByIdCache : GenericMemoryCache<long, UserInfo>
+Roblox\Roblox.Services\Users\UserCache.cs:36:public class GetUserByNameCache : GenericMemoryCache<string, UserInfo>
+Roblox\Roblox.Services\Users\UserCache.cs:44:public class UserThemeCache : GenericMemoryCache<long, ThemeTypes>
+Roblox\Roblox.Services\Users\UserCache.cs:49:public class UserAvatarPageStyleCache : GenericMemoryCache<long, AvatarPageStyle>
+Roblox\Roblox.Services\Users\UserCache.cs:54:public class UserConnectionsCache : GenericMemoryCache<long, UserConnections>
+Roblox\Roblox.Services\Users\UserCache.cs:59:public class UserYearCache : GenericMemoryCache<long, WebsiteYear>
+Roblox\Roblox.Services\Users\Users.cs:31:public class UsersService : ServiceBase, IService
+Roblox\Roblox.UnitTest\UnitTest1.cs:5:public class ImageTest
+Roblox\Roblox.Website\Controllers\ControllerBase.cs:11:    public class ControllerBase : Microsoft.AspNetCore.Mvc.ControllerBase
+Roblox\Roblox.Website\Controllers\ControllerBase.cs:175:        private class RedisIpHashSetupV1
+Roblox\Roblox.Website\Controllers\ControllerServices.cs:10:    public class ControllerServices
+Roblox\Roblox.Website\Controllers\ControllerServices.cs:35:        public CooldownService cooldown { get; } = new();
+Roblox\Roblox.Website\Controllers\ControllerServicesExtended.cs:19:    /// This class extends ControllerServices. It is meant for extension methods that are used by multiple controllers, but also require access to multiple services.
+Roblox\Roblox.Website\Controllers\ControllerServicesExtended.cs:21:    public class ControllerServicesExtended : ControllerServices
+Roblox\Roblox.Website\Controllers\ErrorController.cs:12:public class ErrorController : ControllerBase
+Roblox\Roblox.Website\Controllers\ErrorController.cs:75:        else if (exception is Roblox.Services.CooldownException)
+Roblox\Roblox.Website\Controllers\Internal\AdminApi.cs:56:public class AdminApiController : ControllerBase
+Roblox\Roblox.Website\Controllers\Internal\AdminApi.cs:355:        if (!await services.cooldown.TryIncrementBucketCooldown("GiftAssetV2_Hour", 20, TimeSpan.FromHours(12)))
+Roblox\Roblox.Website\Controllers\Internal\AdminApi.cs:501:                if (!await services.cooldown.TryIncrementBucketCooldown($"ModerateApprovedItem_Hour:{safeUserSession.userId}", 150, TimeSpan.FromHours(1)))
+Roblox\Roblox.Website\Controllers\Internal\AdminApi.cs:503:                if (!await services.cooldown.TryIncrementBucketCooldown($"ModerateApprovedItem_Day:{safeUserSession.userId}", 400, TimeSpan.FromDays(1)))
+Roblox\Roblox.Website\Controllers\Internal\AdminApi.cs:505:                if (!await services.cooldown.TryIncrementBucketCooldown($"ModerateApprovedItem_Day_Global", 5000, TimeSpan.FromDays(1)))
+Roblox\Roblox.Website\Controllers\Internal\AdminApi.cs:591:            if (!await services.cooldown.TryIncrementBucketCooldown("DeleteAssetV1_Hour", 30, TimeSpan.FromHours(1)))
+Roblox\Roblox.Website\Controllers\Internal\AdminApi.cs:595:            if (!await services.cooldown.TryIncrementBucketCooldown("DeleteAssetV1_Day", 100, TimeSpan.FromDays(1)))
+Roblox\Roblox.Website\Controllers\Internal\AdminApi.cs:923:        if (!await services.cooldown.TryIncrementBucketCooldown("BanUserV1:" + safeUserSession.userId, 30, TimeSpan.FromHours(1)))
+Roblox\Roblox.Website\Controllers\Internal\AdminApi.cs:2051:            var canUploadLocal = await services.cooldown.TryIncrementBucketCooldown(
+Roblox\Roblox.Website\Controllers\Internal\AdminApi.cs:2056:            var canUploadLocalDay = await services.cooldown.TryIncrementBucketCooldown(
+Roblox\Roblox.Website\Controllers\Internal\AdminApi.cs:2062:                await services.cooldown.TryIncrementBucketCooldown("CopyItemFromRobloxGlobalV1", 50,
+Roblox\Roblox.Website\Controllers\Internal\BotApi\CustomerSupport.cs:12:    public class CustomerSupport : ControllerBase
+Roblox\Roblox.Website\Controllers\Internal\BotApi\DiscordLinkController.cs:13:    public class DiscordLink: ControllerBase
+Roblox\Roblox.Website\Controllers\Internal\BotApi\GambleController.cs:12:    public class GambleBot : ControllerBase
+Roblox\Roblox.Website\Controllers\Internal\BotApi\GambleController.cs:42:            // cooldown is every 2 seconds
+Roblox\Roblox.Website\Controllers\Internal\BotApi\GambleController.cs:43:            if (!await services.cooldown.TryCooldownCheck($"CoinFlipV1_Cooldown:{userInfo.userId}", TimeSpan.FromSeconds(2)))
+Roblox\Roblox.Website\Controllers\Internal\BotApi\GambleController.cs:47:                    message = "You are on cooldown, please wait a few seconds before gambling again",
+Roblox\Roblox.Website\Controllers\Internal\BotApi\GambleController.cs:53:            if (!await services.cooldown.TryIncrementBucketCooldown($"CoinFlipV1_Day:{userInfo.userId}", 20, TimeSpan.FromDays(1)))
+Roblox\Roblox.Website\Controllers\Internal\BotApi\ModerationController.cs:8:    public class ModerationBot: ControllerBase
+Roblox\Roblox.Website\Controllers\Internal\BotApi\UserInfo.cs:11:    public class UserInfoBot: ControllerBase
+Roblox\Roblox.Website\Controllers\Internal\BotApi\WebInfo.cs:10:    public class WebInfo: ControllerBase
+Roblox\Roblox.Website\Controllers\Internal\BypassController.cs:55:    public class BypassController : ControllerBase
+Roblox\Roblox.Website\Controllers\Internal\BypassController.cs:846:            var items = new XElement("Item", new XAttribute("class", "BodyColors"));
+Roblox\Roblox.Website\Controllers\Internal\BypassController.Metadata.cs:3:    internal static class BypassControllerMetadata
+Roblox\Roblox.Website\Controllers\Internal\EconomyChat.cs:11:public class EconomyChat : ControllerBase
+Roblox\Roblox.Website\Controllers\Internal\WebController.cs:28:public class WebController : ControllerBase
+Roblox\Roblox.Website\Controllers\Internal\WebController.cs:594:        if (!await services.cooldown.TryCooldownCheck($"CreatePlaceInGame:{safeUserSession.userId}", TimeSpan.FromSeconds(5)))
+Roblox\Roblox.Website\Controllers\Internal\WebController.cs:846:        if (!await services.cooldown.TryCooldownCheck("Develop:Upload:StartUserId:" + userSession.userId, TimeSpan.FromSeconds(5))
+Roblox\Roblox.Website\Controllers\Internal\WebController.cs:847:            || !await services.cooldown.TryCooldownCheck("Develop:Upload:StartIp:" + GetIP(), TimeSpan.FromSeconds(5)))
+Roblox\Roblox.Website\Controllers\Internal\WebController2021.cs:16:public class ViewUserInfo
+Roblox\Roblox.Website\Controllers\Internal\WebController2021.cs:46:public class WebController2021 : ControllerBase
+Roblox\Roblox.Website\Controllers\RobloxApi\Asset.cs:20:public class Asset : ControllerBase
+Roblox\Roblox.Website\Controllers\RobloxApi\Avatar.cs:19:public class AvatarRBX : ControllerBase
+Roblox\Roblox.Website\Controllers\RobloxApi\Catalog.cs:13:public class Catalog : ControllerBase
+Roblox\Roblox.Website\Controllers\RobloxApi\Chat.cs:13:public class Chat : ControllerBase
+Roblox\Roblox.Website\Controllers\RobloxApi\Datastore.cs:13:    public class Datastores : ControllerBase
+Roblox\Roblox.Website\Controllers\RobloxApi\Economy.cs:24:public class Economy : ControllerBase
+Roblox\Roblox.Website\Controllers\RobloxApi\FeatureFlagsRoblox.cs:11:    public class FeatureFlagsRoblox: ControllerBase
+Roblox\Roblox.Website\Controllers\RobloxApi\Followers.cs:9:    public class Followers: ControllerBase
+Roblox\Roblox.Website\Controllers\RobloxApi\Friends.cs:18:    public class FollowerRequest
+Roblox\Roblox.Website\Controllers\RobloxApi\Friends.cs:22:    public class FriendRequest
+Roblox\Roblox.Website\Controllers\RobloxApi\Friends.cs:28:    public class FilterSocialRequest
+Roblox\Roblox.Website\Controllers\RobloxApi\Friends.cs:36:    public class Friends: ControllerBase
+Roblox\Roblox.Website\Controllers\RobloxApi\GameListing.cs:15:    public class GameListing: ControllerBase
+Roblox\Roblox.Website\Controllers\RobloxApi\Inventory.cs:9:    public class Inventory: ControllerBase
+Roblox\Roblox.Website\Controllers\RobloxApi\Locales.cs:10:    public class Locales: ControllerBase
+Roblox\Roblox.Website\Controllers\RobloxApi\Login.cs:18:    public class RobloxLogin: ControllerBase
+Roblox\Roblox.Website\Controllers\RobloxApi\Login.cs:415:            var attemptCount = (await services.cooldown.GetBucketDataForKey(loginKey, TimeSpan.FromMinutes(10))).ToArray();
+Roblox\Roblox.Website\Controllers\RobloxApi\Login.cs:417:            if (!await services.cooldown.TryIncrementBucketCooldown(loginKey, 15, TimeSpan.FromMinutes(10), attemptCount, true))
+Roblox\Roblox.Website\Controllers\RobloxApi\Marketplace.cs:18:    public class Marketplace : ControllerBase 
+Roblox\Roblox.Website\Controllers\RobloxApi\Sets.cs:9:    public class Sets: ControllerBase
+Roblox\Roblox.Website\Controllers\RobloxApi\SiteInfo.cs:9:    public class SiteAlertMobile: ControllerBase
+Roblox\Roblox.Website\Controllers\RobloxApi\Studio.cs:8:    public class StudioScripts : ControllerBase
+Roblox\Roblox.Website\Controllers\RobloxApi\Telemetry.cs:9:    public class Telementry : ControllerBase
+Roblox\Roblox.Website\Controllers\RobloxApi\Thumbnails.cs:13:public class RbxThumbnails : ControllerBase
+Roblox\Roblox.Website\Controllers\RobloxApi\UniversalApp.cs:9:    public class UniversalAppConfiguration: ControllerBase
+Roblox\Roblox.Website\Controllers\RobloxApi\Universe.cs:26:public class UniverseV1 : ControllerBase
+Roblox\Roblox.Website\Controllers\RobloxApi\Users.cs:10:public class Users : ControllerBase
+Roblox\Roblox.Website\Controllers\RobloxApi\Voice.cs:14:public class Voice : ControllerBase
+Roblox\Roblox.Website\Controllers\RobloxPageModel.cs:8:public class RobloxPageModel : PageModel
+Roblox\Roblox.Website\Controllers\v1\AccountInformation.cs:12:public class AccountInformationControllerV1 : ControllerBase
+Roblox\Roblox.Website\Controllers\v1\AccountSettings.cs:10:public class AccountSettingsControllerV1 : ControllerBase
+Roblox\Roblox.Website\Controllers\v1\Ads.cs:17:public class AdsControllerV1 : ControllerBase
+Roblox\Roblox.Website\Controllers\v1\Ads.cs:32:        if (!await services.cooldown.TryCooldownCheck("CreateAdV1:" + safeUserSession.userId, TimeSpan.FromSeconds(5)))
+Roblox\Roblox.Website\Controllers\v1\Ads.cs:49:        if (!await services.cooldown.TryCooldownCheck("CreateAdV1:" + safeUserSession.userId, TimeSpan.FromSeconds(5)))
+Roblox\Roblox.Website\Controllers\v1\Api.cs:9:public class ApiController : ControllerBase
+Roblox\Roblox.Website\Controllers\v1\ApisController.cs:7:public class ApisController : ControllerBase
+Roblox\Roblox.Website\Controllers\v1\Authentication.cs:12:public class AuthenticationController : ControllerBase
+Roblox\Roblox.Website\Controllers\v1\Avatar.cs:21:public class AvatarControllerV1 : ControllerBase, IService
+Roblox\Roblox.Website\Controllers\v1\Avatar.cs:573:    public class AvatarMetadata
+Roblox\Roblox.Website\Controllers\v1\Avatar.cs:583:    public class BodyColor
+Roblox\Roblox.Website\Controllers\v1\Badges.cs:15:public class BadgesControllerV1 : ControllerBase
+Roblox\Roblox.Website\Controllers\v1\BillingController.cs:8:public class BillingControllerV1
+Roblox\Roblox.Website\Controllers\v1\Catalog.cs:14:public class CatalogControllerV1 : ControllerBase
+Roblox\Roblox.Website\Controllers\v1\Contacts.cs:7:public class ContactsControllerV1
+Roblox\Roblox.Website\Controllers\v1\Develop.cs:21:public class DevelopControllerV1 : ControllerBase
+Roblox\Roblox.Website\Controllers\v1\Develop.cs:176:        if (!await services.cooldown.TryCooldownCheck("Place:RevertVersion:StartUserId:" + safeUserSession.userId, TimeSpan.FromSeconds(5)) || !await services.cooldown.TryCooldownCheck("Place:RevertVersion:StartIp:" + GetIP(), TimeSpan.FromSeconds(5)))
+Roblox\Roblox.Website\Controllers\v1\Develop.cs:223:        if (!await services.cooldown.TryCooldownCheck("Place:GameIcon:StartUserId:" + safeUserSession.userId, TimeSpan.FromSeconds(5))
+Roblox\Roblox.Website\Controllers\v1\Develop.cs:224:            || !await services.cooldown.TryCooldownCheck("Place:GameIcon:StartIp:" + GetIP(), TimeSpan.FromSeconds(5)))
+Roblox\Roblox.Website\Controllers\v1\Develop.cs:264:        if (!await services.cooldown.TryCooldownCheck("Universe:ThumbnailUpload:StartUserId:" + safeUserSession.userId, TimeSpan.FromSeconds(5))
+Roblox\Roblox.Website\Controllers\v1\Develop.cs:265:            || !await services.cooldown.TryCooldownCheck("Universe:ThumbnailUpload:StartIp:" + GetIP(), TimeSpan.FromSeconds(5)))
+Roblox\Roblox.Website\Controllers\v1\Develop.cs:312:        if (!await services.cooldown.TryCooldownCheck("Universe:ThumbnailUpload:StartUserId:" + safeUserSession.userId, TimeSpan.FromSeconds(5)) || !await services.cooldown.TryCooldownCheck("Universe:ThumbnailUpload:StartIp:" + GetIP(), TimeSpan.FromSeconds(5)))
+Roblox\Roblox.Website\Controllers\v1\Develop.cs:344:        if (!await services.cooldown.TryCooldownCheck("Place:GameIcon:StartUserId:" + safeUserSession.userId, TimeSpan.FromSeconds(5)) || !await services.cooldown.TryCooldownCheck("Place:GameIcon:StartIp:" + GetIP(), TimeSpan.FromSeconds(5)))
+Roblox\Roblox.Website\Controllers\v1\Economy.cs:20:public class EconomyControllerV1 : ControllerBase
+Roblox\Roblox.Website\Controllers\v1\Followings.cs:7:public class FollowingsControllerV1 : ControllerBase
+Roblox\Roblox.Website\Controllers\v1\ForumsController.cs:14:public class ForumsControllerV1 : ControllerBase
+Roblox\Roblox.Website\Controllers\v1\Friends.cs:12:public class FriendsControllerV1 : ControllerBase
+Roblox\Roblox.Website\Controllers\v1\Games.cs:17:public class GamesControllerV1 : ControllerBase
+Roblox\Roblox.Website\Controllers\v1\Games.cs:46:                "classics", new
+Roblox\Roblox.Website\Controllers\v1\Games.cs:48:                    token = "classics",
+Roblox\Roblox.Website\Controllers\v1\Games.cs:49:                    name = "Classics",
+Roblox\Roblox.Website\Controllers\v1\Games.cs:50:                    displayName = "Classics",
+Roblox\Roblox.Website\Controllers\v1\Games.cs:111:            results.Add(sorts["classics"]);
+Roblox\Roblox.Website\Controllers\v1\Games.cs:165:                new { token = "T638364961735518277_Classic_a1f4", name = "Classic", tokenExpiryInSeconds = 3600 }
+Roblox\Roblox.Website\Controllers\v1\Games.cs:179:        // if (!await services.cooldown.TryIncrementBucketCooldown($"GetGames:{safeUserSession.userId}", 3, TimeSpan.FromSeconds(5)))
+Roblox\Roblox.Website\Controllers\v1\Groups.cs:25:public class GroupsControllerV1 : ControllerBase
+Roblox\Roblox.Website\Controllers\v1\Groups.cs:195:        catch (CooldownException)
+Roblox\Roblox.Website\Controllers\v1\InventoryController.cs:10:public class InventoryControllerV1 : ControllerBase
+Roblox\Roblox.Website\Controllers\v1\ItemConfiguration.cs:16:public class ItemConfigurationV1 : ControllerBase
+Roblox\Roblox.Website\Controllers\v1\Locale.cs:7:public class LocaleControllerV1
+Roblox\Roblox.Website\Controllers\v1\Metrics.cs:7:public class MetricsControllerV1
+Roblox\Roblox.Website\Controllers\v1\PremiumFeatures.cs:7:public class PremiumFeaturesControllerV1 : ControllerBase
+Roblox\Roblox.Website\Controllers\v1\Presence.cs:10:public class PresenceControllerV1 : ControllerBase
+Roblox\Roblox.Website\Controllers\v1\PrivateMessages.cs:11:public class PrivateMessagesControllerV1 : ControllerBase
+Roblox\Roblox.Website\Controllers\v1\Thumbnails.cs:16:public class ThumbnailsControllerV1 : ControllerBase
+Roblox\Roblox.Website\Controllers\v1\Trades.cs:18:public class TradesControllerV1 : ControllerBase
+Roblox\Roblox.Website\Controllers\v1\Users.cs:18:public class UsersControllerV1 : ControllerBase
+Roblox\Roblox.Website\Controllers\v2\Authentication.cs:15:public class AuthenticationControllerV2 : ControllerBase
+Roblox\Roblox.Website\Controllers\v2\Authentication.cs:102:        if (!await services.cooldown.TryCooldownCheck(
+Roblox\Roblox.Website\Controllers\v2\Authentication.cs:173:        if (!await services.cooldown.TryCooldownCheck(
+Roblox\Roblox.Website\Controllers\v2\Authentication.cs:256:        if (!await services.cooldown.TryCooldownCheck(
+Roblox\Roblox.Website\Controllers\v2\Badges.cs:13:public class BadgesControllerV2 : ControllerBase
+Roblox\Roblox.Website\Controllers\v2\Chat.cs:11:public class ChatControllerV2 : ControllerBase
+Roblox\Roblox.Website\Controllers\v2\Develop.cs:8:public class DevelopControllerV2 : ControllerBase
+Roblox\Roblox.Website\Controllers\v2\Economy.cs:16:public class EconomyControllerV2 : ControllerBase
+Roblox\Roblox.Website\Controllers\v2\Games.cs:11:public class GamesControllerV2 : ControllerBase
+Roblox\Roblox.Website\Controllers\v2\Groups.cs:11:public class GroupsControllerV2 : ControllerBase
+Roblox\Roblox.Website\Controllers\v2\Inventory.cs:16:public class InventoryControllerV2 : ControllerBase
+Roblox\Roblox.Website\Controllers\v2\Notifications.cs:7:public class NotificationsControllerV2 : ControllerBase
+Roblox\Roblox.Website\Controllers\WellKnown\Wellknown.cs:7:    public class WellKnown : ControllerBase
+Roblox\Roblox.Website\Documentation\ApiExplorerConvention.cs:5:public class ApiExplorerGetsOnlyConvention : IActionModelConvention
+Roblox\Roblox.Website\Documentation\HttpBotAuth.cs:8:    [AttributeUsage(AttributeTargets.Method | AttributeTargets.Class)]
+Roblox\Roblox.Website\Documentation\HttpBotAuth.cs:9:    public class BotAuthorizationAttribute : Attribute, IFilterFactory
+Roblox\Roblox.Website\Documentation\HttpBotAuth.cs:19:    public class BotAuthorizationFilter : IActionFilter
+Roblox\Roblox.Website\Documentation\HttpGetBypass.cs:11:    public class BypassConfiguration
+Roblox\Roblox.Website\Documentation\HttpGetBypass.cs:39:    public class HttpGetBypassAttribute : HttpMethodAttribute
+Roblox\Roblox.Website\Documentation\HttpGetBypass.cs:88:    public class HttpDeleteBypassAttribute : HttpMethodAttribute
+Roblox\Roblox.Website\Documentation\HttpGetBypass.cs:119:    public class HttpPatchBypassAttribute : HttpMethodAttribute
+Roblox\Roblox.Website\Documentation\HttpGetBypass.cs:149:    public class HttpPostBypassAttribute : HttpMethodAttribute
+Roblox\Roblox.Website\Documentation\SwaggerFileOperationFilter.cs:6:public class SwaggerFileOperationFilter : IOperationFilter  
+Roblox\Roblox.Website\Exceptions\ExceptionEntry.cs:3:    public class ExceptionEntry
+Roblox\Roblox.Website\Exceptions\Http\BadRequestException.cs:5:    public class BadRequestException : HttpBaseException, IHttpException
+Roblox\Roblox.Website\Exceptions\Http\ForbiddenException.cs:5:public class ForbiddenException : HttpBaseException, IHttpException
+Roblox\Roblox.Website\Exceptions\Http\HttpException.cs:5:    public class HttpException : HttpBaseException, IHttpException
+Roblox\Roblox.Website\Exceptions\Http\NotFoundException.cs:5:    public class NotFoundException : HttpBaseException, IHttpException
+Roblox\Roblox.Website\Exceptions\Http\StaffException.cs:5:public class StaffException : HttpBaseException, IHttpException
+Roblox\Roblox.Website\Exceptions\Http\TooManyRequestsException.cs:5:    public class TooManyRequestsException : HttpBaseException, IHttpException
+Roblox\Roblox.Website\Exceptions\Http\UnauthorizedException.cs:5:public class UnauthorizedException : HttpBaseException, IHttpException
+Roblox\Roblox.Website\Exceptions\HttpBaseException.cs:5:    public class HttpBaseException : System.Exception, IHttpException
+Roblox\Roblox.Website\Filters\HttpCacheAttribute.cs:8:public class HttpCacheFilter : ActionFilterAttribute, IAsyncActionFilter
+Roblox\Roblox.Website\Filters\StaffFilterAttribute.cs:10:public class StaffFilter : ActionFilterAttribute, IAsyncActionFilter
+Roblox\Roblox.Website\Hubs\ChatHub.cs:11:public class ChatHub : Hub
+Roblox\Roblox.Website\Hubs\MessageRouterHub.cs:8:public class MessageRouterHub : Hub
+Roblox\Roblox.Website\Lib\Timers.cs:5:public class MiddlewareTimerResult
+Roblox\Roblox.Website\Lib\Timers.cs:11:public class MiddlewareTimer
+Roblox\Roblox.Website\Middleware\ApplicationGuardMiddleware.cs:18:public class ApplicationGuardMiddleware
+Roblox\Roblox.Website\Middleware\ApplicationGuardMiddleware.cs:401:public static class ApplicationGuardMiddlewareExtensions
+Roblox\Roblox.Website\Middleware\CorsMiddleware.cs:3:public class RobloxPlayerCorsMiddleware
+Roblox\Roblox.Website\Middleware\CorsMiddleware.cs:59:public static class RobloxPlayerCorsMiddlewareExtensions
+Roblox\Roblox.Website\Middleware\CsrfMiddleware.cs:15:public class CsrfJwtEntry
+Roblox\Roblox.Website\Middleware\CsrfMiddleware.cs:21:public class CsrfMiddleware : ControllerServicesExtended
+Roblox\Roblox.Website\Middleware\CsrfMiddleware.cs:243:public static class CsrfMiddlewareExtension
+Roblox\Roblox.Website\Middleware\FrontendProxyMiddleware.cs:15:public class FrontendProxyMiddleware
+Roblox\Roblox.Website\Middleware\LoggingMiddleware.cs:7:public class RobloxLoggingMiddleware
+Roblox\Roblox.Website\Middleware\LoggingMiddleware.cs:46:public static class RobloxLoggingMiddlewareExtensions
+Roblox\Roblox.Website\Middleware\SessionMiddleware.cs:20:public class JwtEntry
+Roblox\Roblox.Website\Middleware\SessionMiddleware.cs:26:public class SessionMiddleware
+Roblox\Roblox.Website\Middleware\SessionMiddleware.cs:175:public static class SessionMiddlewareExtensions
+Roblox\Roblox.Website\Middleware\ThumbnailMiddleware.cs:8:    public class ThumbnailMiddleware
+Roblox\Roblox.Website\Middleware\TimerMiddleware.cs:7:public class TimerMiddleware
+Roblox\Roblox.Website\Middleware\TimerMiddleware.cs:36:public static class TimerMiddlewareExtensions
+Roblox\Roblox.Website\Pages\Auth\2FASetup.cshtml.cs:18:public class TotpSetup : RobloxPageModel
+Roblox\Roblox.Website\Pages\Auth\AccountDeletion.cshtml.cs:11:public class AccountDeletion : RobloxPageModel
+Roblox\Roblox.Website\Pages\Auth\Application.cshtml.cs:22:public class VerificationPhraseCookie
+Roblox\Roblox.Website\Pages\Auth\Application.cshtml.cs:27:public class DiscordInfo
+Roblox\Roblox.Website\Pages\Auth\Application.cshtml.cs:32:public class Application : RobloxPageModel
+Roblox\Roblox.Website\Pages\Auth\Application.cshtml.cs:335:        if (!await services.cooldown.TryCooldownCheck(joinRlKey, TimeSpan.FromMinutes(5)))
+Roblox\Roblox.Website\Pages\Auth\Application.cshtml.cs:414:            await services.cooldown.ResetCooldown(joinRlKey);
+Roblox\Roblox.Website\Pages\Auth\ApplicationCheck.cshtml.cs:6:public class ApplicationCheck : RobloxPageModel
+Roblox\Roblox.Website\Pages\Auth\Captcha.cshtml.cs:9:public class Captcha : RobloxPageModel
+Roblox\Roblox.Website\Pages\Auth\Contact.cshtml.cs:5:public class Contact : RobloxPageModel
+Roblox\Roblox.Website\Pages\Auth\Discord.cshtml.cs:5:public class Discord : RobloxPageModel
+Roblox\Roblox.Website\Pages\Auth\Donate.cshtml..cs:5:public class Donate : RobloxPageModel
+Roblox\Roblox.Website\Pages\Auth\Home.cshtml.cs:6:public class Home : RobloxPageModel
+Roblox\Roblox.Website\Pages\Auth\Login.cshtml.cs:18:public class Login : RobloxPageModel
+Roblox\Roblox.Website\Pages\Auth\Login.cshtml.cs:129:        if (!await services.cooldown.TryCooldownCheck("LoginAttemptV1:" + hashedIp, TimeSpan.FromSeconds(5)))
+Roblox\Roblox.Website\Pages\Auth\Login.cshtml.cs:139:        var attemptCount = (await services.cooldown.GetBucketDataForKey(loginKey, TimeSpan.FromMinutes(10))).ToArray();
+Roblox\Roblox.Website\Pages\Auth\Login.cshtml.cs:141:        if (!await services.cooldown.TryIncrementBucketCooldown(loginKey, 15, TimeSpan.FromMinutes(10), attemptCount, true))
+Roblox\Roblox.Website\Pages\Auth\NotApproved.cshtml.cs:11:public class NotApproved : RobloxPageModel
+Roblox\Roblox.Website\Pages\Auth\PasswordReset.cshtml.cs:17:public class PasswordReset : RobloxPageModel
+Roblox\Roblox.Website\Pages\Auth\PasswordReset.cshtml.cs:25:    private const string Cooldown = "Too many attempts. Try again in a few minutes.";
+Roblox\Roblox.Website\Pages\Auth\PasswordReset.cshtml.cs:122:            // cooldown 1
+Roblox\Roblox.Website\Pages\Auth\PasswordReset.cshtml.cs:123:            if (!await services.cooldown.TryIncrementBucketCooldown("PasswordResetIP:V1:"+hashedIp, 10, TimeSpan.FromHours(1)))
+Roblox\Roblox.Website\Pages\Auth\PasswordReset.cshtml.cs:125:                errorMessage = Cooldown;
+Roblox\Roblox.Website\Pages\Auth\PasswordReset.cshtml.cs:128:            // cooldown 2
+Roblox\Roblox.Website\Pages\Auth\PasswordReset.cshtml.cs:129:            if (!await services.cooldown.TryIncrementBucketCooldown("PasswordResetUserID:V1:"+userId, 10, TimeSpan.FromMinutes(10)))
+Roblox\Roblox.Website\Pages\Auth\PasswordReset.cshtml.cs:131:                errorMessage = Cooldown;
+Roblox\Roblox.Website\Pages\Auth\Privacy.cshtml.cs:5:public class Privacy : RobloxPageModel
+Roblox\Roblox.Website\Pages\Auth\Signup.cshtml.cs:26:public class Signup : RobloxPageModel
+Roblox\Roblox.Website\Pages\Auth\Signup.cshtml.cs:102:        // Initial cooldown check - to prevent people spamming attempts
+Roblox\Roblox.Website\Pages\Auth\Signup.cshtml.cs:103:        if (!await services.cooldown.TryCooldownCheck($"signup:step1:" + ip, TimeSpan.FromSeconds(5)))
+Roblox\Roblox.Website\Pages\Auth\Signup.cshtml.cs:105:            Writer.Info(LogGroup.SignUp, "Sign up failed, cooldown step 1");
+Roblox\Roblox.Website\Pages\Auth\Signup.cshtml.cs:205:        // Created user, so add final cooldown
+Roblox\Roblox.Website\Pages\Auth\Signup.cshtml.cs:207:        if (!await services.cooldown.TryCooldownCheck(signupFinalKey, TimeSpan.FromMinutes(5)))
+Roblox\Roblox.Website\Pages\Auth\Signup.cshtml.cs:221:            await services.cooldown.ResetCooldown(signupFinalKey);
+Roblox\Roblox.Website\Pages\Auth\Ticket.cshtml.cs:8:public class Ticket : RobloxPageModel
+Roblox\Roblox.Website\Pages\Auth\TOS.cshtml.cs:5:public class TOS : RobloxPageModel
+Roblox\Roblox.Website\Pages\IDE\EditPlace.cshtml.cs:12:public class EditPlace : RobloxPageModel
+Roblox\Roblox.Website\Pages\IDE\StartPage.cshtml.cs:12:public class StartPage : RobloxPageModel
+Roblox\Roblox.Website\Pages\IDE\Toolbox.cshtml.cs:12:public class Toolbox : RobloxPageModel
+Roblox\Roblox.Website\Pages\IDE\Upload.cshtml.cs:9:public class Upload : RobloxPageModel
+Roblox\Roblox.Website\Pages\Internal\Chat.cshtml.cs:5:public class Chat : RobloxPageModel
+Roblox\Roblox.Website\Pages\Internal\CollectibleInventory.cshtml.cs:9:public class CollectibleInventory : RobloxPageModel
+Roblox\Roblox.Website\Pages\Internal\CreatePlace.cshtml.cs:6:public class CreatePlace : RobloxPageModel
+Roblox\Roblox.Website\Pages\Internal\Membership.cshtml.cs:8:public class Membership : RobloxPageModel
+Roblox\Roblox.Website\Pages\Internal\MigrateToApplication.cshtml.cs:5:public class MigrateToApplication : RobloxPageModel
+Roblox\Roblox.Website\Pages\Internal\Promocodes.cshtml.cs:6:public class Promocodes : RobloxPageModel
+Roblox\Roblox.Website\Pages\Internal\Referral.cshtml.cs:10:public class Referral : RobloxPageModel
+Roblox\Roblox.Website\Pages\Internal\ReportAbuse.cshtml.cs:11:public class ReportAbuse : RobloxPageModel
+Roblox\Roblox.Website\Pages\Internal\ReportAbuse.cshtml.cs:63:        if (!await services.cooldown.TryCooldownCheck($"AbuseReportV1_Cooldown:{userSession.userId}", TimeSpan.FromMinutes(20)))
+Roblox\Roblox.Website\Pages\Internal\RobuxExchange.cshtml.cs:10:    public class RobuxExchange : RobloxPageModel
+Roblox\Roblox.Website\Pages\Internal\TixExchange.cshtml.cs:11:    public class TixExchange : RobloxPageModel
+Roblox\Roblox.Website\Pages\Internal\Year.cshtml.cs:8:public class Year : RobloxPageModel
+Roblox\Roblox.Website\Pages\UserFeed.cshtml.cs:12:public class UserFeed : RobloxPageModel
+Roblox\Roblox.Website\Pages\UserSponsorship.cshtml.cs:13:public class UserSponsorship : RobloxPageModel
+Roblox\Roblox.Website\WebsiteModels\Admin.cs:8:public class SetAlertRequest
+Roblox\Roblox.Website\WebsiteModels\Admin.cs:14:public class CreateUserRequest
+Roblox\Roblox.Website\WebsiteModels\Admin.cs:20:public class GiftUsersRequest
+Roblox\Roblox.Website\WebsiteModels\Admin.cs:25:public class ForceApplicationReq
+Roblox\Roblox.Website\WebsiteModels\Admin.cs:30:public class PendingAssetEntry
+Roblox\Roblox.Website\WebsiteModels\Admin.cs:40:public class ModerateAssetRequest
+Roblox\Roblox.Website\WebsiteModels\Admin.cs:47:public class AssetModerationStatus
+Roblox\Roblox.Website\WebsiteModels\Admin.cs:56:public class ModerateIconRequest
+Roblox\Roblox.Website\WebsiteModels\Admin.cs:63:public class IconToggleRequest
+Roblox\Roblox.Website\WebsiteModels\Admin.cs:70:public class BanUserRequest
+Roblox\Roblox.Website\WebsiteModels\Admin.cs:78:public class CreateMessageRequest
+Roblox\Roblox.Website\WebsiteModels\Admin.cs:85:public class UserIdRequest
+Roblox\Roblox.Website\WebsiteModels\Admin.cs:90:public class GiveBadgeRequest
+Roblox\Roblox.Website\WebsiteModels\Admin.cs:96:public class GiveUserTicketsRequest
+Roblox\Roblox.Website\WebsiteModels\Admin.cs:103:public class GiveUserRobuxRequest
+Roblox\Roblox.Website\WebsiteModels\Admin.cs:109:public class RemoveItemRequest
+Roblox\Roblox.Website\WebsiteModels\Admin.cs:115:public class GiveItemRequest
+Roblox\Roblox.Website\WebsiteModels\Admin.cs:123:public class DeleteUsernameRequest
+Roblox\Roblox.Website\WebsiteModels\Admin.cs:129:public class DeleteForumPostRequest
+Roblox\Roblox.Website\WebsiteModels\Admin.cs:134:public class ReRenderRequest
+Roblox\Roblox.Website\WebsiteModels\Admin.cs:139:public class UpdateProductRequest
+Roblox\Roblox.Website\WebsiteModels\Admin.cs:154:public class CreateAssetRequest
+Roblox\Roblox.Website\WebsiteModels\Admin.cs:171:public class CreateClothingRequest
+Roblox\Roblox.Website\WebsiteModels\Admin.cs:183:public class MigrateItemRequest
+Roblox\Roblox.Website\WebsiteModels\Admin.cs:190:public class MigrateItemAlternateRequest
+Roblox\Roblox.Website\WebsiteModels\Admin.cs:196:public class CreateAssetVersionRequest
+Roblox\Roblox.Website\WebsiteModels\Admin.cs:202:public class DateTimeSerialized
+Roblox\Roblox.Website\WebsiteModels\Admin.cs:207:public class CopyAssetRequest
+Roblox\Roblox.Website\WebsiteModels\Admin.cs:213:public class AssetVersionWithIdEntry
+Roblox\Roblox.Website\WebsiteModels\Admin.cs:218:public class RefundTransactionEntry
+Roblox\Roblox.Website\WebsiteModels\Configuration.cs:5:public class StaffEntry
+Roblox\Roblox.Website\WebsiteModels\Request\Assets\Advertisements.cs:3:public class CreateAdvertisementRequest
+Roblox\Roblox.Website\WebsiteModels\Request\Assets\Advertisements.cs:9:public class RunAdvertisementRequest
+Roblox\Roblox.Website\WebsiteModels\Request\Catalog.cs:10:public class MultiGetEntry
+Roblox\Roblox.Website\WebsiteModels\Request\Catalog.cs:17:public class MultiGetRequest
+Roblox\Roblox.Website\WebsiteModels\Request\Catalog.cs:23:public class UpdateAssetRequest
+Roblox\Roblox.Website\WebsiteModels\Request\Catalog.cs:33:public class UpdateGamePassAssetRequest
+Roblox\Roblox.Website\WebsiteModels\Request\Catalog.cs:43:public class MultiGetAssetDetailsRequest
+Roblox\Roblox.Website\WebsiteModels\Request\Catalog.cs:48:public class UpdateAssetPriceRequest
+Roblox\Roblox.Website\WebsiteModels\Request\Catalog.cs:54:public class AddToProfileCollectionsRequest
+Roblox\Roblox.Website\WebsiteModels\Request\Catalog.cs:60:public class AddCommentRequest
+Roblox\Roblox.Website\WebsiteModels\Request\Catalog.cs:66:public class UploadAssetRequest
+Roblox\Roblox.Website\WebsiteModels\Request\Catalog.cs:79:public class UploadAssetVersionRequest
+Roblox\Roblox.Website\WebsiteModels\Request\Games.cs:5:public class JoinGameRequest
+Roblox\Roblox.Website\WebsiteModels\Request\Games.cs:11:public class ReportActivity
+Roblox\Roblox.Website\WebsiteModels\Request\Games.cs:18:public class ReportPlayerActivity
+Roblox\Roblox.Website\WebsiteModels\Request\Games.cs:27:public class ValidateTicketRequest
+Roblox\Roblox.Website\WebsiteModels\Request\Games.cs:45:public class FilterTextRequest
+Roblox\Roblox.Website\WebsiteModels\Request\Groups\Groups.cs:6:public class SetDescriptionRequest
+Roblox\Roblox.Website\WebsiteModels\Request\Groups\Groups.cs:12:public class SetPrimaryGroupRequest
+Roblox\Roblox.Website\WebsiteModels\Request\Groups\Groups.cs:17:public class GetGroupPoliciesRequest
+Roblox\Roblox.Website\WebsiteModels\Request\Groups\Groups.cs:22:public class CreateGroupRequest
+Roblox\Roblox.Website\WebsiteModels\Request\Groups\Groups.cs:32:public class PayoutRecipient
+Roblox\Roblox.Website\WebsiteModels\Request\Groups\Groups.cs:38:public class PayoutRequest
+Roblox\Roblox.Website\WebsiteModels\Request\Groups\Permissions.cs:5:public class UpdatePermissionsRequest
+Roblox\Roblox.Website\WebsiteModels\Request\Groups\Roles.cs:3:public class SetRoleRequest
+Roblox\Roblox.Website\WebsiteModels\Request\Groups\Roles.cs:8:public class CreateRoleRequest
+Roblox\Roblox.Website\WebsiteModels\Request\Groups\Social.cs:5:public class UpdateSocialLinkRequest
+Roblox\Roblox.Website\WebsiteModels\Request\Groups\Status.cs:3:public class UpdateStatusRequest
+Roblox\Roblox.Website\WebsiteModels\Request\Groups\Wall.cs:6:public class CreateWallPostRequest
+Roblox\Roblox.Website\WebsiteModels\Request\Thumbnails.cs:3:public class BatchRequestEntry
+Roblox\Roblox.Website\WebsiteModels\Request\Ticket.cs:3:public class RedeemTicket
+Roblox\Roblox.Website\WebsiteModels\Request\Users\Avatar.cs:6:public class SetWearingAssetsRequest
+Roblox\Roblox.Website\WebsiteModels\Request\Users\Avatar.cs:11:public class SetBodyAttributesRequest
+Roblox\Roblox.Website\WebsiteModels\Request\Users\Avatar.cs:16:public class SetColorsRequest : Roblox.Dto.Avatar.ColorEntry
+Roblox\Roblox.Website\WebsiteModels\Request\Users\Avatar.cs:21:public class SetAvatarTypeRequest
+Roblox\Roblox.Website\WebsiteModels\Request\Users\Avatar.cs:26:public class CreateOutfitRequest
+Roblox\Roblox.Website\WebsiteModels\Request\Users\Avatar.cs:31:public class UpdateOutfitRequest
+Roblox\Roblox.Website\WebsiteModels\Request\Users\Description.cs:3:public class UpdateDescriptionRequest
+Roblox\Roblox.Website\WebsiteModels\Request\Users\Gender.cs:3:public class UpdateGenderRequest
+Roblox\Roblox.Website\WebsiteModels\Request\Users\Gender.cs:8:public class UpdateAvPageStyleRequest
+Roblox\Roblox.Website\WebsiteModels\Request\Users\Messages.cs:3:public class SendMessageRequest
+Roblox\Roblox.Website\WebsiteModels\Request\Users\Messages.cs:12:public class MultiUpdateMessagesRequest
+Roblox\Roblox.Website\WebsiteModels\Request\Users\Presence.cs:3:public class PresenceRequest
+Roblox\Roblox.Website\WebsiteModels\Request\Users\Privacy.cs:5:public class SetInventoryPrivacyRequest
+Roblox\Roblox.Website\WebsiteModels\Request\Users\Privacy.cs:10:public class SetTradePrivacyRequest
+Roblox\Roblox.Website\WebsiteModels\Request\Users\Privacy.cs:15:public class SetTradeValueRequest
+Roblox\Roblox.Website\WebsiteModels\Request\Users\Privacy.cs:20:public class PrivateMessagePrivacyRequest
+Roblox\Roblox.Website\WebsiteModels\Request\Users\Theme.cs:5:public class SetThemeRequest
+Roblox\Roblox.Website\WebsiteModels\Response\Assets\MigrateItem.cs:13:public class AssetTypeNotAllowedException : Exception
+Roblox\Roblox.Website\WebsiteModels\Response\Assets\MigrateItem.cs:21:public class MigrateItem
+Roblox\Roblox.Website\WebsiteModels\Response\Authentication\Login.cs:2:public class LoginRequest
+Roblox\Roblox.Website\WebsiteModels\Response\Authentication\Login.cs:10:public class LegacyLoginRequest
+Roblox\Roblox.Website\WebsiteModels\Response\Authentication\Passwords.cs:3:public class ChangePasswordRequest
+Roblox\Roblox.Website\WebsiteModels\Response\Authentication\Signup.cs:3:public class SignUpRequest
+Roblox\Roblox.Website\WebsiteModels\Response\Authentication\Signup.cs:12:public class SignupResponse
+Roblox\Roblox.Website\WebsiteModels\Response\Authentication\TwoFactor.cs:3:public class TwoFactor
+Roblox\Roblox.Website\WebsiteModels\Response\Authentication\TwoFactor.cs:10:public class TwoFactorEmail
+Roblox\Roblox.Website\WebsiteModels\Response\Authentication\TwoFactor.cs:17:public class TwoFactorEmailLogin
+Roblox\Roblox.Website\WebsiteModels\Response\Authentication\TwoFactor.cs:24:public class TwoFactorLegacy
+Roblox\Roblox.Website\WebsiteModels\Response\Authentication\Usernames.cs:3:public class NameChangeAvailableResponse
+Roblox\Roblox.Website\WebsiteModels\Response\Authentication\Usernames.cs:15:public class NameChangeRequest
+Roblox\Roblox.Website\WebsiteModels\Response\ErrorResponse.cs:3:public class ErrorResponseEntry
+Roblox\Roblox.Website\WebsiteModels\Response\ErrorResponse.cs:9:public class ErrorResponse
+Roblox\Roblox.Website\WebsiteModels\Response\Games\Joinscript.cs:2:public class BaseJoinScript
+Roblox\Roblox.Website\WebsiteModels\Response\Users\PreviousUsernames.cs:3:public class PreviousUsernameEntry
+Roblox\Roblox.Website\WebsiteServices\Verification.cs:16:public class VerificationResult
+Roblox\Roblox.Website\WebsiteServices\Verification.cs:38:// TODO: remove or recycle this class as it's no longer used since we now parse the username into a userid 
+Roblox\Roblox.Website\WebsiteServices\Verification.cs:39:public class InvalidSocialMediaUrlException : Exception {}
+Roblox\Roblox.Website\WebsiteServices\Verification.cs:40:public class AccountTooNewException : Exception {}
+Roblox\Roblox.Website\WebsiteServices\Verification.cs:42:public class UnableToFindVerificationPhraseException : Exception
+Roblox\Roblox.Website\WebsiteServices\Verification.cs:47:public class ApplicationWebsiteService : WebsiteService
+Roblox\Roblox.Website\WebsiteServices\Verification.cs:167:            using var cooldown = ServiceProvider.GetOrCreate<CooldownService>();
+Roblox\Roblox.Website\WebsiteServices\Verification.cs:168:            var rateLimitAttempt = await cooldown.TryIncrementBucketCooldown("VerifyPhraseGen:v1:" + userIp, 10, TimeSpan.FromHours(1));
+Roblox\Roblox.Website\WebsiteServices\WebsiteService.cs:3:public class WebsiteService
