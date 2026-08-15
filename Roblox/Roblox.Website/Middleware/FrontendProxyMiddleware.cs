@@ -61,7 +61,6 @@ public class FrontendProxyMiddleware
         "/internal/robuxexchange",
         "/internal/referral",
         "/auth/notapproved",
-        "/home",
         // Admin
         "/admin-api/api",
         "/admin",
