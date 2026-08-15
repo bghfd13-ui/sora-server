@@ -249,6 +249,11 @@ public class AssetsService : ServiceBase, IService
         FeatureFlags.FeatureCheck(FeatureFlag.UploadContentEnabled);
         directory ??= Configuration.StorageDirectory;
 
+        // Ensure the storage directory exists before File.Create() is called.
+        // This is required on fresh Render containers where /storage/asset
+        // has not been created yet.
+        Directory.CreateDirectory(directory);
+
         // validation
         if (!content.CanRead)
         {
