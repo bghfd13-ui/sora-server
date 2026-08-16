@@ -221,6 +221,18 @@ public class AssetsService : ServiceBase, IService
             throw new ArgumentException("GetAssetContent error 1");
         }
 
+        var databaseContent = await db.QuerySingleOrDefaultAsync<byte[]>(
+            "SELECT content FROM asset_content WHERE content_url = :key LIMIT 1",
+            new
+            {
+                key
+            });
+
+        if (databaseContent != null && databaseContent.Length > 0)
+        {
+            return new MemoryStream(databaseContent, writable: false);
+        }
+
         var fullPath = Configuration.AssetDirectory + key;
         for (var i = 0; i < 10; i++)
         {
@@ -290,6 +302,43 @@ public class AssetsService : ServiceBase, IService
         //await content.DisposeAsync();
         return plainHash;
     }
+
+    private async Task PersistAssetContent(string contentUrl, Stream content)
+    {
+        if (string.IsNullOrEmpty(contentUrl))
+            return;
+
+        if (content == null || !content.CanRead)
+            return;
+
+        const long MaxPersistBytes = 50 * 1024 * 1024;
+
+        if (content.CanSeek)
+            content.Position = 0;
+
+        await using var buffer = new MemoryStream();
+        await content.CopyToAsync(buffer);
+
+        if (buffer.Length > MaxPersistBytes)
+            return;
+
+        var bytes = buffer.ToArray();
+
+        await db.ExecuteAsync(
+            @"INSERT INTO asset_content (content_url, content)
+              VALUES (:contentUrl, :content)
+              ON CONFLICT (content_url)
+              DO UPDATE SET content = EXCLUDED.content",
+            new
+            {
+                contentUrl,
+                content = bytes
+            });
+
+        if (content.CanSeek)
+            content.Position = 0;
+    }
+
     public Task DeleteAssetContent(string key, string? directory = null)
     {
         if (key.Contains('/', StringComparison.Ordinal))
@@ -1337,6 +1386,7 @@ var meshMatch = System.Text.RegularExpressions.Regex.Match(rbxmText, @"rbxasseti
         const bool skipCache = true;
         var latest = await GetLatestAssetVersion(assetId, skipCache);
         var fileId = await UploadAssetContent(assetContent, Configuration.AssetDirectory);
+        await PersistAssetContent(fileId, assetContent);
         var created = DateTime.UtcNow;
 
         var id = await InsertAsync("asset_version", new
@@ -1395,6 +1445,7 @@ var meshMatch = System.Text.RegularExpressions.Regex.Match(rbxmText, @"rbxasseti
         if (content != null && contentId == null)
         {
             contentKey = await UploadAssetContent(content, Configuration.AssetDirectory);
+            await PersistAssetContent(contentKey, content);
         }
         else if (assetType == Type.Package || (content == null && contentId != null))
         {
