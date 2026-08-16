@@ -243,15 +243,57 @@ namespace Roblox.Rendering
         /// Thrown if the input type isn't supported, if the input stream can't be read or seeked,
         /// or if the requested return type isn't supported.
         /// </exception>
+        private static string NormalizeBase64(string input)
+        {
+            if (string.IsNullOrWhiteSpace(input))
+                throw new ArgumentException("Renderer returned an empty image.");
+
+            string value = input.Trim();
+
+            if (value.Length >= 2 && value[0] == '"' && value[value.Length - 1] == '"')
+            {
+                try
+                {
+                    string? decoded = JsonSerializer.Deserialize<string>(value);
+                    if (!string.IsNullOrEmpty(decoded))
+                        value = decoded.Trim();
+                }
+                catch
+                {
+                }
+            }
+
+            int comma = value.IndexOf(',');
+            if (value.StartsWith("data:image/", StringComparison.OrdinalIgnoreCase) && comma >= 0)
+                value = value.Substring(comma + 1);
+
+            value = new string(value.Where(c => !char.IsWhiteSpace(c)).ToArray());
+
+            return value;
+        }
         public static async Task<TReturn> ResizeImage<TReturn, TImageType>(TImageType inputImage, int width, int height)
         {
             MemoryStream imageStream;
 
             if (typeof(TImageType) == typeof(string))
-            {
-                string base64 = (string)(object)inputImage!;
-                byte[] imageBytes = Convert.FromBase64String(base64);
+            {            {
+                string base64 = NormalizeBase64((string)(object)inputImage!);
+                byte[] imageBytes;
+
+                try
+                {
+                    imageBytes = Convert.FromBase64String(base64);
+                }
+                catch (FormatException ex)
+                {
+                    string preview = base64.Length > 160 ? base64.Substring(0, 160) : base64;
+                    throw new ArgumentException(
+                        $"Renderer returned invalid Base64. Length={base64.Length}; Preview={preview}",
+                        ex);
+                }
+
                 imageStream = new MemoryStream(imageBytes);
+            }
             }
             else if (typeof(TImageType) == typeof(byte[]))
             {
