@@ -1296,6 +1296,36 @@ public class AssetsService : ServiceBase, IService
             throw new Exception($"Roblox returned empty RBXM content for asset {assetId}");
         }
 
+        // Modern Roblox UGC may use content references that are not exposed as
+        // rbxassetid:// mesh IDs and can be represented by formats this legacy
+        // backporter does not understand. Preserve the original RBXM first; it
+        // contains the complete accessory hierarchy and references exactly as
+        // Roblox delivered it. This is the most compatible path for modern UGC.
+        try
+        {
+            using var originalRbxmStream = new MemoryStream(rbxmByte, writable: false);
+            var directAsset = await assetsService.CreateAsset(
+                accessoryAsset.Name ?? "",
+                accessoryAsset.Description,
+                1,
+                CreatorType.User,
+                1,
+                originalRbxmStream,
+                (Type)accessoryAsset.AssetTypeId,
+                Genre.All,
+                ModerationStatus.ReviewApproved,
+                DateTime.UtcNow,
+                DateTime.UtcNow,
+                assetId);
+
+            Console.WriteLine($"[UGC Backport] Direct RBXM import succeeded: localAssetId={directAsset.assetId}, sourceAssetId={assetId}");
+            return directAsset.assetId;
+        }
+        catch (Exception directImportError)
+        {
+            Console.WriteLine($"[UGC Backport] Direct RBXM import failed for {assetId}, falling back to legacy mesh conversion: {directImportError.Message}");
+        }
+
         String rbxmHexString = Convert.ToHexString(rbxmByte);
         string rbxmText = System.Text.Encoding.UTF8.GetString(rbxmByte);
 
