@@ -302,7 +302,6 @@ public class AssetsService : ServiceBase, IService
         //await content.DisposeAsync();
         return plainHash;
     }
-
     private async Task PersistAssetContent(string contentUrl, Stream content)
     {
         if (string.IsNullOrEmpty(contentUrl))
@@ -1260,6 +1259,12 @@ public class AssetsService : ServiceBase, IService
         var robloxApi = new RobloxApi();
         var assetsService = new AssetsService();
         var accessoryAsset = await robloxApi.GetProductInfo(assetId);
+
+        if (accessoryAsset == null)
+        {
+            throw new Exception($"Could not get Roblox product info for asset {assetId}");
+        }
+
         var allowedTypes = new List<Models.Assets.Type>()
         {
             Type.Hat,
@@ -1275,64 +1280,128 @@ public class AssetsService : ServiceBase, IService
             Type.Head,
             Type.Model
         };
-        Console.WriteLine($"Backport asset type is: {accessoryAsset.AssetTypeId}");
-        if (accessoryAsset.AssetTypeId.HasValue && allowedTypes.Contains(accessoryAsset.AssetTypeId.Value))
+
+        Console.WriteLine($"[UGC Backport] SourceAssetId={assetId}, AssetTypeId={accessoryAsset.AssetTypeId}");
+
+        if (!accessoryAsset.AssetTypeId.HasValue || !allowedTypes.Contains(accessoryAsset.AssetTypeId.Value))
         {
-            Stream rbxmStream = await robloxApi.GetAssetContentFromProxy(assetId);
-            byte[] rbxmByte = EasyConverters.StreamToByte(rbxmStream);
-            String rbxmHexString = Convert.ToHexString(rbxmByte);
-
-string rbxmText = System.Text.Encoding.UTF8.GetString(rbxmByte);
-
-var meshMatch = System.Text.RegularExpressions.Regex.Match(rbxmText, @"rbxassetid://(\d+)", System.Text.RegularExpressions.RegexOptions.IgnoreCase); if (!meshMatch.Success) { throw new Exception("Could not find rbxassetid in RBXM"); } string meshId = meshMatch.Groups[1].Value; string meshIdHexString = EasyConverters.StringToHexString(meshId);
-
-            var meshAssetRequest = await robloxApi.GetProductInfo(long.Parse(meshId));
-            if (meshAssetRequest == null)
-                throw new Exception("The mesh request has failed");
-            if (meshAssetRequest.AssetTypeId.HasValue && (int)meshAssetRequest.AssetTypeId == 4)
-            {
-                Stream meshStream = await robloxApi.GetAssetContentFromProxy(long.Parse(meshId));
-                byte[] meshByte = EasyConverters.StreamToByte(meshStream);
-
-                byte[] newMeshByte; // this is the new mesh, as byte[], do whatever you want with this
-                try
-                {
-                    newMeshByte = ConvertMesh(meshByte);
-                }
-                catch (Exception)
-                {
-                    Console.WriteLine("Failed converting mesh");
-                    throw;
-                }
-                // convert to stream
-                Stream newMeshStream = new MemoryStream(newMeshByte);
-
-                var meshDetails = await assetsService.CreateAsset(accessoryAsset.Name ?? "", accessoryAsset.Description, 1,
-                    CreatorType.User, 1, newMeshStream, Type.Mesh, Genre.All, ModerationStatus.ReviewApproved,
-                    DateTime.UtcNow, DateTime.UtcNow, long.Parse(meshId));
-                Writer.Info(LogGroup.AdminApi, "UGC Backporter new mesh id : {0}  OLD mesh id: {1}", meshDetails.assetId, meshId.Length);
-                long newMeshIdLong = meshDetails.assetId; // example, is a long just incase
-                string newMeshId = newMeshIdLong.ToString(); // convert to string
-                string newMeshIdHex = EasyConverters.StringToHexString(newMeshId);
-                if (newMeshId.Length > meshId.Length)
-                {
-                    throw new Exception("New MeshId too long");
-                }
-                for (int i = 0; i < (meshId.Length - newMeshId.Length); i++)
-                {
-                    newMeshIdHex = $"{newMeshIdHex}00";
-                }
-                rbxmHexString = rbxmHexString.Replace(meshIdHexString, newMeshIdHex);
-                byte[] newRbxmByte = Convert.FromHexString(rbxmHexString); // this is the new RBXM, as byte[], do whatever you want with this
-                Stream newRbxmStream = new MemoryStream(newRbxmByte);
-                var assetDetails = await assetsService.CreateAsset(accessoryAsset.Name ?? "", accessoryAsset.Description, 1,
-                                    CreatorType.User, 1, newRbxmStream, (Type)accessoryAsset.AssetTypeId, Genre.All, ModerationStatus.ReviewApproved,
-                                    DateTime.UtcNow, DateTime.UtcNow, assetId);
-                return assetDetails.assetId;
-            }
+            throw new Exception($"Unsupported Roblox asset type for backport: {accessoryAsset.AssetTypeId}");
         }
-        return 0;
+
+        Stream rbxmStream = await robloxApi.GetAssetContentFromProxy(assetId);
+        byte[] rbxmByte = EasyConverters.StreamToByte(rbxmStream);
+
+        if (rbxmByte.Length == 0)
+        {
+            throw new Exception($"Roblox returned empty RBXM content for asset {assetId}");
+        }
+
+        String rbxmHexString = Convert.ToHexString(rbxmByte);
+        string rbxmText = System.Text.Encoding.UTF8.GetString(rbxmByte);
+
+        var meshMatch = System.Text.RegularExpressions.Regex.Match(
+            rbxmText,
+            @"rbxassetid://(\d+)",
+            System.Text.RegularExpressions.RegexOptions.IgnoreCase);
+
+        if (!meshMatch.Success)
+        {
+            throw new Exception($"Could not find rbxassetid in RBXM for asset {assetId}");
+        }
+
+        string meshId = meshMatch.Groups[1].Value;
+        string meshIdHexString = EasyConverters.StringToHexString(meshId);
+
+        var meshAssetRequest = await robloxApi.GetProductInfo(long.Parse(meshId));
+
+        if (meshAssetRequest == null)
+        {
+            throw new Exception($"The mesh request has failed for mesh {meshId}");
+        }
+
+        Console.WriteLine(
+            $"[UGC Backport] MeshId={meshId}, MeshAssetTypeId={meshAssetRequest.AssetTypeId}, AccessoryAssetTypeId={accessoryAsset.AssetTypeId}");
+
+        // Do not hard-code the Roblox mesh asset type here. Newer UGC can reference
+        // mesh-like assets with different catalog type IDs. ConvertMesh() below
+        // validates the actual binary payload instead.
+        Stream meshStream = await robloxApi.GetAssetContentFromProxy(long.Parse(meshId));
+        byte[] meshByte = EasyConverters.StreamToByte(meshStream);
+
+        if (meshByte.Length == 0)
+        {
+            throw new Exception($"Roblox returned empty mesh content for mesh {meshId}");
+        }
+
+        byte[] newMeshByte;
+        try
+        {
+            newMeshByte = ConvertMesh(meshByte);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine($"[UGC Backport] Failed converting mesh {meshId}: {e.Message}");
+            throw new Exception($"Failed converting mesh {meshId}: {e.Message}", e);
+        }
+
+        Stream newMeshStream = new MemoryStream(newMeshByte);
+
+        var meshDetails = await assetsService.CreateAsset(
+            accessoryAsset.Name ?? "",
+            accessoryAsset.Description,
+            1,
+            CreatorType.User,
+            1,
+            newMeshStream,
+            Type.Mesh,
+            Genre.All,
+            ModerationStatus.ReviewApproved,
+            DateTime.UtcNow,
+            DateTime.UtcNow,
+            long.Parse(meshId));
+
+        Writer.Info(
+            LogGroup.AdminApi,
+            "UGC Backporter new mesh id : {0} OLD mesh id: {1}",
+            meshDetails.assetId,
+            meshId);
+
+        long newMeshIdLong = meshDetails.assetId;
+        string newMeshId = newMeshIdLong.ToString();
+        string newMeshIdHex = EasyConverters.StringToHexString(newMeshId);
+
+        if (newMeshId.Length > meshId.Length)
+        {
+            throw new Exception($"New MeshId {newMeshId} is too long to replace old MeshId {meshId}");
+        }
+
+        for (int i = 0; i < (meshId.Length - newMeshId.Length); i++)
+        {
+            newMeshIdHex = $"{newMeshIdHex}00";
+        }
+
+        rbxmHexString = rbxmHexString.Replace(meshIdHexString, newMeshIdHex);
+        byte[] newRbxmByte = Convert.FromHexString(rbxmHexString);
+        Stream newRbxmStream = new MemoryStream(newRbxmByte);
+
+        var assetDetails = await assetsService.CreateAsset(
+            accessoryAsset.Name ?? "",
+            accessoryAsset.Description,
+            1,
+            CreatorType.User,
+            1,
+            newRbxmStream,
+            (Type)accessoryAsset.AssetTypeId,
+            Genre.All,
+            ModerationStatus.ReviewApproved,
+            DateTime.UtcNow,
+            DateTime.UtcNow,
+            assetId);
+
+        Console.WriteLine($"[UGC Backport] Created local asset {assetDetails.assetId} from Roblox asset {assetId}");
+        return assetDetails.assetId;
     }
+
     public async Task<CreateResponse> CreateAssetVersion(long assetId, long creatorUserId, long contentId)
     {
         const bool skipCache = true;
