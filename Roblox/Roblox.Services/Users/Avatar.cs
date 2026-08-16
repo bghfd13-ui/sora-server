@@ -1,4 +1,4 @@
-﻿using System.Diagnostics;
+using System.Diagnostics;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
@@ -959,6 +959,8 @@ public class AvatarService : ServiceBase, IService {
             string? mtl = null;
             var textures = new List<string>();
             
+            string thumbnail3DDirectory = Path.Combine(Configuration.ThumbnailsDirectory, "3d");
+            Directory.CreateDirectory(thumbnail3DDirectory);
             using SHA256 hasher = SHA256.Create();
 
             if (thumbJson.files.TryGetValue("scene.obj", out var sceneObj))
