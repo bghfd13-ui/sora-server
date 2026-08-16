@@ -1303,56 +1303,64 @@ public class AssetsService : ServiceBase, IService
         // contain texture/image IDs before the actual MeshId. The previous
         // implementation picked the first ID, which caused Fedora 493476042
         // to treat Image 493450535 as a mesh and fail with "Invalid mesh file".
-        var meshPatterns = new[]
-        {
-            @"<string[^>]+name=[""']MeshId[""'][^>]*>[^<]*rbxassetid://(\d+)",
-            @"<Content[^>]+name=[""']MeshId[""'][^>]*>[\s\S]*?rbxassetid://(\d+)",
-            @"MeshId[^>]*?rbxassetid://(\d+)"
-        };
+        // Roblox UGC RBXM files can contain multiple rbxassetid references:
+        // textures/images may appear before the actual mesh. Pick the referenced
+        // asset whose downloaded payload is a supported Roblox FileMesh.
+        var assetMatches = System.Text.RegularExpressions.Regex.Matches(
+            rbxmText,
+            @"rbxassetid://(\d+)",
+            System.Text.RegularExpressions.RegexOptions.IgnoreCase);
 
-        Match? meshMatch = null;
-        foreach (var pattern in meshPatterns)
-        {
-            var candidate = System.Text.RegularExpressions.Regex.Match(
-                rbxmText,
-                pattern,
-                System.Text.RegularExpressions.RegexOptions.IgnoreCase);
+        var referencedAssetIds = assetMatches
+            .Select(m => m.Groups[1].Value)
+            .Distinct(StringComparer.Ordinal)
+            .ToList();
 
-            if (candidate.Success)
+        if (referencedAssetIds.Count == 0)
+        {
+            throw new Exception($"Could not find rbxassetid references in RBXM for asset {assetId}");
+        }
+
+        string? meshId = null;
+        byte[]? meshByte = null;
+
+        foreach (var candidateId in referencedAssetIds)
+        {
+            try
             {
-                meshMatch = candidate;
+                var candidateStream = await robloxApi.GetAssetContentFromProxy(long.Parse(candidateId));
+                var candidateBytes = EasyConverters.StreamToByte(candidateStream);
+
+                if (candidateBytes.Length < 12)
+                    continue;
+
+                var header = Encoding.UTF8.GetString(candidateBytes, 0, Math.Min(8, candidateBytes.Length));
+                if (!header.Equals("version ", StringComparison.Ordinal))
+                    continue;
+
+                // Validate the actual mesh format before selecting it.
+                var candidateVersion = Encoding.UTF8.GetString(candidateBytes, 8, Math.Min(4, candidateBytes.Length - 8));
+                if (candidateVersion is not ("1.00" or "1.01" or "2.00" or "3.00" or "3.01" or "4.00" or "4.01" or "5.00"))
+                    continue;
+
+                meshId = candidateId;
+                meshByte = candidateBytes;
                 break;
+            }
+            catch (Exception candidateError)
+            {
+                Console.WriteLine($"[UGC Backport] Skipping referenced asset {candidateId}: {candidateError.Message}");
             }
         }
 
-        if (meshMatch == null || !meshMatch.Success)
+        if (meshId == null || meshByte == null)
         {
-            throw new Exception($"Could not find MeshId rbxassetid in RBXM for asset {assetId}");
+            throw new Exception($"Could not find a supported mesh payload in RBXM for asset {assetId}. Referenced IDs: {string.Join(",", referencedAssetIds)}");
         }
 
-        string meshId = meshMatch.Groups[1].Value;
+        Console.WriteLine($"[UGC Backport] Selected mesh payload MeshId={meshId} from {referencedAssetIds.Count} referenced asset(s)");
+
         string meshIdHexString = EasyConverters.StringToHexString(meshId);
-
-        var meshAssetRequest = await robloxApi.GetProductInfo(long.Parse(meshId));
-
-        if (meshAssetRequest == null)
-        {
-            throw new Exception($"The mesh request has failed for mesh {meshId}");
-        }
-
-        Console.WriteLine(
-            $"[UGC Backport] MeshId={meshId}, MeshAssetTypeId={meshAssetRequest.AssetTypeId}, AccessoryAssetTypeId={accessoryAsset.AssetTypeId}");
-
-        // Do not hard-code the Roblox mesh asset type here. Newer UGC can reference
-        // mesh-like assets with different catalog type IDs. ConvertMesh() below
-        // validates the actual binary payload instead.
-        Stream meshStream = await robloxApi.GetAssetContentFromProxy(long.Parse(meshId));
-        byte[] meshByte = EasyConverters.StreamToByte(meshStream);
-
-        if (meshByte.Length == 0)
-        {
-            throw new Exception($"Roblox returned empty mesh content for mesh {meshId}");
-        }
 
         byte[] newMeshByte;
         try
