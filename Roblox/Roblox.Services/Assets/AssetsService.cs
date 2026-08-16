@@ -1299,14 +1299,35 @@ public class AssetsService : ServiceBase, IService
         String rbxmHexString = Convert.ToHexString(rbxmByte);
         string rbxmText = System.Text.Encoding.UTF8.GetString(rbxmByte);
 
-        var meshMatch = System.Text.RegularExpressions.Regex.Match(
-            rbxmText,
-            @"rbxassetid://(\d+)",
-            System.Text.RegularExpressions.RegexOptions.IgnoreCase);
-
-        if (!meshMatch.Success)
+        // Do not use the first rbxassetid:// in the RBXM. UGC files commonly
+        // contain texture/image IDs before the actual MeshId. The previous
+        // implementation picked the first ID, which caused Fedora 493476042
+        // to treat Image 493450535 as a mesh and fail with "Invalid mesh file".
+        var meshPatterns = new[]
         {
-            throw new Exception($"Could not find rbxassetid in RBXM for asset {assetId}");
+            @"<string[^>]+name=[""']MeshId[""'][^>]*>[^<]*rbxassetid://(\d+)",
+            @"<Content[^>]+name=[""']MeshId[""'][^>]*>[\s\S]*?rbxassetid://(\d+)",
+            @"MeshId[^>]*?rbxassetid://(\d+)"
+        };
+
+        Match? meshMatch = null;
+        foreach (var pattern in meshPatterns)
+        {
+            var candidate = System.Text.RegularExpressions.Regex.Match(
+                rbxmText,
+                pattern,
+                System.Text.RegularExpressions.RegexOptions.IgnoreCase);
+
+            if (candidate.Success)
+            {
+                meshMatch = candidate;
+                break;
+            }
+        }
+
+        if (meshMatch == null || !meshMatch.Success)
+        {
+            throw new Exception($"Could not find MeshId rbxassetid in RBXM for asset {assetId}");
         }
 
         string meshId = meshMatch.Groups[1].Value;
