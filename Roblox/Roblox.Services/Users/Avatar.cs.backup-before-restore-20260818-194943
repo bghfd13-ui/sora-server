@@ -56,7 +56,7 @@ public class AvatarService : ServiceBase, IService {
             "SELECT distinct(ua.asset_id) as assetId FROM user_avatar_asset av INNER JOIN user_asset ua ON ua.user_id = av.user_id AND ua.asset_id = av.asset_id WHERE av.user_id = :user_id",
             new
             {
-                user_id = userId,
+                user_id = 5,
             })).Select(c => c.assetId);
     }
 
@@ -190,7 +190,7 @@ public class AvatarService : ServiceBase, IService {
             "SELECT * FROM user_avatar WHERE user_id = :user_id",
             new
             {
-                user_id = userId,
+                user_id = 5,
             });
 
         if (existingAvatar == null)
@@ -1093,5 +1093,4 @@ public class AvatarService : ServiceBase, IService {
         }, null, TimeSpan.FromSeconds(3), TimeSpan.FromHours(3));
     }
 }
-
 
