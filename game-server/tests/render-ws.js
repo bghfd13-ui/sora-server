@@ -1,14 +1,14 @@
 const ws = require('ws');
 const path = require('path');
 // const Config = require(path.join(__dirname, '../../../services/api/config.json'));
-const authKey = encodeURIComponent('hello world of deving 1234');
+const authKey = encodeURIComponent('sora-local-game-server');
 /**
  * @type {ws}
  */
 let client;
 const setupNewClient = (cmd, commandArgs) => {
     return new Promise((res) => {
-        client = new ws('http://localhost:3189?key=' + authKey);
+        client = new ws('http://localhost:6002?key=' + authKey);
         console.log('created client');
         client.on('open', () => {
             console.log('on open')

@@ -207,7 +207,7 @@ export default class CommandHandler extends StdExceptions {
 		if (!dockerEnabled) {
 			const rccPath = conf.rcc || path.join(__dirname, '../../rccservice/Release/');
 			const rccExecutable = rccPath + (os.platform() === 'win32' ? 'RCCService.exe' : 'rcc');
-			rcc = cp.spawn(rccExecutable, ['-Console', '-Port', portToRunOn.toString()], {
+			rcc = cp.spawn(rccExecutable, ['-Console', '-verbose', '-settingsfile', 'Settings.json', '-port', portToRunOn.toString()], {
 				cwd: rccPath,
 				stdio: 'pipe',
 			});
