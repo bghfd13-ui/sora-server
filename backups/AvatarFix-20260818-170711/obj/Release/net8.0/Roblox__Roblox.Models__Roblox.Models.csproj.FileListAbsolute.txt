@@ -1,0 +1,5 @@
+C:\ProjectSora\pekora-latest-src\backups\AvatarFix-20260818-170711\obj\Release\net8.0\Roblox__Roblox.Models__Roblox.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\ProjectSora\pekora-latest-src\backups\AvatarFix-20260818-170711\obj\Release\net8.0\Roblox__Roblox.Models__Roblox.Models.AssemblyInfoInputs.cache
+C:\ProjectSora\pekora-latest-src\backups\AvatarFix-20260818-170711\obj\Release\net8.0\Roblox__Roblox.Models__Roblox.Models.AssemblyInfo.cs
+C:\ProjectSora\pekora-latest-src\backups\AvatarFix-20260818-170711\obj\Release\net8.0\Roblox__Roblox.Models__Roblox.Models.csproj.CoreCompileInputs.cache
+C:\ProjectSora\pekora-latest-src\backups\AvatarFix-20260818-170711\obj\Release\net8.0\Roblox__Roblox.Models__Roblox.Models.sourcelink.json

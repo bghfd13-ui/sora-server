@@ -1,4 +1,4 @@
-﻿using System.Diagnostics;
+using System.Diagnostics;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
@@ -56,7 +56,7 @@ public class AvatarService : ServiceBase, IService {
             "SELECT distinct(ua.asset_id) as assetId FROM user_avatar_asset av INNER JOIN user_asset ua ON ua.user_id = av.user_id AND ua.asset_id = av.asset_id WHERE av.user_id = :user_id",
             new
             {
-                user_id = 5,
+                user_id = 1,
             })).Select(c => c.assetId);
     }
 
@@ -190,7 +190,7 @@ public class AvatarService : ServiceBase, IService {
             "SELECT * FROM user_avatar WHERE user_id = :user_id",
             new
             {
-                user_id = 5,
+                user_id = 1,
             });
 
         if (existingAvatar == null)
@@ -957,7 +957,7 @@ public class AvatarService : ServiceBase, IService {
         // Now thumbnail 3D, these have a unique format in JSON
         try
         {
-            // TODO: consider resizing these 3D renders РІР‚вЂќ they may be too large
+            // TODO: consider resizing these 3D renders вЂ” they may be too large
             var thumbJson = JsonSerializer.Deserialize<Thumbnail3DRender>(thumbnail3DResult);
             if (thumbJson is null)
                 throw new Exception("Renderer returned incorrect 3D thumbnail.");
@@ -1093,4 +1093,3 @@ public class AvatarService : ServiceBase, IService {
         }, null, TimeSpan.FromSeconds(3), TimeSpan.FromHours(3));
     }
 }
-
