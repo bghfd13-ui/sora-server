@@ -1,4 +1,4 @@
-const ws = require('./render-ws');
+﻿const ws = require('./render-ws');
 const path = require('path');
 const fs = require('fs');
 const outDir = path.join(__dirname, './out/');
@@ -23,7 +23,7 @@ const avatar = {
 console.log('send');
 ws('GenerateThumbnail', [avatar]).then(res => {
     console.log('ok?')
-    const icon = res.data;
+    console.log('=== FULL RCC RESPONSE ==='); console.log(JSON.stringify(res, null, 2)); if (!res || res.status !== 200 || !res.data) { console.error('THUMBNAIL GENERATION FAILED'); process.exit(1); } const icon = res.data;
     // console.log('ok', icon);
     const fPath = outDir + 'player-thumbnail.png'
     fs.writeFileSync(fPath, Buffer.from(icon, 'base64'));
