@@ -1,4 +1,4 @@
-﻿using System.Diagnostics;
+using System.Diagnostics;
 using System.Text.Json;
 using System.Text.RegularExpressions;
 using CsvHelper;
@@ -30,6 +30,14 @@ namespace Roblox.Services;
 
 public class UsersService : ServiceBase, IService
 {
+    // Relive default starter avatar (classic Roblox "Bacon Hair" look).
+    // IDs are validated against the local asset table before being granted.
+    private static readonly long[] ReliveDefaultAvatarAssetIds =
+    {
+        63690008,  // Pal Hair (Bacon Hair)
+        144076358, // Blue and Black Motorcycle Shirt
+        144076760, // Dark Green Jeans
+    };
     private static TwoFactorAuth tfa = new TwoFactorAuth("Pekora");
     public async Task<bool> IsNameAvailableForNameChange(long contextUserId, string username)
     {
@@ -1329,13 +1337,58 @@ public class UsersService : ServiceBase, IService
                 await CreateUserAsset(userId, id);
             }
 
+            // Give every new Relive account the classic starter avatar assets.
+            // We only grant assets that actually exist in this installation so
+            // a missing catalog item can never break account creation.
+            var configuredAvatarAssets = Roblox.Configuration.SignupAvatarAssetIds ?? Enumerable.Empty<long>();
+            var starterAvatarAssets = configuredAvatarAssets
+                .Concat(ReliveDefaultAvatarAssetIds)
+                .Distinct()
+                .ToList();
+
+            var existingStarterAssets = (await db.QueryAsync<long>(
+                "SELECT id FROM asset WHERE id = ANY(:ids)",
+                new { ids = starterAvatarAssets.ToArray() }))
+                .ToHashSet();
+
+            foreach (var id in starterAvatarAssets)
+            {
+                if (!existingStarterAssets.Contains(id))
+                    continue;
+
+                var alreadyOwned = await db.QuerySingleOrDefaultAsync<long?>(
+                    "SELECT id FROM user_asset WHERE user_id = :user_id AND asset_id = :asset_id LIMIT 1",
+                    new { user_id = userId, asset_id = id });
+
+                if (alreadyOwned == null)
+                    await CreateUserAsset(userId, id);
+            }
+
             return new UserId
             {
                 userId = userId,
             };
         });
-        // Render outside transaction to prevent deadlock/unnecessary locks
-// Avatar rendering disabled on Render
+        // Render outside the transaction. The renderer reads user_avatar/user_asset
+        // and uses its own distributed lock.
+        try
+        {
+            using var av = ServiceProvider.GetOrCreate<AvatarService>();
+            var configuredAvatarAssets = Roblox.Configuration.SignupAvatarAssetIds ?? Enumerable.Empty<long>();
+            var starterAvatarAssets = configuredAvatarAssets
+                .Concat(ReliveDefaultAvatarAssetIds)
+                .Distinct()
+                .ToList();
+
+            await av.RedrawAvatar(result.userId, starterAvatarAssets);
+        }
+        catch (Exception e)
+        {
+            Writer.Info(LogGroup.FixBrokenThumbnails,
+                "Initial avatar render failed for new user {0}: {1}\n{2}",
+                result.userId, e.Message, e.StackTrace);
+        }
+
         return result;
     }
 

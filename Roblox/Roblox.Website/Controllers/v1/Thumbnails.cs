@@ -61,9 +61,9 @@ public class ThumbnailsControllerV1 : ControllerBase
             Writer.Info(LogGroup.FixBrokenThumbnails, "Error running FixAssetThumbnails(). will move to users. err={0}\n{1}", e.Message, e.StackTrace);
         }
 
-        //Writer.Info(LogGroup.FixBrokenThumbnails,"Fix thumbs for users");
-        //await FixUserThumbnails();
-        //Writer.Info(LogGroup.FixBrokenThumbnails, "fixed all thumbs");
+        Writer.Info(LogGroup.FixBrokenThumbnails, "Fix thumbs for users");
+        await FixUserThumbnails();
+        Writer.Info(LogGroup.FixBrokenThumbnails, "fixed user thumbs");
 #endif
     }
 

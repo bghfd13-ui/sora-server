@@ -1,4 +1,4 @@
-﻿using Roblox.Rendering;
+using Roblox.Rendering;
 using Roblox.Website.Middleware;
 using Roblox.Libraries.RemoteView;
 using System.Text.Json.Serialization;
@@ -599,6 +599,9 @@ _ = Task.Run(async () =>
 _ = Task.Run(
     AvatarService.StartTimerClear3D
 );
+
+// Keep user avatar thumbnails self-healing.
+Roblox.Website.Controllers.ThumbnailsControllerV1.StartThumbnailFixLoop();
 
 // ============================================================
 // ENDPOINTS
